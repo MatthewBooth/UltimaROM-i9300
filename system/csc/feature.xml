@@ -1,0 +1,96 @@
+﻿<?xml  version="1.0" encoding="UTF-8" ?>
+<!-- It can be added for each operators like below form
+
+<ABC>                       -> sales code
+<sapient>true</sapient>         -> feature1
+<burton>false</burton>          -> feature2
+<libtech>true</libtech>         -> feature3
+.
+.
+</ABC>
+
+each name of tags are will be environment variable with "ro.csc."
+ex) "ro.csc.sapient", "ro.csc.burton", "ro.csc.libtech" <== you could use them at any section.
+also, should be added between <FeatureSet>
+ and </FeatureSet> .
+jhwan.kim@hdlnc.com  -->
+<SamsungMobileFeature>
+
+<Country></Country>
+<CountryISO></CountryISO>
+<SalesCode></SalesCode>
+
+<!-- KOR -->
+<FeatureSet>
+
+<!-- Camera -->
+
+<!-- Message -->
+<CscFeature_Message_ReplaceCRToNewLine>true</CscFeature_Message_ReplaceCRToNewLine>
+<CscFeature_Message_DisableConvertingEffectBetweenSMSMMS>true</CscFeature_Message_DisableConvertingEffectBetweenSMSMMS>
+<CscFeature_Message_DisableBackgroundStyleWithImage>true</CscFeature_Message_DisableBackgroundStyleWithImage>
+<CscFeature_Message_EnableRegisterToCalender>true</CscFeature_Message_EnableRegisterToCalender>
+<CscFeature_Message_EnableNetworkWarningDialog>true</CscFeature_Message_EnableNetworkWarningDialog>
+
+<!-- KIES -->                          															
+
+
+<!-- Browser -->
+
+<CscFeature_Web_AddOptionToTerminate>true</CscFeature_Web_AddOptionToTerminate>
+<CscFeature_Web_ShowVersionInSetting>true</CscFeature_Web_ShowVersionInSetting>
+
+<!-- Camera -->
+<CscFeature_Camera_ShutterSoundMenu>true</CscFeature_Camera_ShutterSoundMenu>
+
+<!-- Contacts -->
+<CscFeature_Contact_SetLinkCountMaxAs>999</CscFeature_Contact_SetLinkCountMaxAs>
+<!-- Calendar -->
+
+<!-- Call -->
+
+<!-- Clock -->
+
+<!-- Email -->
+<CscFeature_Email_UseFixedBgColorAsWhite>false</CscFeature_Email_UseFixedBgColorAsWhite>
+<!-- Mini Diary -->
+<CscFeature_MiniDiary_DisableChinaSns>true</CscFeature_MiniDiary_DisableChinaSns>
+
+<!-- Dialer -->
+
+<!-- Log -->
+
+<!-- RIL -->
+<CscFeature_RIL_ForceConnectMMS>true</CscFeature_RIL_ForceConnectMMS>
+<!-- Settings -->
+<CscFeature_Setting_DisableMenuSoftwareUpdate>true</CscFeature_Setting_DisableMenuSoftwareUpdate>
+<!-- MMApp -->
+
+<!-- MyFiles -->
+
+<!-- Gallery -->
+
+<!-- Music -->
+
+<!-- MMFW -->
+
+<!-- NFC -->
+
+<!-- WEB -->
+<CscFeature_Web_EnableAutoSimHomeUrlInProfile>true</CscFeature_Web_EnableAutoSimHomeUrlInProfile>
+
+<!-- AppFW -->
+
+<!-- Email -->
+
+<!-- SEC FMRadio -->
+
+<!-- SIP -->
+<CscFeature_Sip_UseSymbolInCMKey>true</CscFeature_Sip_UseSymbolInCMKey>
+<CscFeature_Sip_EnableSymbolInSecondary>en_GB;en_US;az;ca;cs;da;de;et;es;eu;el;fr;ga;gl;ka;hr;it;is;kk;lv;lt;hu;nb;nl;pl;pt;ru;ro;fi;sr;sk;sl;sv;tr;uk;ko;hy;bg;ar;fa;ur;iw;ja;th;vi;zh;uz;in;mk;ms</CscFeature_Sip_EnableSymbolInSecondary>
+
+<!-- GMS -->
+<CscFeature_GMS_DisableSetupWizard>true</CscFeature_GMS_DisableSetupWizard>
+
+</FeatureSet>
+</SamsungMobileFeature>

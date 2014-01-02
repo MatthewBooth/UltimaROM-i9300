@@ -1,0 +1,28 @@
+<@center><b><#selectbg_g>UltimaROM Installation Notes:</#></b>
+
+<b><#selectbg_g>PLEASE READ</#></b></@>
+
+<@fill>
+<*><#selectbg_g>When coming from ANY other base firmware other than the one listed, you <b>MUST</b> wipe otherwise face problems. If you are using the same base then it is generally ok to just wipe cache. Not Wiping will result in loss of contacts pictures and other problems which nothing can be done about other than wiping.</#></*>
+
+<*>The Android 4.2 Gallery and Camera doesn't allow you to change the Lockscreen Wallpaper. Therefore the stock gallery is also included. ALSO, when trying to take a picture with the flash enabled, you MUST hold your finger on the shutter button and let the flash light up first, THEN release your finger to take the picture. IF you do not the camera will force close. This is a problem in general with the NExus camera and NOT the ROM. There is no known fix.</*>
+
+<*>Be aware when using the External2InternalSD mod. This swaps your Sdcard (physical) for the internal storage. So, if you use a 32GB SD card, the phone will think that is the internal storage and the actual internal storage will show as the external SD card. Confused? Don't be, basically the two storages are swapped. HOWEVER, this causes much confusion regarding the camera. The Camera WILL NOT save any videos or images taken while set to "Memory Card" and MUST be set to "Phone". I have no idea why this is, but it's a worthy trade off for the mod.</*>
+
+<*>The installer seems to crash from time to time for no reason I can discern. I find TWRP crashes much less.</*>
+
+<*>See the Second Post regarding the Xposed Framework instructions on how to enable</*>
+
+<*>Status Bar Clock Mods are found in the Time and Date settings page adn Advanced Settings</*>
+
+<*>Call recording and Disabled increasing Ringtones are no longer in the installer, and are part of the ROM now. Use the UltimaROM Advanced Settings app for this.</*>
+
+<*>Volume2Skip is now in the ADVANCED SETTINGS page. </*>
+
+<*>CRT is now in the ADVANCED SETTINGS page.</*>
+
+<*>Your phone WILL get warm on the first boot as the media scanner scans your folders. After this it will settle and your battery should stop being drained. It was about 5% for me.</*>
+
+</@>
+<@center>Please note the above before continuing to save any needless posts in the thread!</@>
+

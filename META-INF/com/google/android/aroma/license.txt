@@ -1,0 +1,159 @@
+<@center><b><#selectbg_g>UltimaROM TERMS & CONDITIONS</#></b>
+Version 16.0, December 2013
+
+<b><#selectbg_g>TERMS AND CONDITIONS FOR USE</#></b></@>
+
+<@fill><q>By clicking agree and flashing this ROM you agree that:
+
+<*>I am not responsible for any loss of data that may occure from using this ROM.</*>
+<*>This ROM comes AS IS and no support is guaranteed (though I will do my best).</*>
+<*>That you will NOT use this ROM to start a Nuclear War (Very important).</*>
+<*>You will READ this installer as you go along to understand everything about it. Please do this to save us all some time!</*>
+
+I hope you enjoy this!
+
+<#selectbg_g><b>Big thanks to my girlfriend, Jo, who puts up with my late nights and telling her about the ROM 24/7!</b></#>
+
+<#selectbg_g><b>Thanks/Credits (In no particular order)</b></#>
+<*>Master Vertumus - For your awesome theme work</*>
+<*>VillainROM Team - For the VRT System</*>
+<*>Amarullz - For Aroma Installer</*>
+<*>wanam - For the base ROMs and many mods</*>
+<*>Darkside Agent - For your guidance, AOSP help and much more!</*>
+<*>anbech - For the custom boot animation enabler</*>
+<*>therazrguy - For the ripped Moto bootanimation</*>
+<*>Rujelus22 - For the base some of the inverted apps</*>
+<*>JaiThemes - For the wallpapers</*>
+<*>raubkatze - For some battery icons</*>
+<*>pkoper - For the original Bokeh Animation & UltimaROM Poly FX</*>
+<*>gokhanmoral and AndreiLux - For the awesome Kernels</*>
+<*>Greg White - For Tweaked SD Watcher</*>
+<*>torxx - For 1% battery mod images</*>
+<*>AndiP - For the Extended Power Menu</*>
+<*>marcellocord - CWM Touch and data wipe help :)</*>
+<*>danieldmm - For the working call recording mod</*>
+<*>asc366 - For your help on various things :) </*>
+<*>FrankZZ - For your help testing and hosting!</*>
+<*>ivarson_swe - For your help with hosting!</*>
+<*>sorg - For the CRT-Off Animation and Smart Rotation</*>
+<*>D3HuM4NiZ3D - MegaBassBeats Mod</*>
+<*>acquariusoft - OTA Updater</*>
+<*>mattadj - Internal2ExternalSD</*>
+<*>gunthermic - For helping me brainstorm regarding theming!</*>
+<*>hyperX - HX Camera Mod</*>
+<*>Scott - ROMHut.com</*>
+<*>Korumera - xdafileserver.nl and xdatorrents.com</*>
+<*>SabrWolf - AOSP Lockscreen</*>
+<*>Gyebro - Resizable Popup Browser</*>
+<*>Aoi_sora9x - for the UltimaROM Droid boot animation and graphics</*>
+<*>mythtrandyr - Ink Lockscreen Colour changer, Auto Call recording mod</*>
+<*>rickythefox & Chris_84 - Headphones Shortcuts</*>
+<*>Cristiano Matos - 23 Toggles</*>
+<*>LegendK95 - MultiWindow Mod & Control App</*>
+<*>cyanisblue - MultiWindow theme</*>
+<*>Didact74 - AOSP Lock ScreenToggle, Extra Icons, Clock settings, statusbar transparency and Lockscreen Torch and much more!</*>
+<*>sotmax - Note I Torch Widget</*>
+<*>winuxguy - Ripple Live Wallpaper APK</*>
+<*>Difusal - Modded MMS.apk</*>
+<*>artyfarty - For the RIL tip</*>
+<*>IganKuhz - Ink Preview Images</*>
+<*>KIMBASINGER - Modded Accuweather</*>
+<*>UOT Kitchen - Some of the battery icons</*>
+<*>rovo89 and Tungstwenty - Xposed Framework</*>
+<*>loserskater - AOSP MMS fix, proper VolumetoSkip implmentation and an insane amount of other things</*>
+<*>shoman94 - JB MediaScaner Fix</*>
+<*>AndroidGX - Lite Camera</*>
+<*>droidphile - STweaks Profile Backup</*>
+<*>Tamerlan2009 - Sense Recent Apps</*>
+<*>Neme77 - 2G Toggle Guide & Resources</*>
+<*>androidsoul - Droid DNA Wallpapers</*>
+<*>blgblade - Asus Weather Widget and Live Wallpaper</*>
+<*>OliG - Battery icon creator</*>
+<*>AllianceROM and ficeto - CustomSettings (UltimaROM Settings)</*>
+<*>Shoman - CRT Toggle implmentation </*>
+<*>sam77744 & zoot1 - Galaxy S4 S-Voice </*>
+<*>djembey - HD-Voice </*>
+<*>xDroidH - S4 Themed Accuweather Widget and Main </*>
+<*>AllianceROM - Point of reference for the colour chooser code</*>
+<*>AOKP - Wallpapers App</*>
+<*>Moster2 - Working Camera lib</*>
+<*>Crussader - Some theing on 4.3 apps</*>
+<*>Arsaw - Watercolor effect</*>
+<#selectbg_g><b>Everything else created by myself. Most items are heavily modified and themed and it is stated where this is otherwise. See the thread for more details. If I missed you out here let me know!</b></#>
+
+<#selectbg_g><b>Big Thanks to Donators!</b></#>
+<*>Coreym</*>
+<*>DonHuan</*>
+<*>Litakely</*>
+<*>soukyaki</*>
+<*>shorty1483</*>
+<*>S Roy</*>
+<*>D Janz</*>
+<*>zoomee</*>
+<*>Cabuchola</*>
+<*>S Gamberini</*>
+<*>P Osiadacz</*>
+<*>Williz</*>
+<*>darge0flex</*>
+<*>Rakkesh27</*>
+<*>basheerica</*>
+<*>bobik666</*>
+<*>DirtyWizard</*>
+<*>G Whellams</*>
+<*>M Purdy</*>
+<*>W Muller</*>
+<*>S Rapp</*>
+<*>A M Bousefield</*>
+<*>L Legrenzi</*>
+<*>S Ellis</*>
+<*>M Long</*>
+<*>Steve301187</*>
+<*>T Bordais</*>
+<*>rickSIII</*>
+<*>T van Hak</*>
+<*>W Schoot</*>
+<*>M Perner</*>
+<*>G Burghall</*>
+<*>A Smith</*>
+<*>C Thorogood</*>
+<*>Boldizzle</*>
+<*>A M Junaidi</*>
+<*>tranxilium</*>
+<*>R Vermey</*>
+<*>S Serobabov</*>
+<*>B Marragou</*>
+<*>i.amtom</*>
+<*>P Andrea</*>
+<*>M Starzyk</*>
+<*>S Shahidan</*>
+<*>J Patel</*>
+<*>J Chickoree</*>
+<*>O Balek</*>
+<*>D Kanngieber</*>
+<*>artyfarty</*>
+<*>K Jeyalingam</*>
+<*>M Alishanov</*>
+<*>nigol</*>
+<*>N Urmonas</*>
+<*>M Kinces</*>
+<*>brojoe11</*>
+<*>J Saunders</*>
+<*>B Miell</*>
+<*>Schniz2</*>
+<*>D Whooley</*>
+<*>V Schett</*>
+<*>P G Domingo</*>
+<*>InevitableDJ</*>
+<*>dani.nedan</*>
+<*>D Helfrich</*>
+<*>bazz7777777</*>
+<*>M Reit</*>
+<*>Androidrobbus</*>
+<*>BobInFL</*>
+<*>A Henkes</*>
+
+
+If I missed anyone, let me know :)
+</@>
+
+
