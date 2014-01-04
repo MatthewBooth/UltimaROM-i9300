@@ -1,6 +1,6 @@
 #!/bin/bash
 ourRepo="origin"
-ourLink="git://github.com/JustArchi/ArchiDroid.git"
+ourLink="git://github.com/Kryten2k35/UltimaROM-i9300.git"
 VERSION="$1"
 
 if [ -z "$VERSION" ]; then
@@ -9,7 +9,7 @@ fi
 
 echo "CHANGELOG START"
 echo ""
-curl -kSs https://raw.github.com/JustArchi/ArchiDroid/$VERSION/META-INF/com/google/android/aroma/_changelog.txt
+curl -kSs https://raw.github.com//Kryten2k35/UltimaROM-i9300/$VERSION/META-INF/com/google/android/aroma/changelog.txt
 echo ""
 echo ""
 echo "CHANGELOG EOF"
@@ -24,7 +24,7 @@ if [ -d $VERSION ]; then
 	echo ""
 	echo ""
 else
-	echo "Repository isn't available yet, cloning ArchiDroid repository branch $VERSION"
+	echo "Repository isn't available yet, cloning UltimaROM repository branch $VERSION"
 	git clone --branch $VERSION --depth 1 $ourLink $VERSION
 	cd $VERSION
 	git pull $ourRepo $VERSION

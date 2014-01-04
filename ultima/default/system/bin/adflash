@@ -4,12 +4,12 @@ VERSION=""
 TEMP=""
 NOZIP=0
 
-if [ -d /storage/sdcard1/ArchiDroid ]; then
-	AD="/storage/sdcard1/ArchiDroid"
-elif [ -d /storage/extSdCard/ArchiDroid ]; then
-	AD="/storage/extSdCard/ArchiDroid"
+if [ -d /storage/sdcard1/UltimaROM ]; then
+	AD="/storage/sdcard1/UltimaROM"
+elif [ -d /storage/extSdCard/UltimaROM ]; then
+	AD="/storage/extSdCard/UltimaROM"
 else
-	AD="/data/media/0/ArchiDroid"
+	AD="/data/media/0/UltimaROM"
 fi
 if [ -d $AD/GitHub ]; then
 	MODE="git"
@@ -17,8 +17,8 @@ else
 	MODE="direct"
 fi
 
-echo "Welcome to ArchiDroid Command Line Flasher!"
-echo "Detected ArchiDroid in $AD"
+echo "Welcome to UltimaROM Command Line Flasher!"
+echo "Detected UltimaROM in $AD"
 echo "Checking access to $AD"
 mkdir -p $AD/tmp
 cd $AD/tmp && rm -f test && touch test && rm -f test
@@ -34,10 +34,8 @@ if [ $# -eq 0 ]; then
 	echo "Usage: $0 <VERSION>"
 	echo ""
 	echo "Available versions:"
-	echo "2e	2.X-EXPERIMENTAL"
-	echo "2s	2.X-STABLE"
-	echo "1e	1.X-EXPERIMENTAL"
-	echo "1s	1.X-STABLE"
+	echo "1e	Experimental"
+	echo "1s	Stable"
 	echo ""
 	echo -n "Your choice: "
 	read VERSION
@@ -45,14 +43,14 @@ if [ $# -eq 0 ]; then
 	echo ""
 	echo "You may specify any extra options here separated by a whitespace. Eventually you can just skip this question and apply defaults"
 	echo ""
-	echo "ArchiDroid will prioritize git mode if ArchiDroid github repository already exists on your device and eventually fall back to direct, you can override this here"
+	echo "UltimaROM will prioritize git mode if UltimaROM github repository already exists on your device and eventually fall back to direct, you can override this here"
 	echo "Currently using mode: $MODE. If you're satisfied with this mode you can just skip this question"
 	echo "git			Sets up local git repository, which gives you delta upgrades and bandwidth saving"
 	echo "direct		Downloads targeted branch as .zip file directly from github"
-	echo "clean			Cleans everything up, including local repo and tmp folder from ArchiDroid directory specified below"
+	echo "clean			Cleans everything up, including local repo and tmp folder from UltimaROM directory specified below"
 	echo ""
-	echo "ArchiDroid will prioritize extsd if it contains ArchiDroid folder and eventually fall back to intsd, you can override this here"
-	echo "Currently using ArchiDroid in: $AD. If you're satisfied with this path you can just skip this question"
+	echo "UltimaROM will prioritize extsd if it contains UltimaROM folder and eventually fall back to intsd, you can override this here"
+	echo "Currently using UltimaROM in: $AD. If you're satisfied with this path you can just skip this question"
 	echo "extsd			Use external sd card (/storage/sdcard1 /storage/extSdCard)"
 	echo "intsd			Use internal sd card (/data/media/0)"
 	echo ""
@@ -84,9 +82,9 @@ for arg in $EXTRA; do
 			NOZIP=1
 			;;
 		"intsd")
-			if [ "$AD" != "/data/media/0/ArchiDroid" ]; then
+			if [ "$AD" != "/data/media/0/UltimaROM" ]; then
 				echo "Changing path to internal sd!"
-				AD="/data/media/0/ArchiDroid"
+				AD="/data/media/0/UltimaROM"
 				mkdir -p $AD/tmp
 				cd $AD/tmp && rm -f test && touch test && rm -f test
 				CHECK1=$?
@@ -99,15 +97,15 @@ for arg in $EXTRA; do
 			fi
 			;;
 		"extsd")
-			if [ "$AD" == "/data/media/0/ArchiDroid" ]; then
+			if [ "$AD" == "/data/media/0/UltimaROM" ]; then
 				echo "Changing path to external sd!"
 				if [ -e /storage/sdcard1 ]; then
-					AD="/storage/sdcard1/ArchiDroid"
+					AD="/storage/sdcard1/UltimaROM"
 				elif [ -e /storage/extSdCard ]; then
-					AD="/storage/extSdCard/ArchiDroid"
+					AD="/storage/extSdCard/UltimaROM"
 				fi
 
-				if [ "$AD" != "/data/media/0/ArchiDroid" ]; then
+				if [ "$AD" != "/data/media/0/UltimaROM" ]; then
 					mkdir -p $AD/tmp
 					cd $AD/tmp && rm -f test && touch test && rm -f test
 					CHECK1=$?
@@ -138,17 +136,11 @@ if [ "$MODE" == "clean" ]; then
 fi
 
 case "$VERSION" in
-	"2e")
-		VERSION="2.X-EXPERIMENTAL"
-		;;
-	"2s")
-		VERSION="2.X-STABLE"
-		;;
 	"1e")
-		VERSION="1.X-EXPERIMENTAL"
+		VERSION="Experimental"
 		;;
 	"1s")
-		VERSION="1.X-STABLE"
+		VERSION="Stable"
 		;;
 	*)
 		echo "Sorry, could not detect any valid version, exiting"
@@ -173,7 +165,7 @@ if [ "$MODE" == "direct" ]; then
 	cd $AD/tmp
 	echo "CHANGELOG START"
 	echo ""
-	curl -kSs https://raw.github.com/JustArchi/ArchiDroid/$VERSION/META-INF/com/google/android/aroma/_changelog.txt
+	curl -kSs https://raw.github.com/Kryten2k35/UltimaROM-i9300/$VERSION/META-INF/com/google/android/aroma/changelog.txt
 	echo ""
 	echo ""
 	echo "CHANGELOG EOF"
@@ -187,38 +179,38 @@ if [ "$MODE" == "direct" ]; then
 	echo "Ok, starting download from GitHub"
 	echo "Warning, it may take long time. Make sure that you have stable Wi-Fi connection"
 	echo ""
-	TEMP=`curl -kISs https://codeload.github.com/JustArchi/ArchiDroid/zip/$VERSION | grep "Content-Length" | awk '{print $2}'`
+	TEMP=`curl -kISs https://codeload.github.com/Kryten2k35/UltimaROM-i9300/zip/$VERSION | grep "Content-Length" | awk '{print $2}'`
 	if [ ! -z "$TEMP" ]; then
 		TEMP=`expr $TEMP / 1048576`
 		echo "It's about $TEMP Megabytes"
 	else
-		echo "Couldn't retrieve remote ArchiDroid size, sorry"
+		echo "Couldn't retrieve remote UltimaROM size, sorry"
 	fi
 	echo ""
 	TEMP=""
 	echo "Downloading right now..."
-	rm -f archidroid_github.zip
-	curl -Sk https://codeload.github.com/JustArchi/ArchiDroid/zip/$VERSION > archidroid_github.zip
+	rm -f UltimaROM_github.zip
+	curl -Sk https://codeload.github.com/Kryten2k35/UltimaROM-i9300/zip/$VERSION > UltimaROM_github.zip
 	echo "Download completed, it took some time..."
 
-	if [ ! -e archidroid_github.zip ]; then
-		echo "Couldn't find $AD/tmp/archidroid_github.zip, aborting"
+	if [ ! -e UltimaROM_github.zip ]; then
+		echo "Couldn't find $AD/tmp/UltimaROM_github.zip, aborting"
 		exit 1
 	fi
 
-	echo "Repacking downloaded ArchiDroid"
-	echo "Unzipping ArchiDroid in GitHub version..."
+	echo "Repacking downloaded UltimaROM"
+	echo "Unzipping UltimaROM in GitHub version..."
 	rm -rf _adflash
 	mkdir _adflash
 
-	unzip -q archidroid_github.zip -d _adflash
+	unzip -q UltimaROM_github.zip -d _adflash
 	if [ $? -ne 0 ]; then
 		echo "Unzipping failed, aborting"
 		exit 1
 	fi
 
-	rm -f archidroid_github.zip
-	cd _adflash/ArchiDroid-$VERSION
+	rm -f UltimaROM_github.zip
+	cd _adflash/UltimaROM-$VERSION
 	if [ $? -ne 0 ]; then
 		echo "Something went wrong, aborting"
 		exit 1
@@ -227,7 +219,7 @@ else
 	mkdir -p $AD/GitHub
 	echo "CHANGELOG START"
 	echo ""
-	curl -kSs https://raw.github.com/JustArchi/ArchiDroid/$VERSION/META-INF/com/google/android/aroma/_changelog.txt
+	curl -kSs https://raw.github.com/Kryten2k35/UltimaROM-i9300/$VERSION/META-INF/com/google/android/aroma/changelog.txt
 	echo ""
 	echo ""
 	echo "CHANGELOG EOF"
@@ -251,16 +243,16 @@ if [ $NOZIP -eq 1 ]; then
 	exit 0
 fi
 
-echo "Zipping ArchiDroid to flashable version..."
-zip -qry -1 ArchiDroid.zip . -x ".git/*" "__dont_include/*"
+echo "Zipping UltimaROM to flashable version..."
+zip -qry -1 UltimaROM.zip . -x ".git/*" ".gitignore" ".gitattributes" "build.bat" "LICENSE" "README.md"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1
 fi
 	
-rm -f $AD/ArchiDroid.zip
-mv ArchiDroid.zip $AD/ArchiDroid.zip
-echo "Done, you can find your flashable rom in $AD/ArchiDroid.zip"
+rm -f $AD/UltimaROM.zip
+mv UltimaROM.zip $AD/UltimaROM.zip
+echo "Done, you can find your flashable rom in $AD/UltimaROM.zip"
 
 if [ "$MODE" == "direct" ]; then
 	rm -rf $AD/tmp

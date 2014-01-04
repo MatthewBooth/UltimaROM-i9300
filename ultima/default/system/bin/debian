@@ -1,22 +1,22 @@
 #!/system/bin/sh
 
-if [ -d /data/media/0/ArchiDroid/debian ]; then
-	AD="/data/media/0/ArchiDroid"
-elif [ -d /storage/sdcard1/ArchiDroid/debian ]; then
-	AD="/storage/sdcard1/ArchiDroid"
+if [ -d /data/media/0/UltimaROM/PocketDebian ]; then
+	AD="/data/media/0/UltimaROM"
+elif [ -d /storage/sdcard1/UltimaROM/PocketDebian ]; then
+	AD="/storage/sdcard1/UltimaROM"
 	ln -s $AD /storage/sdcard1/adtest >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
-		AD="/data/media/0/ArchiDroid"
+		AD="/data/media/0/UltimaROM"
 		EXTSDSUPPORTED=0
 	else
 		rm -f /storage/sdcard1/adtest
 		EXTSDSUPPORTED=1
 	fi
-elif [ -d /storage/extSdCard/ArchiDroid/debian ]; then
-	AD="/storage/extSdCard/ArchiDroid"
+elif [ -d /storage/extSdCard/UltimaROM/PocketDebian ]; then
+	AD="/storage/extSdCard/UltimaROM"
 	ln -s $AD /storage/extSdCard/adtest >/dev/null 2>&1
 	if [ $? -ne 0 ]; then
-		AD="/data/media/0/ArchiDroid"
+		AD="/data/media/0/UltimaROM"
 		EXTSDSUPPORTED=0
 	else
 		rm -f /storage/extSdCard/adtest
@@ -24,7 +24,7 @@ elif [ -d /storage/extSdCard/ArchiDroid/debian ]; then
 	fi
 fi
 
-mnt=$AD/debian
+mnt=$AD/PocketDebian
 
 FORCE=0
 MODE=default
@@ -45,9 +45,9 @@ for arg in $@; do
 			;;
 		"intsd")
 			ARGN=`expr $ARGN + 1`
-			if [ "$AD" != "/data/media/0/ArchiDroid" ]; then
+			if [ "$AD" != "/data/media/0/UltimaROM" ]; then
 				echo "Changing path to internal sd!"
-				AD="/data/media/0/ArchiDroid"
+				AD="/data/media/0/UltimaROM"
 				mkdir -p $AD/tmp
 				cd $AD/tmp && rm -f test && touch test && rm -f test
 				CHECK1=$?
@@ -62,15 +62,15 @@ for arg in $@; do
 			;;
 		"extsd")
 			ARGN=`expr $ARGN + 1`
-			if [ "$AD" == "/data/media/0/ArchiDroid" ] && [ $EXTSDSUPPORTED -eq 1 ]; then
+			if [ "$AD" == "/data/media/0/UltimaROM" ] && [ $EXTSDSUPPORTED -eq 1 ]; then
 				echo "Changing path to external sd!"
 				if [ -e /storage/sdcard1 ]; then
-					AD="/storage/sdcard1/ArchiDroid"
+					AD="/storage/sdcard1/UltimaROM"
 				elif [ -e /storage/extSdCard ]; then
-					AD="/storage/extSdCard/ArchiDroid"
+					AD="/storage/extSdCard/UltimaROM"
 				fi
 
-				if [ "$AD" != "/data/media/0/ArchiDroid" ]; then
+				if [ "$AD" != "/data/media/0/UltimaROM" ]; then
 					mkdir -p $AD/tmp
 					cd $AD/tmp && rm -f test && touch test && rm -f test
 					CHECK1=$?
@@ -86,7 +86,7 @@ for arg in $@; do
 					echo "You selected extsd and I failed to use it so I'm aborting here"
 					exit 1
 				fi
-			elif [ "$AD" == "/data/media/0/ArchiDroid" ] && [ $EXTSDSUPPORTED -eq 0 ]; then
+			elif [ "$AD" == "/data/media/0/UltimaROM" ] && [ $EXTSDSUPPORTED -eq 0 ]; then
 				echo "You selected extsd, but I failed to use it so I'm aborting here"
 				echo "It lacks symlink functionality, you need to reformat your external sd card to native linux filesystem (f.e. ext4) if you want to use debian on your extsd"
 				exit 1
