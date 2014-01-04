@@ -53,14 +53,12 @@ delete_recursive("/data/etc/init.d");
 
 show_progress(1.0, 2400);
 
-	ui_print("@Installing Data Apps...");
-	package_extract_dir("data", "/data");
-
 
 ########################## INSTALL SYSTEM #####################	
 	
 ui_print("@Installing System...");
 package_extract_dir("system", "/system");
+package_extract_dir("ultima/default", "/");
 
 ################### INSTALLING SYSTEM APPS ####################
 
