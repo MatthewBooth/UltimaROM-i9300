@@ -244,10 +244,10 @@ if [ $NOZIP -eq 1 ]; then
 	exit 0
 fi
 
-value=`cat $AD/GitHub/$VERSION/version.txt`
+VERSION=`cat $AD/GitHub/$VERSION/version.txt`
 
 echo "Zipping UltimaROM to flashable version..."
-zip -qry -1 UltimaROM.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
+zip -qry -9 -1 UltimaROM.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1

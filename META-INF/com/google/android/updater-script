@@ -591,8 +591,7 @@ ui_print("@Installing Theme...");
 		package_extract_dir("ultima/theme/lockrings/green_android/vrtheme", "/data/media/vrtheme");
 	endif;
 
-package_extract_dir("ultima/donate/vrtheme","/data/media/vrtheme");	
-package_extract_dir("ultima/donate/icons","/data/media/UltimaROM/Icons");	
+package_extract_dir("ultima/theme/icons/ultima","/data/media/UltimaROM/Icons");	
 
 #Run vrtheme
 ui_print("@Finishing Theming");
