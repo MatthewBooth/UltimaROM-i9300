@@ -1,32 +1,16 @@
-<b><#selectbg_g>UltimaROM - v16.0 Typhoon</#></b>
-
-<*><#selectbg_g>Rebased to Android 4.3</#></*>
-<*>Removed Samsung bloat</*>
-<*>Included xposed and GravityBox as default, since it has ALL the mods we used to have (except some colour stuff, which I will work on, if necessary. Though I don't want to make the ROM a colouring book).</*>
-<*>Added AOSP Lockscreen</*>
-<*>Added Ripple Lockscreen with Ink</*>
-<*>Added Watercolour Lockscreen</*>
-<*>Added Lense Flare Lockscreen</*>
-<*>Added Transparent Statusbar setting in UltimaROM Settings</*>
-<*><#selectbg_g>Added FULLY stock Google SystemUI</#></*>
-<*>Added AOSP and Samsung Contacts + Phone</*>
-<*>Added AOSP and Samsung Messaging</*>
-<*>Added Blocking Mode notification removal</*>
-<*>Added Call recording options (Samsung Phone and Contacts ONLY)</*>
-<*>Added Zero Wake Lag mod</*>
-<*>Added another theme to the UltimaROM settings - Holo Light Dark ActionBar - just for fun</*>
-<*>Added Wifi Band Switcher</*>
-<*>Added USB Mass Storage Enabler</*>
-<*>Added AdAway</*>
-<*>Added Chronus</*>
-<*>Added FasterGPS</*>
-<*>Added ES File Explorer</*>
-<*>Themed Settings</*>
-<*>Themed Framework-res</*>
-<*>Themed Gallery and Camera AOSP style</*>
-<*><#selectbg_g>Included Google Gallery and Camera - Flash working properly on camera, no more FC.</#></*>
-<*>Included Google 4.3 Launcher</*>
-<*>Removed S-Voice - Doesn't cause odd home button behaviour</*>
+<b><#selectbg_g>UltimaROM - v16.1 Typhoon</#></b>
+<*>Added UltimaROM-i9300 GitHub for better beta testing and code keeping</*>
+<*>Added ArchiDroid's Pocket Debian</*>
+<*>Added Delta Updates (read the website for details)</*>
+<*>Added Google Navigation Launcher icon to the app drawer</*>
+<*>Added a better Boot Animation activity in the settings app for applying animations downloaded from UltimaROM</*>
+<*>Fixed vim binary (did anyone notice?)</*>
+<*>Fixed the Video Calling FC</*>
+<*>Fixed the AOSP MMS FC</*>
+<*>Fixed the AOSP MMS always being dark themed</*>
+<*>Fixed KitKat always showing on Samsung Phone, regardless of user choice.</*>
+<*>Fixed Call Recording options showing when they weren't supposed to be available</*>
+<*>Renamed the Wallpapers, Settings and OTA apps</*>
 
 
 
