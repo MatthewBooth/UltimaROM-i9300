@@ -244,18 +244,18 @@ if [ $NOZIP -eq 1 ]; then
 	exit 0
 fi
 
-VERSION=`cat $AD/GitHub/$VERSION/version.txt`
+URVERSION=$(cat $AD/GitHub/$VERSION/version.txt)
 
-echo "Zipping UltimaROM to flashable version..."
-zip -qry -9 UltimaROM.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
+echo "Zipping UltimaROM into a flashable zip..."
+zip -qry -9 'UltimaROM_'$URVERSION'_'$VERSION.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1
 fi
 	
 rm -f $AD/UltimaROM_*.zip
-mv UltimaROM.zip $AD/UltimaROM_$VERSION_$NOW.zip
-echo "Done, you can find your flashable rom in $AD/UltimaROM_$VERSION_$NOW.zip"
+mv 'UltimaROM_'$URVERSION'_'$VERSION.zip $AD/'UltimaROM_'$URVERSION'_'$VERSION.zip
+echo "Done, you can find your flashable rom in $AD"
 
 if [ "$MODE" == "direct" ]; then
 	rm -rf $AD/tmp
