@@ -3,6 +3,7 @@
 VERSION=""
 TEMP=""
 NOZIP=0
+NOW=$(date +"%m-%d-%Y")
 
 if [ -d /storage/sdcard1/UltimaROM ]; then
 	AD="/storage/sdcard1/UltimaROM"
@@ -243,16 +244,18 @@ if [ $NOZIP -eq 1 ]; then
 	exit 0
 fi
 
+value=`cat $AD/GitHub/$VERSION/version.txt`
+
 echo "Zipping UltimaROM to flashable version..."
-zip -qry -1 UltimaROM.zip . -x ".git/*" ".gitignore" ".gitattributes" "build.bat" "LICENSE" "README.md"
+zip -qry -1 UltimaROM.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1
 fi
 	
 rm -f $AD/UltimaROM.zip
-mv UltimaROM.zip $AD/UltimaROM.zip
-echo "Done, you can find your flashable rom in $AD/UltimaROM.zip"
+mv UltimaROM.zip $AD/UltimaROM_$VERSION_$NOW.zip
+echo "Done, you can find your flashable rom in $AD/UltimaROM_$VERSION_$NOW.zip"
 
 if [ "$MODE" == "direct" ]; then
 	rm -rf $AD/tmp
