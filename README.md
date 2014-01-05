@@ -9,6 +9,7 @@ Permission
 Do not use any part of this ROM without permission. You can seek permission by contacting me here:
 
 XDA: http://forum.xda-developers.com/member.php?u=3443334
+
 UltimaROM: http://www.ultimarom.com/about/contact
 
 I have yet to refuse permission to anyone. So just get in touch. It's simply nice to be asked.
@@ -17,6 +18,7 @@ Development
 ===========
 
 Website: http://www.ultimarom.com
+
 XDA Development thread: http://forum.xda-developers.com/showthread.php?t=1911572
 
 How-To
