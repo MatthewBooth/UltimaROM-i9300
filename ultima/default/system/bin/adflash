@@ -247,13 +247,13 @@ fi
 VERSION=`cat $AD/GitHub/$VERSION/version.txt`
 
 echo "Zipping UltimaROM to flashable version..."
-zip -qry -9 -1 UltimaROM.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
+zip -qry -9 UltimaROM.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1
 fi
 	
-rm -f $AD/UltimaROM.zip
+rm -f $AD/UltimaROM_*.zip
 mv UltimaROM.zip $AD/UltimaROM_$VERSION_$NOW.zip
 echo "Done, you can find your flashable rom in $AD/UltimaROM_$VERSION_$NOW.zip"
 
