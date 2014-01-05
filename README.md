@@ -25,3 +25,11 @@ How-To
 ======
 
 If you would like to try the Experimental version, which is the most up-to-date, clone the Experimental branch to your computer and use the build.bat file to create a zip, and flash. If you do this, bare in mind, it may not work, there may be problems. You can let me know about any issues you think I haven't noticed at XDA, or the website.
+
+You should run this command before cloning
+
+''''
+git config --global core.autocrlf false
+''''
+
+Otherwise it will not flash properly and you will need to add this command and flash again
