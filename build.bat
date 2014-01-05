@@ -1,1 +1,1 @@
-"C:\Program Files\7-Zip\7z.exe" a UltimaROM_%date:~10,4%-%date:~4,2%-%date:~7,2%.zip data META-INF system ultima
+"C:\Program Files\7-Zip\7z.exe" a UltimaROM_%date:~10,4%-%date:~4,2%-%date:~7,2%.zip META-INF system ultima
