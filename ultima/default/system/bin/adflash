@@ -247,7 +247,7 @@ fi
 URVERSION=$(cat $AD/GitHub/$VERSION/version.txt)
 
 echo "Zipping UltimaROM into a flashable zip..."
-zip -qry -1 'UltimaROM_'$URVERSION'_'$VERSION.zip . -x ".git/*" "*/.gitignore" "*/.gitattributes" "build.bat" "LICENSE" "README.md"
+zip -qry -1 'UltimaROM_'$URVERSION'_'$VERSION.zip . -x ".git/*" ".gitignore" "*/.gitattributes" "build.bat" "build.sh" "version.txt" "README.md"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1
