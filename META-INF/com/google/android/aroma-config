@@ -390,8 +390,9 @@ textbox(
 			"email.prop",
 
 			"Email Apps",					"",											2,  #-- Group 2. key = "selected.2"
-			"Google v6",			"Install Google Email from 4.4.2",					1,  #-- selected.1 = 1 		
-			"None",					"Do not install",									0  #-- selected.1 = 2
+			"Stock",			"Install Google Email 4.4.2",					1,  #-- selected.1 = 1 		
+			"Themed",			"Install Themed Google Email 4.4.2",			1,  #-- selected.1 = 2 		
+			"None",				"Do not install",								0   #-- selected.1 = 3
 			
 			);			
   #-------------------------+-----------------[      Status Bar      ]----------------+---------------#

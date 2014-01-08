@@ -4,6 +4,7 @@
 <*>Added Delta Updates (read the website for details)</*>
 <*>Added Google Navigation Launcher icon to the app drawer</*>
 <*>Added a better Boot Animation activity in the settings app for applying animations downloaded from UltimaROM</*>
+<*>Added a themed AOSP EMail v6/*>
 <*>Fixed vim binary (did anyone notice?)</*>
 <*>Fixed the Video Calling FC</*>
 <*>Fixed the AOSP MMS FC</*>

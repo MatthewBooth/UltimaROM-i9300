@@ -128,7 +128,14 @@ package_extract_dir("ultima/default", "/");
       file_getprop("/tmp/aroma/email.prop","selected.1") == "1"
     then
       ui_print("Installing Email");
-	  package_extract_dir("ultima/apps/email/google", "/system");
+	  package_extract_dir("ultima/apps/email/aosp/stock", "/system");
+    endif;
+	if
+      file_getprop("/tmp/aroma/email.prop","selected.1") == "2"
+    then
+      ui_print("Installing Email");
+	  package_extract_dir("ultima/apps/email/aosp/stock", "/system");
+	  package_extract_dir("ultima/apps/email/aosp/themed", "/system");
     endif;
 	
 # MMS
