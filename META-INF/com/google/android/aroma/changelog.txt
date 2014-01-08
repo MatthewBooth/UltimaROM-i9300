@@ -4,10 +4,13 @@
 <*>Added Delta Updates (read the website for details)</*>
 <*>Added Google Navigation Launcher icon to the app drawer</*>
 <*>Added a better Boot Animation activity in the settings app for applying animations downloaded from UltimaROM</*>
-<*>Added a themed AOSP EMail v6/*>
+<*>Added the stock AOSP 4.4.2 Email (v6)</*>
+<*>Added the themed AOSP 4.4.2 Email (v6)</*>
+<*>Swapped the Google Calculator for the Cyanogen Calculator. Way more functional.</*>
 <*>Fixed vim binary (did anyone notice?)</*>
 <*>Fixed the Video Calling FC</*>
 <*>Fixed the AOSP MMS FC</*>
+<*>Fixed the AOSP MMS theming to be a little better</*>
 <*>Fixed the AOSP MMS always being dark themed</*>
 <*>Fixed KitKat always showing on Samsung Phone, regardless of user choice.</*>
 <*>Fixed Call Recording options showing when they weren't supposed to be available</*>
