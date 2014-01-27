@@ -25,13 +25,14 @@ How-To
 ======
 
 If you would like to try the Experimental version, which is the most up-to-date, do the following:
+
 1. Download GithubForWindows, or installed the Git Shell/Bash on your computer. 
 
 Once installed/setup, you should run this command before cloning
 	
 	git config --global core.autocrlf false
 	
-Otherwise it will not flash properly and you will need to add this command and flash again
+Otherwise it will not flash properly and you will need to add this command, delete the repo, and clone again
 
 2. Clone the Experimental branch to your computer.
 3. Run the build.bat found in the folder. Do this by double clicking the .bat file (for linux users, there's a shell script you can execute in a terminal
