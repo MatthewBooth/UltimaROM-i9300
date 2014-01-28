@@ -28,13 +28,13 @@
  ini_set("transition","stack");
 
 ini_set("rom_name",             "UltimaROM");
-ini_set("rom_version",          "16.0");
+ini_set("rom_version",          "17.0");
 ini_set("rom_author",           "Kryten2k35");
 ini_set("rom_device",           "Samsung Galaxy S III GT-i9300");
 ini_set("rom_date",             "1st January 2014");
 setvar("rom_website", 			"www.ultimarom.com");
-setvar("rom_codename", 			"Typhoon");
-setvar("rom_codebase", 			"XXUGML2");
+setvar("rom_codename", 			"Diablos");
+setvar("rom_codebase", 			"XXUGML4");
 setvar("rom_type",				"Google Edition");
 ##
 # Splash Screen
@@ -281,6 +281,20 @@ textbox(
 					"item.1.24=0\n"
 				);
 			endif;
+ 
+   #-------------------------+-----------------[     Camera Apps      ]----------------+---------------#
+   #-------------------------+---------------------------------------------------------+---------------#
+ 
+	selectbox(
+		  "Launchers",
+		  "Select the Launcher app you want to install: ",
+		  "@launcher",
+		  "launcher.prop",
+			
+			"Choose Launcher App",              		"",                 															2,
+			"Stock 4.3",						"Stock 4.3 Launcher",										1,	#-- item.1.1
+			"Stock 4.4.2",						"Stock 4.4.2 Launcher (CyanogenMod, with advanced settings. NOT Google Experience)",											0	#-- item.1.2
+		);
  
   #-------------------------+-----------------[     Camera Apps      ]----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#

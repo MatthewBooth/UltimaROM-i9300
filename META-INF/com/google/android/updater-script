@@ -62,6 +62,19 @@ package_extract_dir("ultima/default", "/");
 
 ################### INSTALLING SYSTEM APPS ####################
 
+# Cameras
+    if
+      file_getprop("/tmp/aroma/launcher.prop","selected.1") == "1"
+    then
+      ui_print("Installing 4.3 Launcher");
+	  package_extract_dir("ultima/apps/launchers/4.3", "/system");
+    endif;	
+	if
+      file_getprop("/tmp/aroma/launcher.prop","selected.1") == "2"
+    then
+      ui_print("Installing 4.4.2 Launcher");
+	  package_extract_dir("ultima/apps/launchers/4.4.2", "/system");
+    endif;
 
 # Cameras
     if
