@@ -75,6 +75,12 @@ package_extract_dir("ultima/default", "/");
       ui_print("Installing 4.4.2 Launcher");
 	  package_extract_dir("ultima/apps/launchers/4.4.2", "/system");
     endif;
+	if
+      file_getprop("/tmp/aroma/launcher.prop","selected.1") == "3"
+    then
+      ui_print("Installing Google Experience Launcher");
+	  package_extract_dir("ultima/apps/launchers/GEL", "/system");
+    endif;
 
 # Cameras
     if

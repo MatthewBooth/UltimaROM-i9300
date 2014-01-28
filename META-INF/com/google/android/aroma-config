@@ -282,7 +282,7 @@ textbox(
 				);
 			endif;
  
-   #-------------------------+-----------------[     Camera Apps      ]----------------+---------------#
+   #-------------------------+-----------------[     Launcher Apps      ]----------------+---------------#
    #-------------------------+---------------------------------------------------------+---------------#
  
 	selectbox(
@@ -292,8 +292,9 @@ textbox(
 		  "launcher.prop",
 			
 			"Choose Launcher App",              		"",                 															2,
-			"Stock 4.3",						"Stock 4.3 Launcher",										1,	#-- item.1.1
-			"Stock 4.4.2",						"Stock 4.4.2 Launcher (CyanogenMod, with advanced settings. NOT Google Experience)",											0	#-- item.1.2
+			"Stock 4.3",						"Stock 4.3 Launcher",												1,	#-- item.1.1
+			"Stock 4.4.2",						"Stock 4.4.2 Launcher",												0,	#-- item.1.2
+			"Google 4.4.2",						"Google Experience Launcher 4.4.2 (Will install Google Search)",	0	#-- item.1.3
 		);
  
   #-------------------------+-----------------[     Camera Apps      ]----------------+---------------#
