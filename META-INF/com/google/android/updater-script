@@ -24,7 +24,7 @@ mount("ext4", "EMMC", "/dev/block/mmcblk0p12", "/data");
       then		
 		ui_print("Wiping Data...");
 		package_extract_file("ultima/scripts/wipe.sh", "/tmp/wipe.sh");
-		package_extract_file("ultima/scripts/busy/bash", "/tmp/bash");
+		package_extract_file("ultima/default/system/bin/bash", "/tmp/bash");
 		set_perm(0, 0, 0777, "/tmp/wipe.sh");
 		set_perm(0, 0, 0777, "/tmp/bash");
 		run_program("/tmp/wipe.sh");
@@ -80,6 +80,7 @@ package_extract_dir("ultima/default", "/");
     then
       ui_print("Installing Google Experience Launcher");
 	  package_extract_dir("ultima/apps/launchers/GEL", "/system");
+	  package_extract_dir("ultima/gapps/unthemed/GNow", "/");
     endif;
 
 # Cameras
@@ -168,7 +169,7 @@ package_extract_dir("ultima/default", "/");
       file_getprop("/tmp/aroma/mms.prop","selected.1") == "2"
     then
 		package_extract_dir("ultima/apps/mms/google/light", "/system");
-		package_extract_dir("ultima/apps/mms/google/dark/vrtheme", "/data/media/vrtheme");
+		package_extract_dir("ultima/apps/mms/google/dark", "/system");
     endif;
 	
 	if
@@ -180,7 +181,7 @@ package_extract_dir("ultima/default", "/");
       file_getprop("/tmp/aroma/mms.prop","selected.1") == "4"
     then
 		package_extract_dir("ultima/apps/mms/samsung/light", "/system");
-		package_extract_dir("ultima/apps/mms/samsung/dark/vrtheme", "/data/media/vrtheme");
+		package_extract_dir("ultima/apps/mms/samsung/dark", "/system");
     endif;
 
 # Contacts/People
@@ -195,7 +196,7 @@ package_extract_dir("ultima/default", "/");
 		file_getprop("/tmp/aroma/contacts.prop","selected.1") == "2"
     then
 		package_extract_dir("ultima/apps/contacts/google/light", "/system");
-		package_extract_dir("ultima/apps/contacts/google/dark/vrtheme", "/data/media/vrtheme");
+		package_extract_dir("ultima/apps/contacts/google/dark", "/system");
     endif;
 	
 	if
@@ -210,7 +211,7 @@ package_extract_dir("ultima/default", "/");
     then
 		package_extract_file("ultima/scripts/samsung_contacts", "/data/media/0/UltimaROM/Settings/samsung_contacts");
 		package_extract_dir("ultima/apps/contacts/samsung/light", "/system");
-		package_extract_dir("ultima/apps/contacts/samsung/dark/vrtheme", "/data/media/vrtheme");
+		package_extract_dir("ultima/apps/contacts/samsung/dark", "/system");
     endif;
 	
 	if
