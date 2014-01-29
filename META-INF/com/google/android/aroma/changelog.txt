@@ -1,4 +1,5 @@
-<b><#selectbg_g>UltimaROM - v16.1 Typhoon</#></b>
+<b><#selectbg_g>UltimaROM - v17.0 Diablos</#></b>
+<*>Updated to 4.3 base XXUGML4</*>
 <*>Added UltimaROM-i9300 GitHub for better beta testing and code keeping</*>
 <*>Added ArchiDroid's Pocket Debian</*>
 <*>Added Delta Updates (read the website for details)</*>
@@ -6,15 +7,20 @@
 <*>Added a better Boot Animation activity in the settings app for applying animations downloaded from UltimaROM</*>
 <*>Added the stock AOSP 4.4.2 Email (v6)</*>
 <*>Added the themed AOSP 4.4.2 Email (v6)</*>
+<*>Added Cyanogen 4.4.2 launcher (KitKat styled, very small, 1.3MB)</*>
+<*>Added Microbes and Grass LWPs from ICS</*>
 <*>Swapped the Google Calculator for the Cyanogen Calculator. Way more functional.</*>
 <*>Fixed vim binary (did anyone notice?)</*>
 <*>Fixed the Video Calling FC</*>
 <*>Fixed the AOSP MMS FC</*>
 <*>Fixed the AOSP MMS theming to be a little better</*>
+<*>Fixed power off charging animation</*>
 <*>Fixed the AOSP MMS always being dark themed</*>
 <*>Fixed KitKat always showing on Samsung Phone, regardless of user choice.</*>
 <*>Fixed Call Recording options showing when they weren't supposed to be available</*>
+<*>Fixed Data wipe from installer not working</*>
 <*>Renamed the Wallpapers, Settings and OTA apps</*>
+<*>Updated any included apps and kernels</*>
 
 
 

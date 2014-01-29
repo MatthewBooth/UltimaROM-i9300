@@ -4,8 +4,8 @@
 	<PublicName>GT-I9300</PublicName>
 	</MobileData>
 	<CustomerDataSet>
-	<CSCName>I9300OXA</CSCName>
-	<CSCVersion>GMK6</CSCVersion>
+	<CSCName>I9300BTU</CSCName>
+	<CSCVersion>GML4</CSCVersion>
 	<NbCustomer>1</NbCustomer>
 	<CustomerData src="/Customer/BTU/customer.xml" />
 	</CustomerDataSet>

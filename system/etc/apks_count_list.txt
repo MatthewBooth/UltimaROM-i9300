@@ -1,7 +1,7 @@
 /system/app/SecSettings.apk
 /system/app/S-Voice_Android_phone_H.apk
-/system/app/SecGallery2013.apk
 /system/app/Samsungservice.apk
+/system/app/SecGallery2013.apk
 /system/app/PlusOne.apk
 /system/app/SecPhone.apk
 /system/app/SecEmail_J.apk
@@ -12,6 +12,7 @@
 /system/app/SecWallpaperChooser.apk
 /system/app/Velvet.apk
 /system/app/VideoHub.apk
+/system/app/GoogleDrive.apk
 /system/app/ChromeWithBrowser.apk
 /system/app/SecMms.apk
 /system/app/Hangouts.apk
@@ -20,6 +21,7 @@
 /system/app/ClockPackage.apk
 /system/app/GmsCore.apk
 /system/app/SamsungIME.apk
+/system/app/Newsstand.apk
 /system/app/YouTube.apk
 /system/app/GMS_Maps.apk
 /system/app/SMemoProvider.apk
@@ -27,7 +29,6 @@
 /system/app/Dropbox.apk
 /system/app/MusicLiveShare2.apk
 /system/app/PickUpTutorial.apk
-/system/app/Magazines.apk
 /system/app/GameHub_2.0_ICS_oldkey.apk
 /system/app/WeatherWall.apk
 /system/app/Phonesky.apk
@@ -96,6 +97,7 @@
 /system/app/SelfTestMode.apk
 /system/app/FotaClient.apk
 /system/app/SimpleFavoritesWidget.apk
+/system/app/KLMSAgent.apk
 /system/app/KeyguardWidget.apk
 /system/app/TrimApp_phone_J.apk
 /system/app/MobilePrint.apk
@@ -118,6 +120,7 @@
 /system/app/PopupuiReceiver.apk
 /system/app/PackageInstaller.apk
 /system/app/AllshareControlShare.apk
+/system/app/ELMAgent.apk
 /system/app/MediaUploader.apk
 /system/app/AccuweatherDaemon.apk
 /system/app/DigitalClock21.apk
@@ -136,7 +139,6 @@
 /system/app/SmartcardManager.apk
 /system/app/SCParser.apk
 /system/app/DroidSansSherifItalic.apk
-/system/app/ELMAgent.apk
 /system/app/WfdBroker.apk
 /system/app/YahoonewsDaemon.apk
 /system/app/NotificationWidget.apk
@@ -211,6 +213,7 @@
 /system/app/EnterprisePermissions.apk
 /system/app/BluetoothTest.apk
 /system/app/TasksProvider.apk
+/system/app/DRSService.apk
 /system/app/Preconfig.apk
 /system/app/DefaultContainerService.apk
 /system/app/SecHTMLViewer.apk
@@ -227,6 +230,6 @@
 /system/app/UserDictionaryProvider.apk
 /system/app/EdmSimPinService.apk
 /system/app/EdmVpnServices.apk
-/system/app/EdmSysScopeService.apk
 /system/app/PartnerBookmarksProvider.apk
+/system/app/EdmSysScopeService.apk
 /system/app/SharedStorageBackup.apk
