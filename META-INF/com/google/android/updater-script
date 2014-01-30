@@ -139,7 +139,7 @@ package_extract_dir("ultima/default", "/");
       file_getprop("/tmp/aroma/dropbox.prop","selected.1") == "1"
     then
       ui_print("Installing Dropbox");
-	  package_extract_dir("ultima/apps/email/unthemed", "/system");
+	  package_extract_dir("ultima/apps/dropbox/unthemed", "/system");
 	  package_extract_dir("ultima/apps/dropbox/files", "/system");
     endif;
 	
