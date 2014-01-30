@@ -127,7 +127,7 @@
         <T9Enabling>enable</T9Enabling>
         <DateTimeFormat>
           <DateFormat>ddmmyyyy</DateFormat>
-          <TimeFormat>12h</TimeFormat>
+          <TimeFormat>24h</TimeFormat>
         </DateTimeFormat>
       </Phone>
       <Security />
