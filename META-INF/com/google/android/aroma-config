@@ -31,10 +31,10 @@ ini_set("rom_name",             "UltimaROM");
 ini_set("rom_version",          "17.0");
 ini_set("rom_author",           "Kryten2k35");
 ini_set("rom_device",           "Samsung Galaxy S III GT-i9300");
-ini_set("rom_date",             "1st January 2014");
+ini_set("rom_date",             "1st February 2014");
 setvar("rom_website", 			"www.ultimarom.com");
 setvar("rom_codename", 			"Diablos");
-setvar("rom_codebase", 			"XXUGML4");
+setvar("rom_codebase", 			"XXUGNA5");
 setvar("rom_type",				"Google Edition");
 ##
 # Splash Screen
