@@ -38,4 +38,7 @@ Otherwise it will not flash properly and you will need to add this command, dele
 3. Run the build.bat found in the folder. Do this by double clicking the .bat file (for linux users, there's a shell script you can execute in a terminal
 4. Copy the created .zip file to your phone and flash
 
+Using the Experimental
+======================
+
 If you do this, bare in mind, it may not work, there may be problems. You can let me know about any issues you think I haven't noticed at XDA, or the website.
