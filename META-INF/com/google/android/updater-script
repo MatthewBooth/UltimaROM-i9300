@@ -202,14 +202,14 @@ package_extract_dir("ultima/default", "/");
 	if
 		file_getprop("/tmp/aroma/contacts.prop","selected.1") == "3"
     then
-		package_extract_file("ultima/scripts/samsung_contacts", "/data/media/0/UltimaROM/Settings/samsung_contacts");
+		package_extract_file("ultima/scripts/samsung_contacts", "/data/media/UltimaROM/Settings/samsung_contacts");
 		package_extract_dir("ultima/apps/contacts/samsung/light", "/system");
     endif;
 	
 	if
 		file_getprop("/tmp/aroma/contacts.prop","selected.1") == "4"
     then
-		package_extract_file("ultima/scripts/samsung_contacts", "/data/media/0/UltimaROM/Settings/samsung_contacts");
+		package_extract_file("ultima/scripts/samsung_contacts", "/data/media/UltimaROM/Settings/samsung_contacts");
 		package_extract_dir("ultima/apps/contacts/samsung/light", "/system");
 		package_extract_dir("ultima/apps/contacts/samsung/dark", "/system");
     endif;
@@ -631,7 +631,8 @@ run_program("/data/media/vrtheme/installtheme.sh");
 run_program("/data/media/vrtheme/cleanup.sh");
 delete_recursive("/data/media/vrtheme");
 delete_recursive("/data/media/vrtheme-backup");
-	
+
+set_perm_recursive(0, 0, 0777, 0777, "/data/media/UltimaROM");	
 	
 ui_print("@Theme Installed...");
 
