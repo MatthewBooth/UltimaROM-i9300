@@ -161,11 +161,12 @@ textbox(
 	      "@alert",
 	      "kernel.prop",
 
-		  "Kernel",	"",					                               															2,  #-- Group 1. key = "selected.1"
+		  "Kernel",	"",					                               																2,  #-- Group 1. key = "selected.1"
 		  "Googy Max Kernel",      					"Install Googy Kernel 2.1.1",		        									0,  #-- selected.1 = 1
-		  "Boeffla",      							"Install Boeffla Kernel 5.1b13",	       										0,  #-- selected.1 = 3
-		  "Yank555",								"Install Yank555 Kernel 4.1a",												0,	#-- selected.1 = 7
-		  "Stock",      							"Install Stock Samsung Kernel",		        								1   #-- selected.1 = 9
+		  "Boeffla",      							"Install Boeffla Kernel 5.1 stable",	       									0,  #-- selected.1 = 3
+		  "Unofficial Boeffla",						"Install Unofficial Boeffla 5.1 stable, for those with network issues",			0,	#-- selected.1 = 7
+		  "Yank555",								"Install Yank555 Kernel 4.1a",													0,	#-- selected.1 = 7
+		  "Stock",      							"Install Stock Samsung Kernel",		        									1   #-- selected.1 = 9
 	);
 	
 	selectbox(

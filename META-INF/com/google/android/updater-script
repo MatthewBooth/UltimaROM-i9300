@@ -535,8 +535,18 @@ ui_print("@Installing Kernel...");
 	package_extract_file("ultima/kernel/apps/BoefflaConfig.apk", "/system/app/BoefflaConfig.apk");
 	endif;
 
-#Yank555
+#Boeffla
 	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3"
+	then
+	ui_print("Flashing Boeffla Kernel...");
+	assert(package_extract_file("ultima/kernel/unofficialboeffla/boot.img", "/tmp/boot.img"),
+		   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
+		   delete("/tmp/boot.img"));
+	package_extract_file("ultima/kernel/apps/BoefflaConfig.apk", "/system/app/BoefflaConfig.apk");
+	endif;
+	
+#Yank555
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4"
 	then
 	ui_print("Flashing Yank555 Kernel...");
 	assert(package_extract_file("ultima/kernel/yank/boot.img", "/tmp/boot.img"),
@@ -546,7 +556,7 @@ ui_print("@Installing Kernel...");
 	endif;
 	
 #Stock	
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4"
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "5"
 	then
 	ui_print("Flashing Stock Kernel...");
 	assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
