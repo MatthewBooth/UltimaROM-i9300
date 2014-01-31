@@ -211,7 +211,7 @@ if [ "$MODE" == "direct" ]; then
 	fi
 
 	rm -f UltimaROM_github.zip
-	cd _adflash/UltimaROM-$VERSION
+	cd _adflash/UltimaROM-i9300-$VERSION
 	if [ $? -ne 0 ]; then
 		echo "Something went wrong, aborting"
 		exit 1
@@ -247,7 +247,7 @@ fi
 URVERSION=$(cat $AD/GitHub/$VERSION/version.txt)
 
 echo "Zipping UltimaROM into a flashable zip..."
-zip -qry -1 'UltimaROM_'$URVERSION'_'$VERSION.zip . -x ".git/*" ".gitignore" "*/.gitattributes" "build.bat" "build.sh" "version.txt" "README.md"
+zip -qry -1 'UltimaROM_'$URVERSION'_'$VERSION.zip . -x ".git/*" ".gitignore" "*/.gitattributes" "build.bat" "build.sh" "version.txt" "README.md" "tools/*"
 if [ $? -ne 0 ]; then
 	echo "Zipping failed, aborting"
 	exit 1
