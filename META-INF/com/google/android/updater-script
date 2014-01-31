@@ -14,15 +14,13 @@ mount("ext4", "EMMC", "/dev/block/mmcblk0p8", "/cache");
 mount("ext4", "EMMC", "/dev/block/mmcblk0p12", "/data");
 
 # Clear Data
-	  if file_getprop("/tmp/aroma/clear.prop","item.1.1") == "1"
-      then	  
-		ui_print("Wiping System...");
-		delete_recursive("/system");
-	endif;
+
+	ui_print("Wiping System...");
+	delete_recursive("/system");
 	
-	  if file_getprop("/tmp/aroma/clear.prop","item.1.2") == "1" && file_getprop("/tmp/aroma/clear.prop","item.1.3") == "0"
-      then		
-		ui_print("Wiping Data...");
+	if file_getprop("/tmp/aroma/clear.prop","item.1.1") == "1" && file_getprop("/tmp/aroma/clear.prop","item.1.2") == "0"
+	  then		
+		ui_print("Wiping User Data...");
 		package_extract_file("ultima/scripts/wipe.sh", "/tmp/wipe.sh");
 		package_extract_file("ultima/default/system/bin/bash", "/tmp/bash");
 		set_perm(0, 0, 0777, "/tmp/wipe.sh");
@@ -30,9 +28,9 @@ mount("ext4", "EMMC", "/dev/block/mmcblk0p12", "/data");
 		run_program("/tmp/wipe.sh");
 	endif;
 	
-	if file_getprop("/tmp/aroma/clear.prop","item.1.3") == "1"
+	if file_getprop("/tmp/aroma/clear.prop","item.1.2") == "1"
       then  
-		ui_print("Wiping Internal...");
+		ui_print("Wiping Everything...");
 		delete_recursive("/data");	
 	endif;
 	
