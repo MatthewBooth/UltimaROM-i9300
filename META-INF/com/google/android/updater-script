@@ -572,7 +572,16 @@ ui_print("@Installing Modem...");
       ui_print("Flashing Modem");
 	  package_extract_file("ultima/modem/flash_image", "/tmp/flash_image");
 	  set_perm(0, 0, 0777, "/tmp/flash_image");
-	  assert(package_extract_file("ultima/modem/MK6/modem.bin", "/tmp/modem.bin"),
+	  
+	if file_getprop("/tmp/aroma/modem.prop","selected.1") == "1"
+		then
+			assert(package_extract_file("ultima/modem/MK6/modem.bin", "/tmp/modem.bin"),
+	endif;
+	if file_getprop("/tmp/aroma/modem.prop","selected.1") == "2"
+		then
+			assert(package_extract_file("ultima/modem/ME7/modem.bin", "/tmp/modem.bin"),
+	endif;
+	
       run_program("/tmp/flash_image", "/dev/block/mmcblk0p7", "/tmp/modem.bin"),
 	  delete("/tmp/modem.bin"));
       delete("/tmp/flash_image");
