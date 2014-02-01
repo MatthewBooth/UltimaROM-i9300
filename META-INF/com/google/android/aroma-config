@@ -132,7 +132,7 @@ textbox(
 		  "clear.prop",
 			
 			"Choose System Apps",              		"",                 															2,
-			"User Data",							"Wipe everything on the data partition, except /data/media (the sdcard)",								0,	#-- item.1.2
+			"User Data",							"Wipe everything on the data partition, except /data/media (the internal storage)",						1,	#-- item.1.2
 			"Everything",							"Wipe everything on the data partition, including the internal storage (extSdCard is not touched)",		0	#-- item.1.3
 		);
 
@@ -176,7 +176,7 @@ textbox(
 	      "modem.prop",
 
 		  "Modem",	"",					                               																2,  #-- Group 1. key = "selected.1"
-		  "MK6 (EFSv2)",      					"Latest 4.3 Modem, this is for EFSv2",		        								0,  #-- selected.1 = 1
+		  "MK6 (EFSv2)",      					"Latest 4.3 Modem, this is for EFSv2",		        								1,  #-- selected.1 = 1
 		  "ME7 (EFSv1)",      					"Latest 4.2.2 Modem, this is for EFSv1",	       									0   #-- selected.1 = 2
 	);
 	
@@ -416,7 +416,7 @@ textbox(
 			"email.prop",
 
 			"Email Apps",					"",											2,  #-- Group 2. key = "selected.2"
-			"Stock",			"Install Google Email 4.4.2",					1,  #-- selected.1 = 1 		
+			"Stock",			"Install Google Email 4.4.2",					0,  #-- selected.1 = 1 		
 			"Themed",			"Install Themed Google Email 4.4.2",			1,  #-- selected.1 = 2 		
 			"None",				"Do not install",								0   #-- selected.1 = 3
 			
