@@ -110,20 +110,38 @@
 
     <family>
         <nameset>
+            <name>sec-roboto-light</name>
+        </nameset>
+        <fileset>
+            <file>SECRobotoLight-Regular.ttf</file>
+            <file>SECRobotoLight-Bold.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
             <name>samsung-sans-light</name>
         </nameset>
         <fileset>
-            <file>SamsungSans_Light.ttf</file>
+            <file>SamsungSans-Light.ttf</file>
         </fileset>
-    </family>    
+    </family>
 
     <family>
         <nameset>
             <name>samsung-sans-thin</name>
         </nameset>
         <fileset>
-            <file>SamsungSans_Thin.ttf</file>
+            <file>SamsungSans-Thin.ttf</file>
         </fileset>
-    </family>    
+    </family>
 
+    <family>
+        <nameset>
+            <name>arib</name>
+        </nameset>
+        <fileset>
+            <file>BML.ttf</file>
+        </fileset>
+    </family>
 </familyset>

@@ -58,7 +58,7 @@
         <group gid="inet" />
     </permission>
 
-		<permission name="com.sec.android.permission.CAMERA" >
+    <permission name="com.sec.android.permission.CAMERA" >
         <group gid="camera" />
     </permission>
 
@@ -73,21 +73,16 @@
     <permission name="android.permission.WRITE_EXTERNAL_STORAGE" >
         <group gid="sdcard_r" />
         <group gid="sdcard_rw" />
-        <group gid="media_rw" />
     </permission>
 
-    <permission name="com.sec.android.app.sysscope.permission.SYSSCOPE_ACCESS_SYSTEM_INFO" >
-        <group gid="radio" />
+    <permission name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" >
+        <group gid="sdcard_r" />
+        <group gid="sdcard_rw" />
+        <group gid="sdcard_all" />
     </permission>
 
     <permission name="android.permission.WRITE_MEDIA_STORAGE" >
         <group gid="media_rw" />
-    </permission>
-	
-	<permission name="android.permission.ACCESS_ALL_EXTERNAL_STORAGE" >
-        <group gid="sdcard_r" />
-        <group gid="sdcard_rw" />
-        <group gid="sdcard_all" />
     </permission>
 
     <permission name="android.permission.ACCESS_MTP" >
@@ -162,8 +157,11 @@
         <group gid="graphics" />
     </permission>
 
+    <!-- Except for SysScope, DO NOT USE this permission. -->
+    <permission name="com.sec.android.app.sysscope.permission.ACCESS_SYSTEM_INFO_SYSSCOPE_ONLY" >
+        <group gid="radio" />
+    </permission>
 
- 
     <!-- ================================================================== -->
     <!-- ================================================================== -->
     <!-- ================================================================== -->
@@ -177,9 +175,9 @@
          interact with the system. -->
 
     <assign-permission name="android.permission.MODIFY_AUDIO_SETTINGS" uid="media" />
-    <assign-permission name="android.permission.ACCESS_DRM" uid="media" />
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="media" />
     <assign-permission name="android.permission.WAKE_LOCK" uid="media" />
+    <assign-permission name="android.permission.UPDATE_DEVICE_STATS" uid="media" />
     <assign-permission name="android.permission.UPDATE_APP_OPS_STATS" uid="media" />
 
     <assign-permission name="android.permission.ACCESS_SURFACE_FLINGER" uid="graphics" />

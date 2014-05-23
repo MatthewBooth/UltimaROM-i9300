@@ -68,8 +68,8 @@ Telekom HU"THU
 21805m:tel"m:tel
 
 21890	BH Mobile"BHMobile
- 
-21901T-Mobile HR"T-Mobile
+
+21901HT HR"HT HR
 
 21902Tele2 HR"Tele2 HR
 
@@ -242,8 +242,6 @@ ROSTELECOM"RTC
 ROSTELECOM"RTC
 $
 25015RUS15, RUS SMARTS"SMARTS
-
-25016RUS16,250 16"NTC
 
 25017
 ROSTELECOM"RTC
@@ -320,8 +318,8 @@ GIBTEL GSM"GIBTEL
 vodafone P"voda P
 
 26803	P OPTIMUS"OPTIM
-
-26806tmn"TMN
+
+26806MEO"P MEO
 
 27001L LUXGSM"LUXGSM
 
@@ -472,10 +470,8 @@ SPM AMERIS"AMERIS
 US PLATEAU"PLATEAU
 
 310120Sprint"Sprint
-"
-310140
-GTA Mpulse"
-GTA Mpulse
+
+310140GTA"GTA
 
 310150AT&T"AT&T
 
@@ -598,6 +594,8 @@ Broadpoint
 311530USANW"USANW
 !
 311540USA Proximiti"ProxMo
+
+311580U.S. Cellular"USCC
 
 311680GreenFly"	Green Fly
 $
@@ -1028,34 +1026,10 @@ IND airtel"airtel
 
 405806Aircel"Aircel
 
-405813
-IN UNITECH"UNITECH
-
-405814
-IN UNITECH"UNITECH
-
-405815
-IN UNITECH"UNITECH
-
-405816
-IN UNITECH"UNITECH
-
-405817
-IN UNITECH"UNITECH
-
 405818
 IN UNITECH"UNITECH
 
 405819
-IN UNITECH"UNITECH
-
-405820
-IN UNITECH"UNITECH
-
-405821
-IN UNITECH"UNITECH
-
-405822
 IN UNITECH"UNITECH
 
 405823VIDEOCON"VIDEOCON
@@ -1097,9 +1071,6 @@ IN UNITECH"UNITECH
 405842VIDEOCON"VIDEOCON
 
 405843VIDEOCON"VIDEOCON
-
-405844
-IN UNITECH"UNITECH
 
 405845IDEA"IDEA
 
@@ -1178,13 +1149,7 @@ LoopMobile
 405874IN Loop"
 LoopMobile
 
-405875
-IN UNITECH"UNITECH
-
 405876
-IN UNITECH"UNITECH
-
-405877
 IN UNITECH"UNITECH
 
 405878
@@ -1193,19 +1158,7 @@ IN UNITECH"UNITECH
 405879
 IN UNITECH"UNITECH
 
-405880
-IN UNITECH"UNITECH
-
-405925
-IN UNITECH"UNITECH
-
-405926
-IN UNITECH"UNITECH
-
 405927
-IN UNITECH"UNITECH
-
-405928
 IN UNITECH"UNITECH
 
 405929
@@ -1284,8 +1237,8 @@ Mobily-KSA"Mobily
 42101SabaFon"SABAFON
 
 42102MTN"MTN
-
-421700YemYY"Y
+
+42104	Y-Telecom"Y
 
 42202OMAN MOBILE"OMAN
 
@@ -1296,8 +1249,9 @@ Mobily-KSA"Mobily
 42403du"du
 
 42501	Orange IL"	Orange IL
-
-42502CH"CH
+
+42502
+Cellcom IL"Cellcom
 
 42503IL Pelephone"PCL
 #
@@ -1329,7 +1283,7 @@ MN MobiCom"MobiCom
 
 42902Ncell"Ncell
 
-43211IR-TCI"432 11
+43211IR-TCI"IR-TCI
 
 43214IR KISH"KIFZO
 
@@ -1483,18 +1437,17 @@ KGT-Online"KGT
 &
 47002BGD ROBI AXIATA"
 ROBIAXIATA
-!
+
 47003
-Banglalink"
-Banglalink
+Banglalink"B-LINK
 
 47004BGD bMobile"bMobile
 
 47007Airtel"Airtel
 
 47201DHIRAAGU"DHIRAAGU
-
-47202WATANIYA"WATANIYA
+
+47202Ooredoo"Ooredoo
 
 50212MY MAXIS"MY MAXIS
 
@@ -1540,11 +1493,13 @@ Banglalink
 
 51511ACeS"ACeS
 
+52000TH 3G+"TH 3G+
+
 52001TH GSM"TH GSM
-
-52002TH CAT"CAT
-
-52003AIS"AIS
+
+52002TH CAT"TH CAT
+
+52003AIS 3G"AIS 3G
 
 52004TRUE 3G+"TRUE 3G+
 
@@ -1638,9 +1593,8 @@ CK KOKANET"KOKANET
 60301ALG Mobilis"Mobilis
 
 60302Djezzy"Djezzy
-
-60303
-DZA NEDJMA"NEDJMA
+
+60303Ooredoo"Ooredoo
 
 60400MOR MEDITEL"MEDITEL
 
@@ -1772,8 +1726,8 @@ CELTEL TCD"CELTEL
 
 62304
 NationLink"NL-RCA
-
-62401MTN CAM"62401
+
+62401MTN CAM"MTN CAM
 
 62402
 Orange CAM"Orange
@@ -1785,8 +1739,8 @@ Orange CAM"Orange
 62601STP CSTmovel"CSTmovel
 
 62701GNQ01"GETESA
-
-62703HiTs-GQ"HiTs-GE
+
+62703GNQ-Muni"Muni-GQ
 
 62801LIBERTIS"LIBERTIS
 !
@@ -2021,9 +1975,9 @@ MOVISTARNI"movistar
 
 71617PERN3"NXT3
 
-72201MOVISTAR"MOVISTAR
+72201Movistar"Movistar
 
-72207MOVISTAR"MOVISTAR
+72207Movistar"Movistar
 %
 722310CLARO ARGENTINA"CLARO AR
 
@@ -2105,6 +2059,8 @@ $
 74000Movistar"Movistar
 
 74001CLARO"CLARO
+
+74002CNT"CNT
 %
 74401HOLA PARAGUAY S.A."HPGYSA
 
@@ -2143,4 +2099,4 @@ AeroMobile"AeroMob
 
 90121Seanet"Seanet
 
-90126TIM@sea"TIM@sea)Published_SE13_Database_23_September_2013
+90126TIM@sea"TIM@seaTS25_10_February_2014

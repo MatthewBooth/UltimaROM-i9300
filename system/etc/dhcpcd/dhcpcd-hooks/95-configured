@@ -21,6 +21,7 @@ BOUND|INFORM|REBIND|REBOOT|RENEW|TIMEOUT|IPV4LL)
     setprop dhcp.${intf}.server     "${new_dhcp_server_identifier}"
     setprop dhcp.${intf}.vendorInfo "${new_vendor_encapsulated_options}"
     setprop dhcp.${intf}.roaming    "${new_roaming}"
+    setprop dhcp.${intf}.mtu        "${new_interface_mtu}"
 
     setprop dhcp.${intf}.result "ok"
     ;;

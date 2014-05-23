@@ -118,13 +118,23 @@
     </family>
     <family>
         <fileset>
+            <file>NotoColorEmoji.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>SamsungSansFallback.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
             <file>DroidSans_Subset.ttf</file>
         </fileset>
     </family>
     <family>
         <fileset>
-            <file>SamsungKoreanBrowser.ttf</file>
-            <file>SamsungKoreanBrowser-Bold.ttf</file>
+            <file>SamsungKorean.ttf</file>
+            <file>SamsungKorean-Bold.ttf</file>
         </fileset>
     </family>
     <family>

@@ -1,16 +1,16 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <glgps xmlns="http://www.glpals.com/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.glpals.com/glconfig.xsd" >
   <!--HAL Confguration  -->
   <hal
        acPortName="/dev/ttySAC1"
-       lBaudRate="115200"
+       lBaudRate="921600"
        gpioNStdbyPath="/sys/class/sec/gps/GPS_PWR_EN/value"
-       gpioNResetPath="/sys/class/sec/gps/GPS_nRST/value"
        gpioDelayMs="250"
-       acNvStoDir="/data/"
+       acNvStoDir="/data/system/gps/"
        FactoryTestFilePath="/data/"
 
-       acLogDirectory="/sdcard/gps/broadcom/"
+       Log="JAVA"
+       acLogDirectory="/storage/sdcard0/gps/broadcom/storage"
 
        TISEnabled="true"
        LPmode="false"
@@ -39,27 +39,34 @@
        LbsSyncLto="false"
        SyncLto="true"
        ltoFileName="lto2.dat"
-       acLtoDir="/data/gps/"
+       acLtoDir="/data/system/gps/"
        LbsSyncLtoThresholdDays="1"
-       LbsTAC="10101222"
+       LbsTAC="10101106"
+       LbsCellEnable="false" 
+       ctrlPipe="/data/gps/glgpsctrl"
        LbsWlanEnable="false"
 
        IgnoreJniTime="true"
        AssertEnabled="false"
+       SensorsTimePeriodGyroMs="20"
+       SensorsTimePeriodAcclMs="20"
+
+
    />
 
   <gll
        LogPriMask="LOG_INFO"
-       LogFacMask="LOG_GLLAPI | LOG_NMEA | LOG_RAWDATA"
+       LogFacMask="LOG_GLLIO | LOG_RAWDATA | LOG_DEVKF | LOG_GLLAPI | LOG_NMEA"
        FrqPlan="FRQ_PLAN_26MHZ_2PPM_26MHZ_300PPB"
-       RfType="GL_RF_47511_BRCM_EXT_LNA"
+       RfType="GL_RF_4752_BRCM_EXT_LNA"
        WarmStandbyTimeout1Seconds="10"
        WarmStandbyTimeout2Seconds="15"
-    >
+  >
   </gll>
+
   <gll_features
        EnableLowPowerEls="false"
        EnableLowPowerPmm="true"
-   />
+  />
 
 </glgps>

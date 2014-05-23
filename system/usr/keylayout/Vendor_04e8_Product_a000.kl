@@ -13,7 +13,7 @@
 # limitations under the License.
 
 #
-# Samsung Game Pad EI-GP10N
+# Samsung Game Pad EI-GP20
 #
 
 key 103   DPAD_UP
@@ -38,6 +38,10 @@ key 316   BUTTON_MODE
 key 317   BUTTON_THUMBL
 key 318   BUTTON_THUMBR
 
+key 99    SYSRQ
+key 114   VOLUME_DOWN
+key 115   VOLUME_UP
+
 key 139   MENU
 key 158   BACK
 key 172   HOME
@@ -53,7 +57,7 @@ axis 0x05   RZ
 axis 0x06   THROTTLE
 axis 0x07   RUDDER
 axis 0x08   WHEEL
-axis 0x09   GAS
-axis 0x0a   BRAKE
+axis 0x09   GAS 		#LTRIGGER
+axis 0x0a   BRAKE 	#RTRIGGER
 axis 0x10   HAT_X
 axis 0x11   HAT_Y

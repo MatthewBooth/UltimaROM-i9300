@@ -1,2 +1,9 @@
-del UltimaROM_%date:~-4,4%%date:~-7,2%%date:~0,2%.zip
-tools\7za.exe a UltimaROM_%date:~-4,4%%date:~-7,2%%date:~0,2%.zip META-INF system ultima tools
+del UltimaROM_4.4.2.zip
+xcopy /E system\* temp\system\
+xcopy /E META-INF\* temp\META-INF\
+xcopy /E /Y overlay\system\* temp\system\
+copy boot.img temp\
+cd temp
+..\tools\7za.exe a -mx9 ..\UltimaROM_4.4.2.zip *
+cd ..
+rmdir /S /Q temp

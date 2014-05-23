@@ -96,6 +96,8 @@ key 111   FORWARD_DEL
 key 113   VOLUME_MUTE
 key 114   VOLUME_DOWN
 key 115   VOLUME_UP
+# add LANG by samsung
+key 122   LANG
 key 125   MENU
 key 127   SEARCH
 key 163   MEDIA_NEXT

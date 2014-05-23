@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -170,6 +170,7 @@ Only the three quirks included above are recognized at this point:
             <Quirk name="needs-flush-before-disable" />
             <Quirk name="decoder-ignores-streamcorrupt-error" />
         </MediaCodec>
+        <MediaCodec name="OMX.google.gsm.decoder" type="audio/gsm" />
 
         <MediaCodec name="OMX.SEC.MPEG4.Decoder" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
@@ -186,9 +187,16 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.SEC.AVC.Decoder" type="video/avc" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Quirk name="video-controller-check-enable" />
+	    <Quirk name="video-controller-check-enable" />
         </MediaCodec>
 
+
+        <MediaCodec name="OMX.SEC.MP3.Decoder" type="audio/mpeg" >
+            <Quirk name="supports-multiple-frames-per-input-buffer" />
+            <Quirk name="needs-flush-before-disable" />
+        </MediaCodec>
+
+        <MediaCodec name="OMX.google.mp3.decoder" type="audio/mpeg" />
         <MediaCodec name="OMX.google.amrnb.decoder" type="audio/3gpp" />
         <MediaCodec name="OMX.google.amrwb.decoder" type="audio/amr-wb" />
         <MediaCodec name="OMX.google.aac.decoder" type="audio/mp4a-latm" />
@@ -203,7 +211,8 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.google.mpeg4.decoder" type="video/mp4v-es" />
         <MediaCodec name="OMX.google.h263.decoder" type="video/3gpp" />
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc" />
-        <MediaCodec name="OMX.google.vpx.decoder" type="video/x-vnd.on2.vp8" />
+        <MediaCodec name="OMX.google.vp8.decoder" type="video/x-vnd.on2.vp8" />
+        <MediaCodec name="OMX.google.vp9.decoder" type="video/x-vnd.on2.vp9" />				
     </Decoders>
 
     <Encoders>
@@ -222,8 +231,8 @@ Only the three quirks included above are recognized at this point:
         <MediaCodec name="OMX.SEC.MPEG4.Encoder" type="video/mp4v-es" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />
-            <Quirk name="requires-allocate-on-output-ports" />        
-        </MediaCodec>
+            <Quirk name="requires-allocate-on-output-ports" />
+		</MediaCodec>
         <MediaCodec name="OMX.SEC.H263.Encoder" type="video/3gpp" >
             <Quirk name="requires-allocate-on-input-ports" />
             <Quirk name="requires-allocate-on-output-ports" />

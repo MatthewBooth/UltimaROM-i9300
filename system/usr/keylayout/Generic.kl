@@ -191,7 +191,8 @@ key 168   MEDIA_REWIND
 key 169   CALL
 # key 170 "KEY_ISO"
 key 171   MUSIC
-key 172   HOME
+#input_fw added wake attribute for home
+key 172   HOME		        WAKE  
 # key 173 "KEY_REFRESH"
 # key 174 "KEY_EXIT"
 # key 175 "KEY_MOVE"
@@ -219,6 +220,9 @@ key 180   NUMPAD_RIGHT_PAREN
 # key 197 (undefined)
 # key 198 (undefined)
 # key 199 (undefined)
+# input_fw for voice wakeup
+key 198   VOICE_WAKEUP_LPSD         WAKE
+key 199   VOICE_WAKEUP         WAKE
 key 200   MEDIA_PLAY
 key 201   MEDIA_PAUSE
 # key 202 "KEY_PROG3"
@@ -246,6 +250,16 @@ key 217   SEARCH
 key 224   BRIGHTNESS_DOWN
 key 225   BRIGHTNESS_UP
 key 226   HEADSETHOOK
+
+# samsung dummy key (common)
+key 249   DUMMY_HOME1
+key 250   DUMMY_HOME2
+key 251   DUMMY_MENU
+key 252   DUMMY_HOME
+key 253   DUMMY_BACK
+
+# samsung
+key 254   APP_SWITCH
 
 key 256   BUTTON_1
 key 257   BUTTON_2
@@ -406,6 +420,9 @@ key 484   B                 FUNCTION
 
 key 523	POUND
 key 522	STAR
+
+# samsung camera
+key 528   FOCUS
 
 # Keys defined by HID usages
 key usage 0x0c006F BRIGHTNESS_UP

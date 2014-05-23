@@ -28,7 +28,7 @@
         </nameset>
         <fileset>
             <file>Roboto-Regular.ttf</file>
-            <file>Roboto-Bold_noKorean.ttf</file>
+            <file>Roboto-Bold.ttf</file>
             <file>Roboto-Italic.ttf</file>
             <file>Roboto-BoldItalic.ttf</file>
         </fileset>
@@ -105,6 +105,34 @@
         </nameset>
         <fileset>
             <file>DroidSansMono.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>sec-roboto-light</name>
+        </nameset>
+        <fileset>
+            <file>SECRobotoLight-Regular.ttf</file>
+            <file>SECRobotoLight-Bold.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>samsung-sans-light</name>
+        </nameset>
+        <fileset>
+            <file>SamsungSans-Light.ttf</file>
+        </fileset>
+    </family>
+
+    <family>
+        <nameset>
+            <name>samsung-sans-thin</name>
+        </nameset>
+        <fileset>
+            <file>SamsungSans-Thin.ttf</file>
         </fileset>
     </family>
 

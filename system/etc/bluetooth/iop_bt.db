@@ -45,7 +45,7 @@
 #
 
 /* Denso Infineon */
-#EnforceMasterRole KEY_BDADDR="00:02:c7:*" KEY_DIR_ALL="0"
+EnforceMasterRole KEY_BDADDR="00:02:c7:*" KEY_LMP_MFCT="9" KEY_LMP_VER="1:1111" KEY_DIR_ALL="0"
 
 /* Sony-Ericsson DS980 (Mfr:13 TI, LMP=3, SUBV=0x1126) */
 #EnforceMasterRole KEY_BDADDR="00:1c:a4:*" KEY_LMP_VER="3:4390" KEY_LMP_MFCT="13" KEY_DIR_ALL="0"
@@ -122,6 +122,9 @@ MasterRoleDelayed KEY_LMP_MFCT="15" KEY_LMP_VER="4:8192"
 
 /* iMT525 */
 ExitSniffOnSco KEY_BDADDR="00:07:62:*"
+
+/* HM1700 */
+ExitSniffOnSco KEY_BDADDR="18:3f:47:*"
 
 /* Moto H790 */
 ExitSniffOnSco KEY_BDADDR="00:24:1c:*" KEY_LMP_VER="4:5725" KEY_LMP_MFCT="10"
@@ -252,16 +255,16 @@ DisablePwlCtrReq KEY_BDADDR="00:0e:9f:*" KEY_LMP_MFCT="10" KEY_LMP_VER="3:1958"
 #    Matched towards testcases defined in iop_db_test.c
 #
 
-EnforceMasterRole KEY_BDADDR="22:22:22:*"
-EnforceMasterRole KEY_BDADDR="22:22:23:*" KEY_DIR_ALL="1"
+#EnforceMasterRole KEY_BDADDR="22:22:22:*"
+#EnforceMasterRole KEY_BDADDR="22:22:23:*" KEY_DIR_ALL="1"
 
-SkipAuthEnable KEY_BDADDR="44:44:33:33:11:11"
-SkipAuthEnable KEY_BDADDR="12:34:56:*"
-EnforcePairing KEY_BDADDR="12:34:56:*"
+#SkipAuthEnable KEY_BDADDR="44:44:33:33:11:11"
+#SkipAuthEnable KEY_BDADDR="12:34:56:*"
+#EnforcePairing KEY_BDADDR="12:34:56:*"
 
-ExitSniffOnSco KEY_BDADDR="12:34:56:*"
+#ExitSniffOnSco KEY_BDADDR="12:34:56:*"
 
-NoClearLinkPolicy KEY_BDADDR="00:22:65:*"
+#NoClearLinkPolicy KEY_BDADDR="00:22:65:*"
 
 /* sony dr-bt50 headset */
 #EnforceMasterRole KEY_BDADDR="00:24:be:*" KEY_LMP_VER="3:3413" KEY_LMP_MFCT="10"
@@ -275,4 +278,27 @@ NoClearLinkPolicy KEY_BDADDR="00:22:65:*"
 
 /* VW PHONE */
 ProcessAvrcKey KEY_BDADDR="90:03:b7:*"
+/* Audi MIB Standard  */
+ProcessAvrcKey KEY_BDADDR="34:c7:31:*"
+/* Audi MIB High */
+ProcessAvrcKey KEY_BDADDR="00:17:ca:*"
+/* Acura ZDX 2013 */
+ProcessAvrcKey KEY_BDADDR="00:0a:30:*"
+/* BMW 57523 COMBOX */
+ProcessAvrcKey KEY_BDADDR="00:0e:9f:*"
+/* SYNC */
+ProcessAvrcKey KEY_BDADDR="00:21:cc:*"
+/* Ford SYNC Touch */
+ProcessAvrcKey KEY_BDADDR="00:26:b4:*"
+/* Chevy Silverado */
+ProcessAvrcKey KEY_BDADDR="38:c0:96:*"
 
+#---------------------------------------------------------------------
+# :: Wait before sending call end indication +CIEV:1,0.
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+/* Ford SYNC Touch */
+WaitBeforeCiev KEY_BDADDR="00:26:b4:*"

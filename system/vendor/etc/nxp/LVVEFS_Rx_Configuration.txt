@@ -38,7 +38,9 @@ LVVEFS_ABSOLUTE_PATH
 /data/nxp-dump/Rx_in.pcm
 0
 16000
+
 /data/nxp-inject/Fs44100_WhiteNoise_St.pcm
+
 0
 16000
 /data/nxp-dump/Rx_out.pcm

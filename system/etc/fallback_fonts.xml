@@ -62,6 +62,46 @@
     </family>
     <family>
         <fileset>
+            <file variant="elegant">NotoSansKhmer-Regular.ttf</file>
+            <file variant="elegant">NotoSansKhmer-Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file variant="compact">NotoSansKhmerUI-Regular.ttf</file>
+            <file variant="compact">NotoSansKhmerUI-Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file variant="elegant">NotoSansLao-Regular.ttf</file>
+            <file variant="elegant">NotoSansLao-Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file variant="compact">NotoSansLaoUI-Regular.ttf</file>
+            <file variant="compact">NotoSansLaoUI-Bold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>Padauk-book.ttf</file>
+            <file>Padauk-bookbold.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>NotoSansSymbols-Regular.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>NotoColorEmoji.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
             <file>SamsungBengali.ttf</file>
         </fileset>
     </family>
@@ -113,7 +153,7 @@
     </family>
     <family>
         <fileset>
-            <file>AndroidEmoji.ttf</file>
+            <file>SamsungSansFallback.ttf</file>
         </fileset>
     </family>
     <family>
@@ -135,6 +175,16 @@
     <family>
         <fileset>
             <file lang="ja">MTLmr3m.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>NanumGothic.ttf</file>
+        </fileset>
+    </family>
+    <family>
+        <fileset>
+            <file>SamsungEmoji.ttf</file>
         </fileset>
     </family>
     <!-- Note: complex scripts (i.e. those requiring shaping in Harfbuzz) have
