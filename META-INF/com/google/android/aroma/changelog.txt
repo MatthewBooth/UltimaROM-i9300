@@ -1,0 +1,12 @@
+<b><#selectbg_g>UltimaROM - v17.0 Diablos</#></b>
+<*>Updated to 4.4.2 port base XXUFNE1</*>
+<*>UltimaAOSP SystemUI apps, which includes the same mods</*>
+<*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
+<*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
+<*>New OTA app - written by me</*>
+
+Seems a little thin, but more will come in the future
+
+
+
+

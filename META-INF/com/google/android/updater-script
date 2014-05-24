@@ -1,13 +1,252 @@
-# updater-script-00_HEAD
-# This updater-script has been automatically generated through ArchiKitchen (http://forum.xda-developers.com/showthread.php?t=2597220)
-assert(getprop("ro.product.device") == "m0" || getprop("ro.build.product") == "m0" || 
-       getprop("ro.product.device") == "i9300" || getprop("ro.build.product") == "i9300" || 
-       getprop("ro.product.device") == "GT-I9300" || getprop("ro.build.product") == "GT-I9300" || abort("This package is for \"m0,i9300,GT-I9300\" devices; this is a \"" + getprop("ro.product.device") + "\"."););
+unmount("/cache");
+unmount("/data");
+unmount("/system");
+ui_print("@|----------- UltimaROM ----------|");
+ui_print(" ");
+ui_print(" ");
+
+############################ MOUNT ###################################
+
+ui_print("@Mounting and Formatting Devices...");
+
 run_program("/sbin/mount", "-t", "auto", "/system");
-delete_recursive("/system");
+run_program("/sbin/mount", "-t", "auto", "/cache");
+run_program("/sbin/mount", "-t", "auto", "/data");
+
+# Clear Data
+
+	ui_print("Wiping System...");
+	delete_recursive("/system");
+	
+	if file_getprop("/tmp/aroma/clear.prop","item.1.1") == "1" && file_getprop("/tmp/aroma/clear.prop","item.1.2") == "0" then		
+		ui_print("Wiping User Data...");
+		package_extract_file("ultima/scripts/wipe.sh", "/tmp/wipe.sh");
+		package_extract_file("system/bin/bash", "/tmp/bash");
+		set_perm(0, 0, 0777, "/tmp/wipe.sh");
+		set_perm(0, 0, 0777, "/tmp/bash");
+		run_program("/tmp/wipe.sh");
+	endif;
+	
+	if file_getprop("/tmp/aroma/clear.prop","item.1.2") == "1" then  
+		ui_print("Wiping Everything...");
+		delete_recursive("/data");	
+	endif;
+	
+ui_print("Clearing Cache and Dalvik...");  	
+delete_recursive("/preload");	
+delete_recursive("/cache");
+delete_recursive("/data/dalvik-cache");
+delete_recursive("/dalvik/dalvik-cache");
+
+# Don't need cache any more
+unmount("/cache");
+
+################### INSTALLING DATA APPS ############################
+
+show_progress(1.0, 2400);
+
+
+########################## INSTALL SYSTEM #####################	
+	
+ui_print("@Installing System...");
 package_extract_dir("system", "/system");
-package_extract_dir("overlay", "/");
-# updater-script-10_SYMLINKS
+
+################### INSTALLING SYSTEM APPS ####################
+
+# Launchers
+	if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "2" then
+		ui_print("Installing Stock Launcher");
+	endif;
+    if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "2" then
+      ui_print("Installing Google Experience Launcher");
+	  package_extract_dir("ultima/apps/launchers/google", "/system");
+    endif;	
+	if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "3" then
+      ui_print("Installing Nova Launcher");
+	  package_extract_dir("ultima/apps/launchers/nova", "/system");
+    endif;
+
+# Cameras
+    if file_getprop("/tmp/aroma/camera.prop","selected.1") == "1" then
+		ui_print("Installing Samsung Camera");
+		package_extract_dir("ultima/apps/camera", "/system");
+		delete("/system/app/GoogleCamera.apk");
+	else
+		ui_print("Installing Google Camera");
+    endif;	
+	
+# Misc
+	if file_getprop("/tmp/aroma/misc.prop","item.1.1") == "1" then
+		ui_print("Installing AcDisplay");
+        package_extract_dir("ultima/apps/misc/acdisplay", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma/misc.prop","item.1.2") == "1" then
+		ui_print("Installing AdAway");
+        package_extract_dir("ultima/apps/misc/adaway", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma/misc.prop","item.1.3") == "1" then
+		ui_print("Installing Dropbox");
+        package_extract_dir("ultima/apps/misc/dropbox", "/system");
+    endif;
+	
+	 if file_getprop("/tmp/aroma/misc.prop","item.1.4") == "1" then
+		ui_print("Installing FasterGPS");
+        package_extract_dir("ultima/apps/misc/fastergps", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma/misc.prop","item.1.5") == "1" then
+		ui_print("Installing TitaniumBackup");
+        package_extract_dir("ultima/apps/misc/titanium", "/system");
+    endif;
+
+
+#################### GAPPS INSTALL #############################
+
+# Full installation
+	if file_getprop("/tmp/aroma/gapps_choice.prop", "selected.1") == "1" then
+		ui_print("Installing Google Apps Full...");
+		package_extract_dir("ultima/apps/gapps/Books", "/system");
+		package_extract_dir("ultima/apps/gapps/Calendar", "/system");
+		package_extract_dir("ultima/apps/gapps/Camera", "/system");
+		package_extract_dir("ultima/apps/gapps/Chrome", "/system");
+		package_extract_dir("ultima/apps/gapps/CloudPrint", "/system");
+		package_extract_dir("ultima/apps/gapps/DeviceManager", "/system");
+		package_extract_dir("ultima/apps/gapps/Drive", "/system");
+		package_extract_dir("ultima/apps/gapps/Ears", "/system");
+		package_extract_dir("ultima/apps/gapps/Games", "/system");
+		package_extract_dir("ultima/apps/gapps/GMail", "/system");
+		package_extract_dir("ultima/apps/gapps/Hangouts", "/system");
+		package_extract_dir("ultima/apps/gapps/Keep", "/system");
+		package_extract_dir("ultima/apps/gapps/Keyboard", "/system");
+		delete("/system/app/LatinIME.apk");
+		package_extract_dir("ultima/apps/gapps/Maps", "/system");
+		package_extract_dir("ultima/apps/gapps/Music", "/system");
+		package_extract_dir("ultima/apps/gapps/NewsStand", "/system");
+		package_extract_dir("ultima/apps/gapps/Plus", "/system");
+		package_extract_dir("ultima/apps/gapps/QuickOffice", "/system");
+		package_extract_dir("ultima/apps/gapps/Text-To-Speech", "/system");
+		package_extract_dir("ultima/apps/gapps/Translate", "/system");
+		package_extract_dir("ultima/apps/gapps/Videos", "/system");
+		package_extract_dir("ultima/apps/gapps/VoiceSearch", "/system");
+		package_extract_dir("ultima/apps/gapps/Wallet", "/system");
+		package_extract_dir("ultima/apps/gapps/YouTube", "/system");
+	endif;
+
+# Custom Installation
+	if file_getprop("/tmp/aroma/gapps_choice.prop","selected.1") == "2" then
+		ui_print("Installing Google Apps Custom...");
+	
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.1") == "1" then
+        package_extract_dir("ultima/apps/gapps/Books", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.2") == "1" then
+        package_extract_dir("ultima/apps/gapps/Calendar", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.3") == "1" then
+        package_extract_dir("ultima/apps/gapps/Chrome", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.4") == "1" then
+        package_extract_dir("ultima/apps/gapps/CloudPrint", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.5") == "1" then
+        package_extract_dir("ultima/apps/gapps/DeviceManager", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.6") == "1" then
+        package_extract_dir("ultima/apps/gapps/Drive", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.7") == "1" then
+        package_extract_dir("ultima/apps/gapps/Ears", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.8") == "1" then
+        package_extract_dir("ultima/apps/gapps/Games", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.9") == "1" then
+        package_extract_dir("ultima/apps/gapps/GMail", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.10") == "1" then
+        package_extract_dir("ultima/apps/gapps/Hangouts", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.11") == "1" then
+        package_extract_dir("ultima/apps/gapps/Keep", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.12") == "1" then
+        package_extract_dir("ultima/apps/gapps/Keyboard", "/system");
+        delete("/system/app/LatineIME.apk");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.13") == "1" then
+        package_extract_dir("ultima/apps/gapps/Maps", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.14") == "1" then
+        package_extract_dir("ultima/apps/gapps/Music", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.15") == "1" then
+        package_extract_dir("ultima/apps/gapps/NewsStand", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.16") == "1" then
+        package_extract_dir("ultima/apps/gapps/Plus", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.17") == "1" then
+        package_extract_dir("ultima/apps/gapps/QuickOffice", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.18") == "1" then
+        package_extract_dir("ultima/apps/gapps/Text-To-Speech", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.19") == "1" then
+        package_extract_dir("ultima/apps/gapps/Translate", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.20") == "1" then
+        package_extract_dir("ultima/apps/gapps/Videos", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.21") == "1" then
+        package_extract_dir("ultima/apps/gapps/VoiceSearch", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.22") == "1" then
+        package_extract_dir("ultima/apps/gapps/Wallet", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/gapps.prop","item.1.23") == "1" then
+        package_extract_dir("ultima/apps/gapps/YouTube", "/system");
+    endif;
+
+    if file_getprop("/tmp/aroma/calendar.prop","selected.1") == "1" then
+        delete("/system/app/Calendar.apk");
+    endif;
+
+    if file_getprop("/tmp/aroma/chrome.prop","selected.1") == "1" then
+        delete("/system/app/Browser.apk");
+    endif;
+
+    if file_getprop("/tmp/aroma/music.prop","selected.1") == "1" then
+        delete("/system/app/Apollo.apk");
+    endif;
+endif;
+
+################## BUSYBOX INSTALL #############################	
+
+ui_print("@Installing BusyBox...");
 symlink("dumpstate", "/system/bin/dumpcrash");
 symlink("libGLESv2.so", "/system/lib/libGLESv3.so");
 symlink("logcat", "/system/bin/lolcat");
@@ -89,7 +328,9 @@ symlink("toolbox", "/system/bin/uptime");
 symlink("toolbox", "/system/bin/vmstat");
 symlink("toolbox", "/system/bin/watchprops");
 symlink("toolbox", "/system/bin/wipe");
-# updater-script-20_PERMISSIONS
+
+ui_print("@Settings Permissions...");
+
 set_metadata_recursive("/system", "uid", 0, "gid", 0, "dmode", 0755, "fmode", 0644, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata_recursive("/system/bin", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/bin/app_process", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
@@ -181,14 +422,62 @@ set_metadata("/system/bin/.ext/.su", "uid", 0, "gid", 0, "mode", 06755, "capabil
 set_metadata("/system/etc/install-recovery.sh", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/xbin/su", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
 set_metadata("/system/xbin/daemonsu", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
-# updater-script-80_EXEC
+
+# Finally install BB
 run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
 run_program("/system/xbin/su", "--install");
-# updater-script-85_USER
-# This updater-script segment isn't touched by ArchiKitchen
-# You can add your own entries here
-# updater-script-90_KERNEL
-package_extract_file("boot.img", "/dev/block/mmcblk0p5");
-# updater-script-91_MODEM
-# updater-script-99_TAIL
+
+################## Installing Recovery #############################
+
+#Recovery
+
+	# TWRP
+	  if file_getprop("/tmp/aroma/recovery.prop","selected.1") == "1" then
+		  ui_print("@Installing TWRP Recovery");
+		  ui_print("Flashing TWRP 2.7.0.0");
+		  assert(package_extract_file("ultima/recovery/twrp/recovery.img", "/tmp/recovery.img"),
+		  write_raw_image("/tmp/recovery.img", "/dev/block/mmcblk0p6"),
+		  delete("/tmp/recovery.img"));
+	endif;
+
+##################### KERNEL INSTALL ##################
+
+ui_print("@Installing Kernel...");
+
+#Stock	
+	#if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "5" then
+	ui_print("Flashing Stock Kernel...");
+	assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
+		   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
+		   delete("/tmp/boot.img")); 
+	#endif;
+
+################################## ROM INSTALLED ####################################	
+
+ui_print("@ROM Installed!");
+ui_print(" ");	
+
+################################ THEME INSTALLATION #################################
+
+
+ui_print("@Unmounting Everything...");
 unmount("/system");
+unmount("/data");
+ui_print(" ");
+ui_print(" ");
+ui_print("NOTES:");
+ui_print(" ");
+
+ui_print("@UltimaROM folder");
+ui_print("DO NOT REMOVE THIS FOLDER! IT IS REQUIRED FOR MANY MODS TO WORK PROPERLY. DELETING IT WILL RESET SOME MODS OR MAKE SOME IMPOSSIBLE TO USE.");
+ui_print(" ");
+
+ui_print("Make suggestions and please report any bugs in the ROM thread!");
+ui_print(" ");
+ui_print("Be sure to check out my website:");
+ui_print("@http://www.ultimarom.com");
+ui_print("Find me on Twitter:");
+ui_print("@https://twitter.com/Kryten2k35");
+ui_print("UltimaROM FB page:");
+ui_print("@http://www.facebook.com/UltimaROM ");
+#-- Finish
