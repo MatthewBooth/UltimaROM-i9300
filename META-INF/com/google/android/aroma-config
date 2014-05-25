@@ -357,10 +357,10 @@ textbox(
 					
 			"Choose your Apps",                  "",                                               2,
 			"AcDisplay",						"An Active Display app created by ACHep",												1,	#-- item.1.1
-			"AdAway",							"Ad blocking via the HOSTS file",														0,	#-- item.1.2
-			"Dropbox",							"Sync and backup your phones pictures and videos, as well as accessing desktop files",	0,	#-- item.1.3
-			"FasterGPS",						"Help locate your GPS signal quicker by dictating your country",						0,	#-- item.1.4
-			"TitaniumBackup",					"Backup and restore your apps and app data.",											0	#-- item.1.5
+			"AdAway",							"Ad blocking via the HOSTS file",														1,	#-- item.1.2
+			"Dropbox",							"Sync and backup your phones pictures and videos, as well as accessing desktop files",	1,	#-- item.1.3
+			"FasterGPS",						"Help locate your GPS signal quicker by dictating your country",						1,	#-- item.1.4
+			"TitaniumBackup",					"Backup and restore your apps and app data.",											1	#-- item.1.5
 		);
 			
 ##
