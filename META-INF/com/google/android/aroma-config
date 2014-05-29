@@ -193,12 +193,13 @@ textbox(
 					"Google Newsstand",       "Google News and Magazines reader app",                             			1, # - item.1.15
 					"Google+",                "Google's Social Networking app",                                   			1, # - item.1.16
 					"Google Quickoffice",     "A powerful and fully featured office app",                         			1, # - item.1.17
-					"Google Text-to-Speech",  "Google's Text-to-Speech synthesizer",                              			1, # - item.1.18
-					"Google Translate",       "Translate languages from around the world.",                       			1, # - item.1.19
-					"Google Videos",          "Google Movie rentals",                                             			1, # - item.1.20
-					"Google Voice Search",    "Search without a keyboard",                                        			1, # - item.1.21
-					"Google Wallet",          "Google Wallet, for contact-less payments (USA Only)",               			1, # - item.1.22
-					"YouTube",                "Google's Popular Video Streaming Service",                         			1  # - item.1.23
+					"Google Sheets",     	  "Create and edit spreadsheets",                         						1, # - item.1.18
+					"Google Text-to-Speech",  "Google's Text-to-Speech synthesizer",                              			1, # - item.1.19
+					"Google Translate",       "Translate languages from around the world.",                       			1, # - item.1.20
+					"Google Videos",          "Google Movie rentals",                                             			1, # - item.1.21
+					"Google Voice Search",    "Search without a keyboard",                                        			1, # - item.1.22
+					"Google Wallet",          "Google Wallet, for contact-less payments (USA Only)",               			1, # - item.1.23
+					"YouTube",                "Google's Popular Video Streaming Service",                         			1  # - item.1.24
 				);
 				
 				if file_getprop("/tmp/aroma/gapps.prop","item.1.2") == "1"
@@ -283,7 +284,8 @@ textbox(
 					"item.1.20=1\n"+
 					"item.1.21=1\n"+
 					"item.1.22=1\n"+
-					"item.1.23=1\n"
+					"item.1.23=1\n"+
+					"item.1.24=1\n"
 				);
 			endif;
 			
@@ -313,7 +315,8 @@ textbox(
 					"item.1.20=0\n"+
 					"item.1.21=0\n"+
 					"item.1.22=0\n"+
-					"item.1.23=0\n"
+					"item.1.22=0\n"+
+					"item.1.24=0\n"
 				);
 			endif;
  
