@@ -153,10 +153,9 @@ net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt
 
 # Ultima
-ro.ua.version.stats=UltimaAOSP-Valhalla-v1.2
-ro.ota.romname=UltimaAOSP
-ro.ota.version=1.2
-ro.ota.codename=Valhalla
+ro.ota.romname=UltimaROM
+ro.ota.version=17.0
+ro.ota.codename=Diablos
 ro.ota.device=i9300
 ro.ota.manifest=http://www.ultimarom.com/rom/update/update_manifest.xml
 
