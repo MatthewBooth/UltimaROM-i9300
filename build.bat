@@ -1,9 +1,5 @@
-del UltimaROM_4.4.2.zip
-xcopy /E system\* temp\system\
-xcopy /E META-INF\* temp\META-INF\
-xcopy /E /Y overlay\system\* temp\system\
-xcopy /E ultima\* temp\ultima\
-cd temp
-..\tools\7za.exe a -mx9 ..\UltimaROM_4.4.2.zip *
+::UltimaROM build script
+tools\7za.exe a -up0q0r2x2y2z1w2 -mx9 -xr@tools/exclusion.txt UltimaROM_4.4.2.zip META-INF system ultima
+cd overlay
+..\tools\7za.exe u -mx9 -up1q1r2x2y2z1w2 -xr@..\tools\exclusion.txt ..\UltimaROM_4.4.2.zip system
 cd ..
-rmdir /S /Q temp
