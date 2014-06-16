@@ -61,6 +61,10 @@
     <permission name="com.sec.android.permission.CAMERA" >
         <group gid="camera" />
     </permission>
+	
+	<permission name="android.permission.CAMERA" >
+        <group gid="camera" />
+    </permission>
 
     <permission name="android.permission.READ_LOGS" >
         <group gid="log" />
