@@ -287,6 +287,18 @@ textbox(
 					"item.1.23=1\n"+
 					"item.1.24=1\n"
 				);
+				writetmpfile(
+					"calendar.prop",
+					"selected.1=0\n"
+				  );
+				writetmpfile(
+					"chrome.prop",
+					"selected.1=0\n"
+				  );
+				writetmpfile(
+					"music.prop",
+					"selected.1=0\n"
+				  );
 			endif;
 			
 			if (prop("gapps_choice.prop","selected.1")=="3")
@@ -318,6 +330,18 @@ textbox(
 					"item.1.22=0\n"+
 					"item.1.24=0\n"
 				);
+				writetmpfile(
+					"calendar.prop",
+					"selected.1=0\n"
+				  );
+				writetmpfile(
+					"chrome.prop",
+					"selected.1=0\n"
+				  );
+				writetmpfile(
+					"music.prop",
+					"selected.1=0\n"
+				  );
 			endif;
  
    #-------------------------+-----------------[     Launcher Apps      ]----------------+---------------#
@@ -345,8 +369,22 @@ textbox(
 		  "camera.prop",
 			
 			"Choose Camera Apps",              		"",                 															2,
-			"Samsung",							"Stock Samsung 4.3 Camera",										1,	#-- item.1.1
+			"Samsung",							"Stock Samsung 4.4.2 Camera",									1,	#-- item.1.1
 			"Google",							"Google's Camera software from the Nexus line",					0	#-- item.1.2
+		);
+		
+  #-------------------------+-----------------[     Contacts and Phone     ]----------------+---------------#
+  #-------------------------+---------------------------------------------------------+---------------#
+		
+		selectbox(
+		  "Phone and Contacts",
+		  "Select the apps you want to install: ",
+		  "@contacts",
+		  "contacts.prop",
+			
+			"Choose Phone and Contacts Apps",              		"",                 															2,
+			"Samsung",							"Stock, AOSP themed, Phone and Contacts app",					0,	#-- item.1.1
+			"AOSP",								"AOSP Phone and Contacts app",									1	#-- item.1.2
 		);
 		
   #-------------------------+-----------------[      Misc Apps       ]----------------+---------------#
