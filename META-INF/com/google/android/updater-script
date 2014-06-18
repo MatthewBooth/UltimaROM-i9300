@@ -1,3 +1,6 @@
+assert(getprop("ro.product.device") == "m0" || getprop("ro.build.product") == "m0" || 
+       getprop("ro.product.device") == "i9300" || getprop("ro.build.product") == "i9300" || 
+       getprop("ro.product.device") == "GT-I9300" || getprop("ro.build.product") == "GT-I9300");
 unmount("/cache");
 unmount("/data");
 unmount("/system");
