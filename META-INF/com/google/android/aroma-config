@@ -151,6 +151,23 @@ textbox(
 		  "No",										"Don't install",														1	#-- selected.1 = 2
 	);
 	
+  #-------------------------+-----------------[         Kernel       ]----------------+---------------#
+  #-------------------------+---------------------------------------------------------+---------------#
+
+
+	selectbox(
+	      "Kernels",
+	      "Which kernel would you like to install?",
+	      "@alert",
+	      "kernel.prop",
+
+		  "Which?",	"",					                               														2,  #-- Group 1. key = "selected.1"
+		  "Stock",									"Stock ArchiPort (Samsung) Kernel",										1,	#-- selected.1 = 1
+		  "AGNi",									"PSN AGNi pureSTOCK v4.3 R2",											0,	#-- selected.1 = 2
+		  "arter97",								"arter97 kernel 2.1.1",													0,	#-- selected.1 = 2
+		  "Boeffla",								"Boeffla Kernel 6.0b2",													0	#-- selected.1 = 2
+	);	
+	
   #-------------------------+-----------------[ Modem & Kernel Items ]----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#
 
