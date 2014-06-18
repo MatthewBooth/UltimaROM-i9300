@@ -1,11 +1,22 @@
 <b><#selectbg_g>UltimaROM - v17.0 Diablos</#></b>
 <*>Updated to 4.4.2 port base XXUFNE1</*>
-<*>UltimaAOSP SystemUI apps, which includes the same mods</*>
+<*>Added UltimaAOSP SystemUI app, which includes the same mods, for example battery colour controls and clock mods</*>
+<*>Added UltimaAOSP Mms app, includes in-app theme chooser</*>
+<*>Added UltimaAOSP lockscreen option</*>
+<*>Added UltimaAOSP Torch</*>
+<*>Added UltimaAOSP Contacts and Dialer option</*>
+<*>Added CRT off animation</*>
+<*>Added extended power menu toggle</*>
+<*>Added 4-way rotation</*>
+<*>Added ICS Grass and Microbes LWP</*>
+<*>Added Google Camera</*>
+<*>Added latest Gapps as of release</*>
 <*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
 <*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
 <*>New OTA app - written by me</*>
 
-Seems a little thin, but more will come in the future
+You can always see the full extent of the changelog, as much of the above is simplified, here: https://github.com/Kryten2k35/UltimaROM-i9300/commits/Experimental
+
 
 
 

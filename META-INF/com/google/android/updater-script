@@ -76,6 +76,15 @@ package_extract_dir("system", "/system");
 		ui_print("Installing Google Camera");
 		package_extract_dir("ultima/apps/camera/google", "/system");
     endif;
+	
+# Lockscreen
+    if file_getprop("/tmp/aroma/lockscreen.prop","selected.1") == "1" then
+		ui_print("Installing Samsung Lockscreen");
+		package_extract_dir("ultima/lockscreen/samsung", "/system");
+	else
+		ui_print("Installing AOSP Lockscreen");
+		package_extract_dir("ultima/lockscreen/aosp", "/system");
+    endif;
 
 # Contacts and Phone
     if file_getprop("/tmp/aroma/contacts.prop","selected.1") == "1" then
