@@ -147,7 +147,7 @@ persist.sys.dalvik.vm.lib=libdvm.so
 ro.build.selinux=1
 ro.config.tima=1
 ro.config.timaversion=2.0
-ro.config.knox=1
+ro.config.knox=0
 dalvik.vm.dexopt-flags=m=y
 net.bt.name=Android
 dalvik.vm.stack-trace-file=/data/anr/traces.txt

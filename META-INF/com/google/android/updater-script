@@ -24,7 +24,7 @@ ui_print("@Mounting and Formatting Devices...");
 # Clear Data
 
 	ui_print("Wiping System...");
-	run_program("/tmp/busybox", "rm", "-rf", "/system/*"); 
+	delete_recursive("/system"); 
 	
 	if file_getprop("/tmp/aroma/clear.prop","item.1.1") == "1" && file_getprop("/tmp/aroma/clear.prop","item.1.2") == "0" then		
 		ui_print("Wiping User Data...");
@@ -37,13 +37,13 @@ ui_print("@Mounting and Formatting Devices...");
 	
 	if file_getprop("/tmp/aroma/clear.prop","item.1.2") == "1" then  
 		ui_print("Wiping Everything...");
-		run_program("/tmp/busybox", "rm", "-rf", "/data/*"); 
+		delete_recursive("/data"); 
 	endif;
 	
 	ui_print("Clearing Cache and Dalvik...");
-	run_program("/tmp/busybox", "rm", "-rf", "/preload/*");  		
-	run_program("/tmp/busybox", "rm", "-rf", "/cache/*");  		
-	run_program("/tmp/busybox", "rm", "-rf", "/data/dalvik-cache/*");  		
+	delete_recursive("/preload");  		
+	delete_recursive("/cache");  		
+	delete_recursive("/data");  		
 
 	
 	show_progress(1.0, 2400);

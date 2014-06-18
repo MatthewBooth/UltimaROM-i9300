@@ -260,7 +260,7 @@ ADRELOAD() {
 }
 
 # Initial variables, you should NOT change them unless you know what you're doing
-AD="/data/media/0/UltimaROM"
+AD="/sdcard/UltimaROM"
 ADSYS="/system/ultimarom"
 ADDEV="$ADSYS/dev"
 ADPROC="$ADSYS/tmpfs"
@@ -287,7 +287,7 @@ mkdir -p "$AD"
 mkdir -p "$ADPROC"
 touch $LOG
 busybox chmod 755 "$ADPROC"
-busybox chmod 755 "$AD"
+busybox -R chmod 755 "$AD"
 busybox chmod 755 "$LOG"
 
 # Initial ArchiDroid dev status
