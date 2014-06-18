@@ -30,8 +30,8 @@ if ! ADMOUNTED "$1"; then
 	exit 1
 fi
 
-echo "Removing $1/ArchiDroid.swp"
-rm -f "$1/ArchiDroid.swp"
+echo "Removing $1/Ultima.swp"
+rm -f "$1/Ultima.swp"
 
 if [ "$2" -ne 0 ]; then
 	echo "Checking free space..."
@@ -42,11 +42,11 @@ if [ "$2" -ne 0 ]; then
 		echo "Sorry, it looks like your partition is out of space"
 		exit 2
 	fi
-	echo "Creating $1/ArchiDroid.swp with $2 size"
-	dd if=/dev/zero of="$1/ArchiDroid.swp" bs=1M count="$2"
-	mkswap "$1/ArchiDroid.swp"
-	chown root:root "$1/ArchiDroid.swp" # We don't want to create
-	chmod 0600 "$1/ArchiDroid.swp" # A potential security risk
+	echo "Creating $1/Ultima.swp with $2 size"
+	dd if=/dev/zero of="$1/Ultima.swp" bs=1M count="$2"
+	mkswap "$1/Ultima.swp"
+	chown root:root "$1/Ultima.swp" # We don't want to create
+	chmod 0600 "$1/Ultima.swp" # A potential security risk
 fi
 
 echo "Done!"

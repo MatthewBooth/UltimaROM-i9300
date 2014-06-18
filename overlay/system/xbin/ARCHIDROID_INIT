@@ -260,8 +260,8 @@ ADRELOAD() {
 }
 
 # Initial variables, you should NOT change them unless you know what you're doing
-AD="/data/media/0/ArchiDroid"
-ADSYS="/system/archidroid"
+AD="/data/media/0/UltimaROM"
+ADSYS="/system/ultimarom"
 ADDEV="$ADSYS/dev"
 ADPROC="$ADSYS/tmpfs"
 ADCRON="$ADPROC/cron"
@@ -272,19 +272,23 @@ ADCRONSTATUS="$ADPROC/ARCHIDROID_CRON_STATUS"
 INTERNAL_EVENTS_DIR="$ADCRON/events/internal"
 
 # Exit if barebones preset was used
-if [ -e /system/archidroid/dev/PRESET_BAREBONES ]; then
-	exit 0
-fi
+#if [ -e /system/archidroid/dev/PRESET_BAREBONES ]; then
+#	exit 0
+#fi
 
 # Exit if user wiped data without reflashing
-if [ ! -f /data/ARCHIDROID_DONT_REMOVE_ME ]; then
-	echo "ERROR: ArchiDroid is not compatible with wiping data, please reflash your system!" >> "$LOG"
-	sync
-	reboot recovery || poweroff
-fi
+#if [ ! -f /data/ARCHIDROID_DONT_REMOVE_ME ]; then
+#	echo "ERROR: ArchiDroid is not compatible with wiping data, please reflash your system!" >> "$LOG"
+#	sync
+#	reboot recovery || poweroff
+#fi
 
+mkdir -p "$AD"
 mkdir -p "$ADPROC"
+touch $LOG
 busybox chmod 755 "$ADPROC"
+busybox chmod 755 "$AD"
+busybox chmod 755 "$LOG"
 
 # Initial ArchiDroid dev status
 if [ -e $ADDEV/HAVEGED_ENABLED ]; then
@@ -362,7 +366,7 @@ done
 
 
 date >> "$LOG"
-echo "ArchiDroid $(getprop ro.rom.ultima)" >> "$LOG"
+echo "$(getprop ro.ota.romname) v$(getprop ro.ota.version) $(getprop ro.ota.codename)"  >> "$LOG"
 uname -a >> "$LOG"
 echo "INFO: ArchiDroid_Init executed!" >> "$LOG"
 
@@ -410,17 +414,18 @@ fi
 #fi
 
 # ArchiDroid tmpfs
-#mkdir -p "$ADPROC"
-#mount -t tmpfs tmpfs "$ADPROC"
+mkdir -p "$ADPROC"
+mount -t tmpfs tmpfs "$ADPROC"
 
 # ArchiDroid Hardswap
 if [ "$(busybox swapon --help 2>&1 | grep -qi "\-p pri"; echo $?)" -eq 0 ]; then
 	HSEXTRA="-p 10"
 fi
 for HSPATH in "/cache" "/preload" "/storage/sdcard1"; do
-	if [ -f "$HSPATH/ArchiDroid.swp" ]; then
-		echo "INFO: Found ArchiDroid swap file in $HSPATH directory, $(busybox du -mh "$HSPATH/ArchiDroid.swp" | cut -f1)" >> "$LOG"
-		busybox swapon $HSEXTRA "$HSPATH/ArchiDroid.swp" # Yes, we must break on spaces in this case
+	if [ -f "$HSPATH/Ultima.swp" ]; then
+		echo "INFO: Found UltimaROM swap file in $HSPATH directory, $(busybox du -mh "$HSPATH/Ultima.swp" | cut -f1)" >> "$LOG"
+		mount -o remount,rw /preload
+		busybox swapon $HSEXTRA "$HSPATH/Ultima.swp" # Yes, we must break on spaces in this case
 	fi
 done
 
