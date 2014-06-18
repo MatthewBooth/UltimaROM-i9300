@@ -8,6 +8,7 @@
 <*>Added CRT off animation</*>
 <*>Added extended power menu toggle</*>
 <*>Added 4-way rotation</*>
+<*>Added Navigation bar toggle</*>
 <*>Added ICS Grass and Microbes LWP</*>
 <*>Added Google Camera</*>
 <*>Added latest Gapps as of release</*>
