@@ -16,6 +16,9 @@ run_program("/sbin/mount", "-t", "auto", "/system");
 run_program("/sbin/mount", "-t", "auto", "/cache");
 run_program("/sbin/mount", "-t", "auto", "/data");
 
+# Extract Busybox to /tmp/ for later user
+package_extract_file("/system/xbin/busybox", "/tmp/busybox");
+
 # Clear Data
 
 	ui_print("Wiping System...");
@@ -35,11 +38,10 @@ run_program("/sbin/mount", "-t", "auto", "/data");
 		delete_recursive("/data");	
 	endif;
 	
-ui_print("Clearing Cache and Dalvik...");  	
-delete_recursive("/preload");	
-delete_recursive("/cache");
-delete_recursive("/data/dalvik-cache");
-delete_recursive("/dalvik/dalvik-cache");
+ui_print("Clearing Cache and Dalvik...");
+run_program("/tmp/busybox", "rm", "-rf", "/preload");  		
+run_program("/tmp/busybox", "rm", "-rf", "/cache");  		
+run_program("/tmp/busybox", "rm", "-rf", "/data/dalvik-cache");  		
 
 # Don't need cache any more
 unmount("/cache");
@@ -450,7 +452,7 @@ set_metadata("/system/etc/install-recovery.sh", "uid", 0, "gid", 0, "mode", 0755
 set_metadata("/system/xbin/su", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
 set_metadata("/system/xbin/daemonsu", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
 
-# Finally install BB
+# Finally install BB and SuperSU
 run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
 run_program("/system/xbin/su", "--install");
 
@@ -472,12 +474,47 @@ run_program("/system/xbin/su", "--install");
 ui_print("@Installing Kernel...");
 
 #Stock	
-	#if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "5" then
-	ui_print("Flashing Stock Kernel...");
-	assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
-		   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
-		   delete("/tmp/boot.img")); 
-	#endif;
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
+		ui_print("Flashing Stock Kernel...");
+		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
+			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
+			   delete("/tmp/boot.img")); 
+	endif;
+	
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
+		ui_print("Flashing AGNi Kernel...");
+		assert(package_extract_file("ultima/kernel/agni/boot.img", "/tmp/boot.img"),
+			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
+			   delete("/tmp/boot.img"));
+		package_extract_dir("ultima/kernel/agni/system", "/system");		   
+	endif;
+	
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
+		ui_print("Flashing arter97 Kernel...");
+		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
+			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
+			   delete("/tmp/boot.img"));
+		run_program("/tmp/busybox", "mkdir", "/system/lib/modules");
+		run_program("/tmp/busybox", "chown", "0.0", "/system/lib/modules");
+		run_program("/tmp/busybox", "chmod", "755", "/system/lib/modules");
+		symlink("/lib/modules/dhd.ko", "/system/lib/modules/dhd.ko");
+		package_extract_dir("ultima/kernel/arter/system", "/system");
+	endif;
+	
+	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
+		ui_print("Flashing Boeffla Kernel...");
+		assert(package_extract_file("ultima/kernel/boeffla/boot.img", "/tmp/boot.img"),
+			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
+			   delete("/tmp/boot.img"));
+		package_extract_dir("ultima/kernel/boeffla/system", "/system");
+	endif;
+	
+################################## Create Hardswap ####################################
+
+	package_extract_file("ultima/scripts/archidroid_hardswap.sh", "/tmp/archidroid_hardswap.sh");
+	set_perm(0, 0, 0777, "/tmp/archidroid_hardswap.sh");
+	run_program("/tmp/archidroid_hardswap.sh", "/preload", "256");
+
 
 ################################## ROM INSTALLED ####################################	
 
@@ -493,10 +530,6 @@ unmount("/data");
 ui_print(" ");
 ui_print(" ");
 ui_print("NOTES:");
-ui_print(" ");
-
-ui_print("@UltimaROM folder");
-ui_print("DO NOT REMOVE THIS FOLDER! IT IS REQUIRED FOR MANY MODS TO WORK PROPERLY. DELETING IT WILL RESET SOME MODS OR MAKE SOME IMPOSSIBLE TO USE.");
 ui_print(" ");
 
 ui_print("Make suggestions and please report any bugs in the ROM thread!");
