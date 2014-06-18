@@ -31,7 +31,7 @@ ini_set("rom_name",             "UltimaROM");
 ini_set("rom_version",          "17.0");
 ini_set("rom_author",           "Kryten2k35");
 ini_set("rom_device",           "Samsung Galaxy S III GT-i9300");
-ini_set("rom_date",             "23rd May 2014");
+ini_set("rom_date",             "23rd June 2014");
 setvar("rom_website", 			"www.ultimarom.com");
 setvar("rom_codename", 			"Diablos");
 setvar("rom_codebase", 			"XXUFNE1");
@@ -150,6 +150,23 @@ textbox(
 		  "Yes",									"Install TWRP UltimaROM 2.7.0.0 (Recommended)",							0,	#-- selected.1 = 1
 		  "No",										"Don't install",														1	#-- selected.1 = 2
 	);
+	
+  #-------------------------+-----------------[         Kernel       ]----------------+---------------#
+  #-------------------------+---------------------------------------------------------+---------------#
+
+
+	selectbox(
+	      "Kernels",
+	      "Which kernel would you like to install?",
+	      "@alert",
+	      "kernel.prop",
+
+		  "Which?",	"",					                               														2,  #-- Group 1. key = "selected.1"
+		  "Stock",									"Stock ArchiPort (Samsung) Kernel",										1,	#-- selected.1 = 1
+		  "AGNi",									"PSN AGNi pureSTOCK v4.3 R2",											0,	#-- selected.1 = 2
+		  "arter97",								"arter97 kernel 2.1.1",													0,	#-- selected.1 = 2
+		  "Boeffla",								"Boeffla Kernel 6.0b2",													0	#-- selected.1 = 2
+	);	
 	
   #-------------------------+-----------------[ Modem & Kernel Items ]----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#
@@ -358,6 +375,20 @@ textbox(
 			"Google Experience",			"Google Experience Launcher 4.4.2",											0,	#-- item.1.2
 			"Nova Launcher",				"Highly customisable custom launcher",										0   #-- item.1.3
 		);
+		
+  #-------------------------+-----------------[      Lockscreen      ]----------------+---------------#
+  #-------------------------+---------------------------------------------------------+---------------#
+		
+		selectbox(
+		  "Lockscreen",
+		  "Select the Lockscreen you want to install: ",
+		  "@lockscreen",
+		  "lockscreen.prop",
+			
+			"Choose Lockscreen",              		"",                 															2,
+			"Samsung",							"Stock Samsung 4.4.2 lockscreen",									0,	#-- item.1.1
+			"AOSP",								"AOSP 4.4.2 Lockscreen",					    							1	#-- item.1.2
+		);
  
   #-------------------------+-----------------[     Camera Apps      ]----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#
@@ -369,8 +400,8 @@ textbox(
 		  "camera.prop",
 			
 			"Choose Camera Apps",              		"",                 															2,
-			"Samsung",							"Stock Samsung 4.4.2 Camera",									1,	#-- item.1.1
-			"Google",							"Google's Camera software from the Nexus line",					0	#-- item.1.2
+			"Samsung",							"Stock Samsung 4.4.2 Camera",									0,	#-- item.1.1
+			"Google",							"Google's Camera software from the Nexus line",					1	#-- item.1.2
 		);
 		
   #-------------------------+-----------------[     Contacts and Phone     ]----------------+---------------#
