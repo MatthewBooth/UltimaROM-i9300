@@ -13,6 +13,7 @@
 <*>Added Google Camera</*>
 <*>Added latest Gapps as of release</*>
 <*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
+<*>Added 256MB Swap enabled on /preload</*>
 <*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
 <*>New OTA app - written by me</*>
 

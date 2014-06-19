@@ -28,7 +28,7 @@ if [ INTERVAL -gt $RUN_EVERY ]; then
     echo "EFS Backup started at $(date +"%m-%d-%y %H:%M:%S" )" | tee -a $LOG;
 
     $BUSYBOX tar zcvf $BACKUP_LOC/efs_$(date +%d%b%Y-%H%M).tar.gz /efs | tee -a $LOG;
-	dd if=/dev/block/platform/dw_mmc/by-name/EFS of=$BACKUP_LOC/efs.img
+	dd if=/dev/block/platform/dw_mmc/by-name/EFS of=$BACKUP_LOC/efs_$(date +%d%b%Y-%H%M).img
 
     echo "EFS Backup ended at $(date +"%m-%d-%y %H:%M:%S" )" | tee -a $LOG;
 fi;
