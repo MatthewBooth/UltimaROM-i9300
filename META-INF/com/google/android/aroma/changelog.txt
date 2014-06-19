@@ -14,6 +14,8 @@
 <*>Added latest Gapps as of release</*>
 <*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
 <*>Added 256MB Swap enabled on /preload</*>
+<*>Added 256MB ZRAM</*>
+<*>Added Automatic EFS backup - it's back from 4.1.2, now with .img</*>
 <*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
 <*>New OTA app - written by me</*>
 
