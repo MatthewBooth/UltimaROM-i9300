@@ -26,8 +26,8 @@ ui_print("@Mounting and Formatting Devices...");
 	ui_print("Wiping System...");
 	delete_recursive("/system"); 
 	
-	if file_getprop("/tmp/aroma/clear.prop","item.1.1") == "1" && file_getprop("/tmp/aroma/clear.prop","item.1.2") == "0" then		
-		ui_print("Wiping User Data...");
+	if file_getprop("/tmp/aroma/clear.prop","selected.1") == "1" then		
+		ui_print("Factory resetting...");
 		package_extract_file("ultima/scripts/wipe.sh", "/tmp/wipe.sh");
 		package_extract_file("system/bin/bash", "/tmp/bash");
 		set_perm(0, 0, 0777, "/tmp/wipe.sh");
@@ -35,7 +35,7 @@ ui_print("@Mounting and Formatting Devices...");
 		run_program("/tmp/wipe.sh");
 	endif;
 	
-	if file_getprop("/tmp/aroma/clear.prop","item.1.2") == "1" then  
+	if file_getprop("/tmp/aroma/clear.prop","selected.1") == "2" then  
 		ui_print("Wiping Everything...");
 		delete_recursive("/data"); 
 	endif;
