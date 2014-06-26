@@ -43,7 +43,6 @@ ui_print("@Mounting and Formatting Devices...");
 	ui_print("Clearing Cache and Dalvik...");
 	delete_recursive("/preload");  		
 	delete_recursive("/cache");  		
-	delete_recursive("/data");  		
 
 	
 	show_progress(1.0, 2400);
