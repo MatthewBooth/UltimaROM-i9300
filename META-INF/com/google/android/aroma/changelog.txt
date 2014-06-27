@@ -10,9 +10,11 @@
 <*>Added extended power menu toggle</*>
 <*>Added 4-way rotation</*>
 <*>Added Volume to Skip mod</*>
+<*>Added Screen off/Lockscreen Torch mod</*>
 <*>Added Navigation bar toggle</*>
 <*>Added ICS Grass and Microbes LWP</*>
 <*>Added CM  PhotoPhase LWP</*>
+<*>Enabled AppOpps Menu</*>
 <*>Added Google Camera</*>
 <*>Added AOSP Gallery</*>
 <*>Added latest GApps as of release</*>
