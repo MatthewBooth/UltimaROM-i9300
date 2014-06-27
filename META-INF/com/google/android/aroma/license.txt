@@ -1,5 +1,5 @@
 <@center><b><#selectbg_g>UltimaROM TERMS & CONDITIONS</#></b>
-Version 17.0, May 2014
+Version 17.0, June 2014
 
 <b><#selectbg_g>TERMS AND CONDITIONS FOR USE</#></b></@>
 
