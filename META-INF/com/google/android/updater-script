@@ -491,7 +491,7 @@ ui_print("@Installing Kernel...");
 		assert(package_extract_file("ultima/kernel/boeffla/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
 			   delete("/tmp/boot.img"));
-		package_extract_dir("ultima/kernel/boeffla/system", "/system");
+		package_extract_dir("ultima/kernel/boeffla/data", "/data");
 	endif;
 	
 ################################## CREATE HARDSWAP ###################################
