@@ -16,6 +16,7 @@
 <*>Added CM  PhotoPhase LWP</*>
 <*>Enabled AppOpps Menu</*>
 <*>Added Google Camera</*>
+<*>Added 8 Lockscreen Effects (Samsung)</*>
 <*>Added AOSP Gallery</*>
 <*>Added latest GApps as of release</*>
 <*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
@@ -26,8 +27,9 @@
 <*>Added stock boot animation from the Android L preview</*>
 <*>Updated system sounds from the Android L preview</*>
 
+You can always see the full extent of the changelog, as much of the above is simplified, here: 
 
-You can always see the full extent of the changelog, as much of the above is simplified, here: <#selectbg_g>https://github.com/Kryten2k35/UltimaROM-i9300/commits/Experimental</#>
+<#selectbg_g>https://github.com/Kryten2k35/UltimaROM-i9300/commits/Stable</#>
 
 
 
