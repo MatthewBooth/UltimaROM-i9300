@@ -105,27 +105,27 @@ ui_print("@Installing System...");
 # Misc
 	if file_getprop("/tmp/aroma/misc.prop","item.1.1") == "1" then
 		ui_print("Installing AcDisplay");
-        package_extract_dir("ultima/apps/misc/acdisplay", "/system");
+        package_extract_dir("ultima/apps/misc/acdisplay", "/data");
     endif;
 	
 	if file_getprop("/tmp/aroma/misc.prop","item.1.2") == "1" then
 		ui_print("Installing AdAway");
-        package_extract_dir("ultima/apps/misc/adaway", "/system");
+        package_extract_dir("ultima/apps/misc/adaway", "/data");
     endif;
 	
 	if file_getprop("/tmp/aroma/misc.prop","item.1.3") == "1" then
 		ui_print("Installing Dropbox");
-        package_extract_dir("ultima/apps/misc/dropbox", "/system");
+        package_extract_dir("ultima/apps/misc/dropbox", "/data");
     endif;
 	
 	 if file_getprop("/tmp/aroma/misc.prop","item.1.4") == "1" then
 		ui_print("Installing FasterGPS");
-        package_extract_dir("ultima/apps/misc/fastergps", "/system");
+        package_extract_dir("ultima/apps/misc/fastergps", "/data");
     endif;
 	
 	if file_getprop("/tmp/aroma/misc.prop","item.1.5") == "1" then
 		ui_print("Installing TitaniumBackup");
-        package_extract_dir("ultima/apps/misc/titanium", "/system");
+        package_extract_dir("ultima/apps/misc/titanium", "/data");
     endif;
 
 
