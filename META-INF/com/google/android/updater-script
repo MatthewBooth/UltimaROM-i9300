@@ -26,7 +26,7 @@ ui_print("@Mounting and Formatting Devices...");
 	ui_print("Wiping System...");
 	delete_recursive("/system"); 
 
-	if file_getprop("/tmp/aroma-data/install.prop","wipe") == "factory" then	
+	if file_getprop("/tmp/aroma-data/wipe.prop","wipe") == "factory" then	
 		ui_print("Factory resetting...");
 		package_extract_file("ultima/scripts/wipe.sh", "/tmp/wipe.sh");
 		package_extract_file("system/bin/bash", "/tmp/bash");
@@ -35,7 +35,7 @@ ui_print("@Mounting and Formatting Devices...");
 		run_program("/tmp/wipe.sh");
 	endif;
 	
-	if file_getprop("/tmp/aroma-data/install.prop","wipe") == "everything" then  
+	if file_getprop("/tmp/aroma-data/wipe.prop","wipe") == "everything" then  
 		ui_print("Wiping Everything...");
 		delete_recursive("/data"); 
 	endif;
@@ -244,15 +244,20 @@ ui_print("@Installing System...");
         package_extract_dir("ultima/apps/gapps/YouTube", "/system");
     endif;
 
-	if file_getprop("/tmp/aroma-data/calendar.prop","calendar") == "no" then
+	if file_getprop("/tmp/aroma-data/calendar.prop","calendar") == "yes" then
         delete("/system/app/Calendar.apk");
     endif;
 
-    if file_getprop("/tmp/aroma-data/chrome.prop","chrome") == "no" then
+    if file_getprop("/tmp/aroma-data/chrome.prop","chrome") == "yes" then
         delete("/system/app/Browser.apk");
     endif;
 
-    if file_getprop("/tmp/aroma-data/music.prop","music") == "no" then
+	if file_getprop("/tmp/aroma-data/email.prop","email") == "yes" then
+        delete("/system/app/Email.apk");
+        delete("/system/app/Exchange2.apk");
+    endif;
+	
+    if file_getprop("/tmp/aroma-data/music.prop","music") == "yes" then
         delete("/system/app/Apollo.apk");
     endif;
 
