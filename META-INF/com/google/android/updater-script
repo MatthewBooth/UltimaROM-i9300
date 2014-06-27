@@ -220,6 +220,10 @@ ui_print("@Installing System...");
         package_extract_dir("ultima/apps/gapps/Sheets", "/system");
     endif;
 	
+	if file_getprop("/tmp/aroma-data/gapps.prop","slides") == "1" then
+        package_extract_dir("ultima/apps/gapps/Slides", "/system");
+    endif;
+	
 	if file_getprop("/tmp/aroma-data/gapps.prop","tts") == "1" then
         package_extract_dir("ultima/apps/gapps/Text-To-Speech", "/system");
     endif;
@@ -250,11 +254,6 @@ ui_print("@Installing System...");
 
     if file_getprop("/tmp/aroma-data/chrome.prop","chrome") == "yes" then
         delete("/system/app/Browser.apk");
-    endif;
-
-	if file_getprop("/tmp/aroma-data/email.prop","email") == "yes" then
-        delete("/system/app/Email.apk");
-        delete("/system/app/Exchange2.apk");
     endif;
 	
     if file_getprop("/tmp/aroma-data/music.prop","music") == "yes" then
