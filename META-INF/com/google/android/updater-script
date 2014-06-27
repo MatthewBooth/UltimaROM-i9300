@@ -66,22 +66,22 @@ ui_print("@Installing System...");
 	endif;
     if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "2" then
       ui_print("Installing Google Experience Launcher");
-	  package_extract_dir("ultima/apps/launchers/google", "/system");
+	  package_extract_dir("ultima/launchers/google", "/system");
 	  delete("/system/priv-app/Launcher3.apk");
     endif;	
 	if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "3" then
       ui_print("Installing Nova Launcher");
-	  package_extract_dir("ultima/apps/launchers/nova", "/system");
+	  package_extract_dir("ultima/launchers/nova", "/system");
 	  delete("/system/priv-app/Launcher3.apk");
     endif;
 
 # Cameras
     if file_getprop("/tmp/aroma/camera.prop","selected.1") == "1" then
 		ui_print("Installing Samsung Camera");
-		package_extract_dir("ultima/apps/camera/samsung", "/system");
+		package_extract_dir("ultima/camera/samsung", "/system");
 	else
 		ui_print("Installing Google Camera");
-		package_extract_dir("ultima/apps/camera/google", "/system");
+		package_extract_dir("ultima/camera/google", "/system");
     endif;
 	
 # Lockscreen
@@ -99,7 +99,7 @@ ui_print("@Installing System...");
 		package_extract_dir("ultima/contacts_phone/samsung", "/system");
 	else
 		ui_print("Installing AOSP Contacts and Phone");
-		package_extract_dir("ultima/contacts_phone/google", "/system");
+		package_extract_dir("ultima/contacts_phone/aosp", "/system");
     endif;	
 	
 # Misc
