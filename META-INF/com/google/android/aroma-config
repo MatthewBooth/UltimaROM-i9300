@@ -31,7 +31,7 @@ ini_set("rom_name",             "UltimaROM");
 ini_set("rom_version",          "17.0");
 ini_set("rom_author",           "Kryten2k35");
 ini_set("rom_device",           "Samsung Galaxy S III GT-i9300");
-ini_set("rom_date",             "23rd June 2014");
+ini_set("rom_date",             "27th June 2014");
 setvar("rom_website", 			"www.ultimarom.com");
 setvar("rom_codename", 			"Diablos");
 setvar("rom_codebase", 			"XXUFNE1");
@@ -125,317 +125,256 @@ textbox(
   #-------------------------+-----------------[ Clear and Wipe Data ]-----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#
 
-	selectbox(
-		  "Wiping Data",
-		  "Decide whether to wipe data or not",
-		  "@alert",
-		  "clear.prop",
-			
-			"Choose wiping method",              		"",                 																					2,
-			"Factory Reset",						"Wipe everything on the data partition, except /data/media (the internal storage)",						1,	#-- selected.1 = 1
-			"Everything",							"Wipe everything on the data partition, including the internal storage (extSdCard is not touched)",		0,	#-- selected.1 = 2
-			"Nothing",								"Wipe just /system. Same as a 'dirty' flash",															0	#-- selected.1 = 3
-		);
+	form(
+		"Wiping Data",
+		"Decide whether to wipe data or not",
+		"@alert",
+		"wipe.prop",
 
-  #-------------------------+-----------------[       Recoveries     ]----------------+---------------#
-  #-------------------------+---------------------------------------------------------+---------------#
-
-
-	selectbox(
-	      "TWRP",
-	      "TWRP is the recommended recovery",
-	      "@alert",
-	      "recovery.prop",
-
-		  "Install it?",	"",					                               												2,  #-- Group 1. key = "selected.1"
-		  "Yes",									"Install TWRP UltimaROM 2.7.0.0 (Recommended)",							0,	#-- selected.1 = 1
-		  "No",										"Don't install",														1	#-- selected.1 = 2
+		"wipe",					"<#selectbg_g>Please Choose a wiping method</#>",				"",																			"group",
+		"factory",				"Factory Reset", 		"Wipe everything on the data partition, except /data/media (the internal storage) <#ff4444>(RECOMMENDED)</#>",		"select.selected",
+		"everything",			"Everything", 			"Wipe everything on the data partition, including the internal storage (extSdCard is not touched)",					"select",
+		"nothing",				"Nothing", 				"Wipe just /system. Same as a 'dirty' flash",																		"select"
 	);
 	
-  #-------------------------+-----------------[         Kernel       ]----------------+---------------#
-  #-------------------------+---------------------------------------------------------+---------------#
-
-
-	selectbox(
-	      "Kernels",
-	      "Which kernel would you like to install?",
-	      "@alert",
-	      "kernel.prop",
-
-		  "Which?",	"",					                               														2,  #-- Group 1. key = "selected.1"
-		  "Stock",									"Stock ArchiPort (Samsung) Kernel",										1,	#-- selected.1 = 1
-		  "AGNi",									"PSN AGNi pureSTOCK v4.3 R2",											0,	#-- selected.1 = 2
-		  "arter97",								"arter97 kernel 2.1.1",													0,	#-- selected.1 = 2
-		  "Boeffla",								"Boeffla Kernel 6.0b2",													0	#-- selected.1 = 2
-	);	
-	
-  #-------------------------+-----------------[ Modem & Kernel Items ]----------------+---------------#
-  #-------------------------+---------------------------------------------------------+---------------#
-
-	selectbox(
-			"Google Apps",
-			"Do you want to install Google Apps?",
-			"@gapps",
-			"gapps_choice.prop",
-
-			"Google Apps",					"",																				2,  #-- Group 2. key = "selected.2"
-			"Yes",					"Install ALL Google Apps",																1,  #-- selected.1 = 1 		
-			"Custom",				"Let me choose which Google Apps to install",											0,  #-- selected.1 = 2
-			"No",					"Do not install Any Google Apps (still includes Play Store & Google Search)",			0  	#-- selected.1 = 3
-			
-			);
-			
-			if (prop("gapps_choice.prop","selected.1")=="2")
-			then
-				checkbox(
-				  "Camera",
-				  "Select the Camera apps you want to install: ",
-				  "@gapps",
-				  "gapps.prop",
-					
-					 "Choose your Google Apps",                  "",                                               			2,
-					"Google Books",           "Google Books reader App",                                          			1, # - item.1.1
-					"Google Calendar",        "Google's in-house Calendar App.",                                  			1, # - item.1.2
-					"Google Chrome",          "Google's Chromium browser for Android.",                           			1, # - item.1.3
-					"Google CloudPrint",      "Use your printer, from anywhere in the world",                    			1, # - item.1.4
-					"Google Device Manager",  "Remotely lock and track your lost device",                        			1, # - item.1.5
-					"Google Drive",           "Google Docs/Drive application on the go.",                        			1, # - item.1.6
-					"Google Ears",            "Recognize music and songs playing around you.",                   			1, # - item.1.7
-					"Google Play Games",      "Android's Online Gaming centre, with achievements and social.",    			1, # - item.1.8
-					"Google Mail",            "Google's E-Mail Service",                                         			1, # - item.1.9
-					"Google Hangouts",        "Google's in-house IM app",                                        			1, # - item.1.10
-					"Google Keep",            "Google Note taking app that syncs",                                			1, # - item.1.11
-					"Google Keyboard",        "Google's enhanced keyboard",                                       			1, # - item.1.12
-					"Google Maps",            "Google's mapping and Navigation Service",                          			1, # - item.1.13
-					"Google Play Music",      "Play local music and Stream uploaded or bought music.",            			1, # - item.1.14
-					"Google Newsstand",       "Google News and Magazines reader app",                             			1, # - item.1.15
-					"Google+",                "Google's Social Networking app",                                   			1, # - item.1.16
-					"Google Quickoffice",     "A powerful and fully featured office app",                         			1, # - item.1.17
-					"Google Sheets",     	  "Create and edit spreadsheets",                         						1, # - item.1.18
-					"Google Text-to-Speech",  "Google's Text-to-Speech synthesizer",                              			1, # - item.1.19
-					"Google Translate",       "Translate languages from around the world.",                       			1, # - item.1.20
-					"Google Videos",          "Google Movie rentals",                                             			1, # - item.1.21
-					"Google Voice Search",    "Search without a keyboard",                                        			1, # - item.1.22
-					"Google Wallet",          "Google Wallet, for contact-less payments (USA Only)",               			1, # - item.1.23
-					"YouTube",                "Google's Popular Video Streaming Service",                         			1  # - item.1.24
-				);
-				
-				if file_getprop("/tmp/aroma/gapps.prop","item.1.2") == "1"
-				then
-					selectbox(
-					"Calendar",
-					"Remove?",
-					"@gapps",
-					"calendar.prop",
-					"Would you like to remove the AOSP App?",  "",             2,
-					"Yes",       "Remove the AOSP Calendar",                   1,
-					"No",        "Keep both the AOSP app and the Google app",  0
-				  );
-			  else
-				  writetmpfile(
-					"calendar.prop",
-					"selected.1=0\n"
-				  );
-			  endif;
-
-			  if file_getprop("/tmp/aroma/gapps.prop","item.1.3") == "1"
-				then
-					selectbox(
-					"Chrome",
-					"Remove?",
-					"@gapps",
-					"chrome.prop",
-					"Would you like to remove the AOSP App?",  "",             2,
-					"Yes",       "Remove the AOSP Browser",                    1,
-					"No",        "Keep both the AOSP app and the Google app",  0
-				  );
-			  else
-				  writetmpfile(
-					"chrome.prop",
-					"selected.1=0\n"
-				  );
-			  endif;
-
-
-			  if file_getprop("/tmp/aroma/gapps.prop","item.1.14") == "1"
-				then
-					selectbox(
-					"Google Play Music",
-					"Remove?",
-					"@gapps",
-					"music.prop",
-					"Would you like to remove the AOSP App?",  "",             2,
-					"Yes",       "Remove the AOSP Music app (Apollo)",         1,
-					"No",        "Keep both the AOSP app and the Google app",  0
-				  );
-			  else
-				  writetmpfile(
-					"music.prop",
-					"selected.1=0\n"
-				  );
-			  endif;
-			endif;
-
-			if (prop("gapps_choice.prop","selected.1")=="1")
-			then
-				writetmpfile(
-					"gapps.prop",
-					"item.1.1=1\n"+
-					"item.1.2=1\n"+
-					"item.1.3=1\n"+
-					"item.1.4=1\n"+
-					"item.1.5=1\n"+
-					"item.1.6=1\n"+
-					"item.1.7=1\n"+
-					"item.1.8=1\n"+
-					"item.1.9=1\n"+
-					"item.1.10=1\n"+
-					"item.1.11=1\n"+
-					"item.1.12=1\n"+
-					"item.1.13=1\n"+
-					"item.1.14=1\n"+
-					"item.1.15=1\n"+
-					"item.1.16=1\n"+
-					"item.1.17=1\n"+
-					"item.1.18=1\n"+
-					"item.1.19=1\n"+
-					"item.1.20=1\n"+
-					"item.1.21=1\n"+
-					"item.1.22=1\n"+
-					"item.1.23=1\n"+
-					"item.1.24=1\n"
-				);
-				writetmpfile(
-					"calendar.prop",
-					"selected.1=0\n"
-				  );
-				writetmpfile(
-					"chrome.prop",
-					"selected.1=0\n"
-				  );
-				writetmpfile(
-					"music.prop",
-					"selected.1=0\n"
-				  );
-			endif;
-			
-			if (prop("gapps_choice.prop","selected.1")=="3")
-			then
-				writetmpfile(
-					"gapps.prop",
-					"item.1.1=0\n"+
-					"item.1.2=0\n"+
-					"item.1.3=0\n"+
-					"item.1.4=0\n"+
-					"item.1.5=0\n"+
-					"item.1.6=0\n"+
-					"item.1.7=0\n"+
-					"item.1.8=0\n"+
-					"item.1.9=0\n"+
-					"item.1.10=0\n"+
-					"item.1.11=0\n"+
-					"item.1.12=0\n"+
-					"item.1.13=0\n"+
-					"item.1.14=0\n"+
-					"item.1.15=0\n"+
-					"item.1.16=0\n"+
-					"item.1.17=0\n"+
-					"item.1.18=0\n"+
-					"item.1.19=0\n"+
-					"item.1.20=0\n"+
-					"item.1.21=0\n"+
-					"item.1.22=0\n"+
-					"item.1.22=0\n"+
-					"item.1.24=0\n"
-				);
-				writetmpfile(
-					"calendar.prop",
-					"selected.1=0\n"
-				  );
-				writetmpfile(
-					"chrome.prop",
-					"selected.1=0\n"
-				  );
-				writetmpfile(
-					"music.prop",
-					"selected.1=0\n"
-				  );
-			endif;
- 
-   #-------------------------+-----------------[     Launcher Apps      ]----------------+---------------#
-   #-------------------------+---------------------------------------------------------+---------------#
- 
-	selectbox(
-		  "Launchers",
-		  "Select the Launcher app you want to install: ",
-		  "@launcher",
-		  "launcher.prop",
-			
-			"Choose Launcher App",              		"",                 															2,
-			"Stock",						"Stock 4.4.2 Launcher (includes mods)",										1,	#-- item.1.1
-			"Google Experience",			"Google Experience Launcher 4.4.2",											0,	#-- item.1.2
-			"Nova Launcher",				"Highly customisable custom launcher",										0   #-- item.1.3
-		);
-		
-  #-------------------------+-----------------[      Lockscreen      ]----------------+---------------#
-  #-------------------------+---------------------------------------------------------+---------------#
-		
-		selectbox(
-		  "Lockscreen",
-		  "Select the Lockscreen you want to install: ",
-		  "@lockscreen",
-		  "lockscreen.prop",
-			
-			"Choose Lockscreen",              		"",                 															2,
-			"Samsung",							"Stock Samsung 4.4.2 lockscreen",									0,	#-- item.1.1
-			"AOSP",								"AOSP 4.4.2 Lockscreen",					    							1	#-- item.1.2
-		);
- 
-  #-------------------------+-----------------[     Camera Apps      ]----------------+---------------#
-  #-------------------------+---------------------------------------------------------+---------------#
-		
-		selectbox(
-		  "Camera",
-		  "Select the Camera apps you want to install: ",
-		  "@camera",
-		  "camera.prop",
-			
-			"Choose Camera Apps",              		"",                 															2,
-			"Samsung",							"Stock Samsung 4.4.2 Camera",									0,	#-- item.1.1
-			"Google",							"Google's Camera software from the Nexus line",					1	#-- item.1.2
-		);
-		
-  #-------------------------+-----------------[     Contacts and Phone     ]----------------+---------------#
-  #-------------------------+---------------------------------------------------------+---------------#
-		
-		selectbox(
-		  "Phone and Contacts",
-		  "Select the apps you want to install: ",
-		  "@contacts",
-		  "contacts.prop",
-			
-			"Choose Phone and Contacts Apps",              		"",                 															2,
-			"Samsung",							"Stock, AOSP themed, Phone and Contacts app",					0,	#-- item.1.1
-			"AOSP",								"AOSP Phone and Contacts app",									1	#-- item.1.2
-		);
-		
-  #-------------------------+-----------------[      Misc Apps       ]----------------+---------------#
+  #-------------------------+-----------------[     Preset Data     ]-----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#
   
-		checkbox(
-			"Other Apps",
-			"Select the apps you want to install: ",
-			"@default",
-			"misc.prop",
-					
-			"Choose your Apps",                  "",                                               2,
-			"AcDisplay",						"An Active Display app created by ACHep",												1,	#-- item.1.1
-			"AdAway",							"Ad blocking via the HOSTS file",														1,	#-- item.1.2
-			"Dropbox",							"Sync and backup your phones pictures and videos, as well as accessing desktop files",	1,	#-- item.1.3
-			"FasterGPS",						"Help locate your GPS signal quicker by dictating your country",						1,	#-- item.1.4
-			"TitaniumBackup",					"Backup and restore your apps and app data.",											1	#-- item.1.5
-		);
+  form(
+		"Installation Presets",
+		"How would you like to install?",
+		"@alert",
+		"preset.prop",
+
+		"preset",				"<#selectbg_g>Please Choose an install method</#>",				"",										"group",
+		"ultima",				"Ultima", 				"The default UltimaROM AOSP installation <#ff4444>(RECOMMENDED)</#>",			"select.selected",
+		"ultima_lite",			"Ultima Lite", 			"The minimal UltimaROM AOSP installation",										"select",
+		"samsung",				"Samsung", 				"Samsung apps are installed, where available",									"select",
+		"samsung_lite",			"Samsung Lite", 		"Samsung apps are install, other apps to a minimal",							"select",
+		"custom",				"Custom", 				"Choose your own options",														"select"
+	);
+  
+
+	# Ultima Preset
+	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima" then
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=boeffla\n"+ "launcher=stock\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
+		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"titanium_backup=1\n");
+		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "tts=0\n"+ "translate=0\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
+		writetmpfile( "calendar.prop", "selected.1=1\n" ); 
+		writetmpfile( "chrome.prop", "selected.1=2\n" ); 
+		writetmpfile( "music.prop", "selected.1=1\n" );
+	endif;
+	
+	# Ultima Lite Preset
+	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima_lite" then
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=boeffla\n"+ "launcher=stock\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
+		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"titanium_backup=0\n");
+		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
+		writetmpfile( "calendar.prop", "selected.1=0\n" ); 
+		writetmpfile( "chrome.prop", "selected.1=2\n" ); 
+		writetmpfile( "music.prop", "selected.1=0\n" );
+	endif;
+	
+	# Samsung Preset
+	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung" then
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=stock\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
+		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"titanium_backup=1\n");
+		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "tts=0\n"+ "translate=0\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
+		writetmpfile( "calendar.prop", "selected.1=1\n" ); 
+		writetmpfile( "chrome.prop", "selected.1=2\n" ); 
+		writetmpfile( "music.prop", "selected.1=1\n" );
+	endif;
+	
+	# Samsung Lite Preset
+	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung_lite" then
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=stock\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
+		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"titanium_backup=0\n");
+		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
+		writetmpfile( "calendar.prop", "selected.1=0\n" ); 
+		writetmpfile( "chrome.prop", "selected.1=2\n" ); 
+		writetmpfile( "music.prop", "selected.1=0\n" );
+	endif;
+	
+	# Custom install
+	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "custom" then
+		
+	  #-------------------------+-----------------[       Recoveries     ]----------------+---------------#
+	  #-------------------------+---------------------------------------------------------+---------------#
+
+		form(
+			"Custom Installation",
+			"Choose your options",
+			"@alert",
+			"install.prop",
+
+			"recovery",				"<#selectbg_g>Recovery</#>",				"",																"group",
+			"yes",					"Yes", 					"Install TWRP UltimaROM 2.7.0.0 <#ff4444>(RECOMMENDED)</#>",						"select.selected",
+			"no",					"No", 					"Don't install",																	"select",
+
+			"kernel",				"<#selectbg_g>Kernel</#>","",																				"group",
+			"stock",				"Stock", 				"Stock ArchiPort (Samsung) Kernel",													"select",
+			"agni",					"AGNi", 				"PSN AGNi pureSTOCK",																"select",
+			"arter",				"arter97", 				"arter97 kernel",																	"select",
+			"boeffla",				"Boeffla", 				"Boeffla Kernel <#ff4444>(RECOMMENDED)</#>",										"select.selected",
 			
+			"launcher",				"<#selectbg_g>Launchers</#>","",																			"group",
+			"stock",				"Stock", 				"Stock 4.4.2 Launcher (includes mods) <#ff4444>(RECOMMENDED)</#>",					"select.selected",
+			"google",				"Google", 				"Google Experience Launcher 4.4.2",													"select",
+			"nova",					"Nova", 				"Highly customisable custom launcher",												"select",
+			
+			"lockscreen",			"<#selectbg_g>Lockscreen</#>","",																			"group",
+			"aosp",					"AOSP", 				"Stock 4.4.2 Lockscreen <#ff4444>(RECOMMENDED)</#>",								"select.selected",
+			"samsung",				"Samsung", 				"Stock Samsung 4.4.2 Lockscreen",													"select",
+			
+			"camera",				"<#selectbg_g>Camera</#>","",																				"group",
+			"google",				"Google", 				"Google's Camera software from the Nexus line <#ff4444>(RECOMMENDED)</#>",			"select.selected",
+			"samsung",				"Samsung", 				"Stock Samsung 4.4.2 Camera",														"select",
+			
+			"gallery",				"<#selectbg_g>Gallery</#>","",																				"group",
+			"aosp",					"AOSP", 				"AOSP Gallery <#ff4444>(RECOMMENDED)</#>",											"select.selected",
+			"samsung",				"Samsung", 				"Stock Samsung 4.4.2 Gallery",														"select",
+			
+			"contacts",				"<#selectbg_g>Contacts and Dialer</#>","",																	"group",
+			"aosp",					"AOSP", 				"AOSP Phone and Contacts",															"select.selected",
+			"samsung",				"Samsung", 				"Stock Samsung Phone and Contacts",													"select",
+			
+			"misc",				"<#selectbg_g>Data Apps</#>","",																			"group",
+			"acdisplay",			"AcDisplay", 			"An Active Display app created by ACHep",											"check.checked",
+			"adaway",				"AdAway", 				"Ad blocking via the HOSTS file",													"check.checked",
+			"dropbox",				"Dropbox", 				"Sync and backup your phones pictures and videos",									"check.checked",
+			"fastergps",			"FasterGPS", 			"Help locate your GPS signal quicker by preselecting your country",					"check.checked",
+			"titanium_backup",		"TitaniumBackup", 		"Backup and restore your apps and app data",										"check.checked"
+
+		);
+			# Lockscreen warning!
+			if file_getprop("/tmp/aroma-data/install.prop","lockscreen") == "samsung" 
+			&&  file_getprop("/tmp/aroma-data/install.prop","gallery") == "aosp" 
+			then
+				agreebox(
+					"Warning",
+					"Please read the information below.",
+					"@alert",
+					resread("lockscreen_wall.txt"),
+					"Yeah, I'm fine with this...",
+					"Please make sure you understand the implications"
+				);
+			endif;
+
+	  #-------------------------+-----------------[        Gapps         ]----------------+---------------#
+	  #-------------------------+---------------------------------------------------------+---------------#
+
+	  
+	  form(
+			"Google Apps",
+			"Do you want to install Google Apps?",
+			"@play",
+			"gapps_choice.prop",
+
+			"gapps_choice",			"<#selectbg_g>Google Apps</#>",				"",																"group",
+			"yes",					"Yes", 			"Install ALL Google Apps",															"select",
+			"custom",				"Custom", 		"Let me choose which Google Apps to install <#ff4444>(RECOMMENDED)</#>",			"select.selected",
+			"no",					"No", 			"Do not install Any Google Apps (still includes Play Store & Google Search)",																	"select"
+		);
+				
+				if file_getprop("/tmp/aroma-data/gapps_choice.prop","gapps_choice") == "yes" then
+					writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "tts=1\n"+ "translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=1\n"+ "youtube=1\n" ); 
+					writetmpfile("calendar.prop","calendar=yes\n");
+					writetmpfile("chrome.prop","chrome=yes\n");
+					writetmpfile("music.prop","music=yes\n");
+				endif;
+				
+				# Custom install
+				if file_getprop("/tmp/aroma-data/gapps_choice.prop","gapps_choice") == "custom" then				
+				form(
+					"Google Apps",
+					"Which Google Apps?",
+					"@play",
+					"gapps.prop",
+
+					"gapps","<#selectbg_g>Google Apps</#>",				"",														"group",
+					"books",		"Google Books", 			"Google Books reader App",												"check.checked",
+					"calendar",		"Google Calendar", 			"Google's in-house Calendar App",										"check.checked",
+					"chrome",		"Google Chrome", 			"Google's Chromium browser for Android",								"check.checked",
+					"print",		"Google CloudPrint", 		"Use your printer, from anywhere in the world",							"check.checked",
+					"manager",		"Google Device Manager", 	"Remotely lock and track your lost device",								"check.checked",
+					"drive",		"Google Drive", 			"Google Docs/Drive application on the go",								"check.checked",
+					"ears",			"Google Ears", 				"Recognize music and songs playing around you",							"check.checked",
+					"games",		"Google Play Games", 		"Android's Online Gaming centre, with achievements and social",			"check.checked",
+					"mail",			"Google Mail", 				"Google's E-Mail Service",												"check.checked",
+					"hangouts",		"Google Hangouts", 			"Google's SMS, MMS and IM app",											"check.checked",
+					"keep",			"Google Keep", 				"Google Note taking app that syncs",									"check.checked",
+					"keyboard",		"Google Keyboard", 			"Google's enhanced keyboard with swiping functionality",				"check.checked",
+					"maps",			"Google Maps", 				"Google's mapping and Navigation Service",								"check.checked",
+					"music",		"Google Music", 			"Play local music and Stream uploaded or bought music",					"check.checked",
+					"news",			"Google Newsstand", 		"Google News and Magazines reader app",									"check.checked",
+					"plus",			"Google+", 					"Google's Social Networking app",										"check.checked",
+					"office",		"Google QuickOffice", 		"A powerful and fully featured office app",								"check.checked",
+					"sheets",		"Google Sheets", 			"Create and edit spreadsheets",											"check.checked",
+					"tts",			"Google Text-to-Speech",	"Google's Text-to-Speech synthesizer",									"check.checked",
+					"translate",	"Google Translate", 		"Translate languages from around the world",							"check.checked",
+					"videos",		"Google Videos", 			"Google Movie rentals and purchasing",									"check.checked",
+					"voice",		"Google Voice Search", 		"Search without a keyboard",											"check.checked",
+					"wallet",		"Google Wallet", 			"Google Wallet, for contact-less payments (USA Only)",					"check.checked",
+					"youtube",		"Google YouTube", 			"Google's Popular Video Streaming Service",								"check.checked"
+				);
+
+					
+					if file_getprop("/tmp/aroma-data/gapps_install.prop","calendar") == "1" then					
+					form(
+						"Calendar",
+						"Remove?",
+						"@calendar",
+						"calendar.prop",
+
+						"calendar",		"<#selectbg_g>Would you like to remove the AOSP App?</#>",			"",		"group",
+						"yes",					"Yes", 			"Remove the AOSP Calendar",									"select.selected",
+						"no",					"No", 			"Keep both the AOSP app and the Google app",				"select"
+					);
+				  else
+					  writetmpfile("calendar.prop","calendar=no\n");
+				  endif;
+
+				  if file_getprop("/tmp/aroma-data/gapps_install.prop","chrome") == "1" then
+				  form(
+						"Chrome",
+						"Remove?",
+						"@browser",
+						"chrome.prop",
+
+						"chrome",		"<#selectbg_g>Would you like to remove the AOSP App?</#>",			"",				"group",
+						"yes",			"Yes", 			"Remove the AOSP Browser",											"select.selected",
+						"no",			"No", 			"Keep both the AOSP app and the Google app",						"select"
+					);
+				  else
+					  writetmpfile("chrome.prop","selected.1=0\n");
+				  endif;
+
+
+				  if file_getprop("/tmp/aroma-data/gapps_install.prop","music") == "1" then
+				  form(
+						"Google Play Music",
+						"Remove?",
+						"@browser",
+						"music.prop",
+
+						"music",		"<#selectbg_g>Would you like to remove the AOSP App?</#>",			"",			"group",
+						"yes",				"Yes", 			"Remove the AOSP Music app (Apollo)",							"select.selected",
+						"no",				"No", 			"Keep both the AOSP app and the Google app",					"select"
+					);
+				  else
+					  writetmpfile("music.prop","music=no\n");
+				  endif;
+				endif;
+				
+				# No Gapps. Just Play Store, Service and Search
+				if file_getprop("/tmp/aroma-data/gapps_choice.prop","gapps_choice") == "no" then
+					writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" );
+					writetmpfile("calendar.prop","calendar=no\n");
+					writetmpfile("chrome.prop","chrome=no\n");
+					writetmpfile("music.prop","music=no\n");
+				endif;
+	endif;
+		
 ##
 #
 # Next Screen is Installation UI, So change the next button text to "Install Now"

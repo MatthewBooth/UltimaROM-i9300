@@ -290,6 +290,9 @@ busybox chmod 755 "$ADPROC"
 busybox -R chmod 755 "$AD"
 busybox chmod 755 "$LOG"
 
+# Allow Torch to be used
+chmod 777 /sys/class/camera/rear/rear_flash
+
 # Initial ArchiDroid dev status
 if [ -e $ADDEV/HAVEGED_ENABLED ]; then
 	HAVEGED=1

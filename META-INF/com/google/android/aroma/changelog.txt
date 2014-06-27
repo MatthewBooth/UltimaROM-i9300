@@ -1,5 +1,6 @@
 <b><#selectbg_g>UltimaROM - v17.0 Diablos</#></b>
-<*>Updated to 4.4.2 port base XXUFNE1</*>
+<*>Updated to 4.4.2 ArchiPort base XXUFNE1</*>
+<*>All UltimaAOSP apps are Android 4.4.4</*>
 <*>Added UltimaAOSP SystemUI app, which includes the same mods, for example battery colour controls and clock mods</*>
 <*>Added UltimaAOSP Mms app, includes in-app theme chooser</*>
 <*>Added UltimaAOSP lockscreen option</*>
@@ -8,16 +9,21 @@
 <*>Added CRT off animation</*>
 <*>Added extended power menu toggle</*>
 <*>Added 4-way rotation</*>
+<*>Added Volume to Skip mod</*>
 <*>Added Navigation bar toggle</*>
 <*>Added ICS Grass and Microbes LWP</*>
+<*>Added CM  PhotoPhase LWP</*>
 <*>Added Google Camera</*>
-<*>Added latest Gapps as of release</*>
+<*>Added AOSP Gallery</*>
+<*>Added latest GApps as of release</*>
 <*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
 <*>Added 256MB Swap enabled on /preload</*>
-<*>Added 256MB ZRAM</*>
 <*>Added Automatic EFS backup - it's back from 4.1.2, now with .img</*>
 <*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
 <*>New OTA app - written by me</*>
+<*>Added stock boot animation from the Android L preview</*>
+<*>Updated system sounds from the Android L preview</*>
+
 
 You can always see the full extent of the changelog, as much of the above is simplified, here: <#selectbg_g>https://github.com/Kryten2k35/UltimaROM-i9300/commits/Experimental</#>
 
