@@ -175,6 +175,10 @@ ui_print("@Installing System...");
         package_extract_dir("ultima/apps/gapps/Games", "/system");
     endif;
 
+    if file_getprop("/tmp/aroma-data/gapps.prop","email") == "1" then
+        package_extract_dir("ultima/apps/gapps/Email", "/system");
+    endif;
+
     if file_getprop("/tmp/aroma-data/gapps.prop","mail") == "1" then
         package_extract_dir("ultima/apps/gapps/GMail", "/system");
     endif;
