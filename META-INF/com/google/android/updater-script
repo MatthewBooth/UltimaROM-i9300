@@ -21,12 +21,12 @@ ui_print("@Mounting and Formatting Devices...");
 	package_extract_file("system/xbin/busybox", "/tmp/busybox");
 	set_perm(0, 0, 0777, "/tmp/busybox");
 
-# Clear Data
+# Wipe Data
 
 	ui_print("Wiping System...");
 	delete_recursive("/system"); 
-	
-	if file_getprop("/tmp/aroma/clear.prop","selected.1") == "1" then		
+
+	if file_getprop("/tmp/aroma-data/install.prop","wipe") == "factory" then	
 		ui_print("Factory resetting...");
 		package_extract_file("ultima/scripts/wipe.sh", "/tmp/wipe.sh");
 		package_extract_file("system/bin/bash", "/tmp/bash");
@@ -35,7 +35,7 @@ ui_print("@Mounting and Formatting Devices...");
 		run_program("/tmp/wipe.sh");
 	endif;
 	
-	if file_getprop("/tmp/aroma/clear.prop","selected.1") == "2" then  
+	if file_getprop("/tmp/aroma-data/install.prop","wipe") == "everything" then  
 		ui_print("Wiping Everything...");
 		delete_recursive("/data"); 
 	endif;
@@ -61,22 +61,22 @@ ui_print("@Installing System...");
 ################### INSTALLING SYSTEM APPS ####################
 
 # Launchers
-	if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "1" then
+	if file_getprop("/tmp/aroma-data/install.prop","launcher") == "stock" then
 		ui_print("Installing Stock Launcher");
 	endif;
-    if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "2" then
+    if file_getprop("/tmp/aroma-data/install.prop","launcher") == "google" then
       ui_print("Installing Google Experience Launcher");
 	  package_extract_dir("ultima/launchers/google", "/system");
 	  delete("/system/priv-app/Launcher3.apk");
     endif;	
-	if file_getprop("/tmp/aroma/launcher.prop","selected.1") == "3" then
+	if file_getprop("/tmp/aroma-data/install.prop","launcher") == "nova" then
       ui_print("Installing Nova Launcher");
 	  package_extract_dir("ultima/launchers/nova", "/system");
 	  delete("/system/priv-app/Launcher3.apk");
     endif;
 
 # Cameras
-    if file_getprop("/tmp/aroma/camera.prop","selected.1") == "1" then
+    if file_getprop("/tmp/aroma-data/install.prop","camera") == "samsung" then
 		ui_print("Installing Samsung Camera");
 		package_extract_dir("ultima/camera/samsung", "/system");
 	else
@@ -85,7 +85,7 @@ ui_print("@Installing System...");
     endif;
 	
 # Gallery
-    if file_getprop("/tmp/aroma/gallery.prop","selected.1") == "1" then
+    if file_getprop("/tmp/aroma-data/install.prop","gallery") == "samsung" then
 		ui_print("Installing Samsung Gallery");
 		package_extract_dir("ultima/gallery/samsung", "/system");
 	else
@@ -94,7 +94,7 @@ ui_print("@Installing System...");
     endif;
 	
 # Lockscreen
-    if file_getprop("/tmp/aroma/lockscreen.prop","selected.1") == "1" then
+    if file_getprop("/tmp/aroma-data/install.prop","lockscreen") == "samsung" then
 		ui_print("Installing Samsung Lockscreen");
 		package_extract_dir("ultima/lockscreen/samsung", "/system");
 	else
@@ -103,7 +103,7 @@ ui_print("@Installing System...");
     endif;
 
 # Contacts and Phone
-    if file_getprop("/tmp/aroma/contacts.prop","selected.1") == "1" then
+    if file_getprop("/tmp/aroma-data/install.prop","lockscreen") == "contacts" then
 		ui_print("Installing Samsung Contacts and Phone");
 		package_extract_dir("ultima/contacts_phone/samsung", "/system");
 	else
@@ -112,27 +112,27 @@ ui_print("@Installing System...");
     endif;	
 	
 # Misc
-	if file_getprop("/tmp/aroma/misc.prop","item.1.1") == "1" then
+	if file_getprop("/tmp/aroma-data/install.prop","acdisplay") == "1" then
 		ui_print("Installing AcDisplay");
         package_extract_dir("ultima/apps/misc/acdisplay", "/data");
     endif;
 	
-	if file_getprop("/tmp/aroma/misc.prop","item.1.2") == "1" then
+	if file_getprop("/tmp/aroma-data/install.prop","adaway") == "1" then
 		ui_print("Installing AdAway");
         package_extract_dir("ultima/apps/misc/adaway", "/data");
     endif;
 	
-	if file_getprop("/tmp/aroma/misc.prop","item.1.3") == "1" then
+	if file_getprop("/tmp/aroma-data/install.prop","dropbox") == "1" then
 		ui_print("Installing Dropbox");
         package_extract_dir("ultima/apps/misc/dropbox", "/data");
     endif;
 	
-	 if file_getprop("/tmp/aroma/misc.prop","item.1.4") == "1" then
+	 if file_getprop("/tmp/aroma-data/install.prop","fastergps") == "1" then
 		ui_print("Installing FasterGPS");
         package_extract_dir("ultima/apps/misc/fastergps", "/data");
     endif;
 	
-	if file_getprop("/tmp/aroma/misc.prop","item.1.5") == "1" then
+	if file_getprop("/tmp/aroma-data/install.prop","titanium_backup") == "1" then
 		ui_print("Installing TitaniumBackup");
         package_extract_dir("ultima/apps/misc/titanium", "/data");
     endif;
@@ -140,149 +140,118 @@ ui_print("@Installing System...");
 
 #################### GAPPS INSTALL #############################
 
-# Full installation
-	if file_getprop("/tmp/aroma/gapps_choice.prop", "selected.1") == "1" then
-		ui_print("Installing Google Apps Full...");
-		package_extract_dir("ultima/apps/gapps/Books", "/system");
-		package_extract_dir("ultima/apps/gapps/Calendar", "/system");
-		package_extract_dir("ultima/apps/gapps/Chrome", "/system");
-		package_extract_dir("ultima/apps/gapps/CloudPrint", "/system");
-		package_extract_dir("ultima/apps/gapps/DeviceManager", "/system");
-		package_extract_dir("ultima/apps/gapps/Drive", "/system");
-		package_extract_dir("ultima/apps/gapps/Ears", "/system");
-		package_extract_dir("ultima/apps/gapps/Games", "/system");
-		package_extract_dir("ultima/apps/gapps/GMail", "/system");
-		package_extract_dir("ultima/apps/gapps/Hangouts", "/system");
-		package_extract_dir("ultima/apps/gapps/Keep", "/system");
-		package_extract_dir("ultima/apps/gapps/Keyboard", "/system");
-		delete("/system/app/LatinIME.apk");
-		package_extract_dir("ultima/apps/gapps/Maps", "/system");
-		package_extract_dir("ultima/apps/gapps/Music", "/system");
-		package_extract_dir("ultima/apps/gapps/NewsStand", "/system");
-		package_extract_dir("ultima/apps/gapps/Plus", "/system");
-		package_extract_dir("ultima/apps/gapps/QuickOffice", "/system");
-		package_extract_dir("ultima/apps/gapps/Sheets", "/system");
-		package_extract_dir("ultima/apps/gapps/Text-To-Speech", "/system");
-		package_extract_dir("ultima/apps/gapps/Translate", "/system");
-		package_extract_dir("ultima/apps/gapps/Videos", "/system");
-		package_extract_dir("ultima/apps/gapps/VoiceSearch", "/system");
-		package_extract_dir("ultima/apps/gapps/Wallet", "/system");
-		package_extract_dir("ultima/apps/gapps/YouTube", "/system");
-	endif;
-
-# Custom Installation
-	if file_getprop("/tmp/aroma/gapps_choice.prop","selected.1") == "2" then
-		ui_print("Installing Google Apps Custom...");
+# Gapps Installation
+	ui_print("Installing Google Apps...");
 	
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.1") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","books") == "1" then
         package_extract_dir("ultima/apps/gapps/Books", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.2") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","calendar") == "1" then
         package_extract_dir("ultima/apps/gapps/Calendar", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.3") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","chrome") == "1" then
         package_extract_dir("ultima/apps/gapps/Chrome", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.4") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","print") == "1" then
         package_extract_dir("ultima/apps/gapps/CloudPrint", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.5") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","manager") == "1" then
         package_extract_dir("ultima/apps/gapps/DeviceManager", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.6") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","drive") == "1" then
         package_extract_dir("ultima/apps/gapps/Drive", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.7") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","ears") == "1" then
         package_extract_dir("ultima/apps/gapps/Ears", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.8") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","games") == "1" then
         package_extract_dir("ultima/apps/gapps/Games", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.9") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","mail") == "1" then
         package_extract_dir("ultima/apps/gapps/GMail", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.10") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","hangouts") == "1" then
         package_extract_dir("ultima/apps/gapps/Hangouts", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.11") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","keep") == "1" then
         package_extract_dir("ultima/apps/gapps/Keep", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.12") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","keyboard") == "1" then
         package_extract_dir("ultima/apps/gapps/Keyboard", "/system");
         delete("/system/app/LatineIME.apk");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.13") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","maps") == "1" then
         package_extract_dir("ultima/apps/gapps/Maps", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.14") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","music") == "1" then
         package_extract_dir("ultima/apps/gapps/Music", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.15") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","news") == "1" then
         package_extract_dir("ultima/apps/gapps/NewsStand", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.16") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","plus") == "1" then
         package_extract_dir("ultima/apps/gapps/Plus", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.17") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","office") == "1" then
         package_extract_dir("ultima/apps/gapps/QuickOffice", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.18") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","sheets") == "1" then
         package_extract_dir("ultima/apps/gapps/Sheets", "/system");
     endif;
 	
-	if file_getprop("/tmp/aroma/gapps.prop","item.1.19") == "1" then
+	if file_getprop("/tmp/aroma-data/gapps.prop","tts") == "1" then
         package_extract_dir("ultima/apps/gapps/Text-To-Speech", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.20") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","translate") == "1" then
         package_extract_dir("ultima/apps/gapps/Translate", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.21") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","videos") == "1" then
         package_extract_dir("ultima/apps/gapps/Videos", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.22") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","voice") == "1" then
         package_extract_dir("ultima/apps/gapps/VoiceSearch", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.23") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","wallet") == "1" then
         package_extract_dir("ultima/apps/gapps/Wallet", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/gapps.prop","item.1.24") == "1" then
+    if file_getprop("/tmp/aroma-data/gapps.prop","youtube") == "1" then
         package_extract_dir("ultima/apps/gapps/YouTube", "/system");
     endif;
 
-    if file_getprop("/tmp/aroma/calendar.prop","selected.1") == "1" then
+	if file_getprop("/tmp/aroma-data/calendar.prop","calendar") == "no" then
         delete("/system/app/Calendar.apk");
     endif;
 
-    if file_getprop("/tmp/aroma/chrome.prop","selected.1") == "1" then
+    if file_getprop("/tmp/aroma-data/chrome.prop","chrome") == "no" then
         delete("/system/app/Browser.apk");
     endif;
 
-    if file_getprop("/tmp/aroma/music.prop","selected.1") == "1" then
+    if file_getprop("/tmp/aroma-data/music.prop","music") == "no" then
         delete("/system/app/Apollo.apk");
     endif;
-endif;
+
 
 ################## BUSYBOX INSTALL #############################	
 
@@ -477,7 +446,7 @@ ui_print("@Settings Permissions...");
 #Recovery
 
 	# TWRP
-	  if file_getprop("/tmp/aroma/recovery.prop","selected.1") == "1" then
+	  if file_getprop("/tmp/aroma-data/install.prop","recovery") == "yes" then
 		  ui_print("@Installing TWRP Recovery");
 		  ui_print("Flashing TWRP 2.7.0.0");
 		  assert(package_extract_file("ultima/recovery/twrp/recovery.img", "/tmp/recovery.img"),
@@ -490,14 +459,14 @@ ui_print("@Settings Permissions...");
 ui_print("@Installing Kernel...");
 
 #Stock	
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "1" then
+	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "stock" then
 		ui_print("Flashing Stock Kernel...");
 		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
 			   delete("/tmp/boot.img")); 
 	endif;
 	
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "2" then
+	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "agni" then
 		ui_print("Flashing AGNi Kernel...");
 		assert(package_extract_file("ultima/kernel/agni/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
@@ -505,7 +474,7 @@ ui_print("@Installing Kernel...");
 		package_extract_dir("ultima/kernel/agni/system", "/system");		   
 	endif;
 	
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "3" then
+	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "arter" then
 		ui_print("Flashing arter97 Kernel...");
 		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
@@ -517,7 +486,7 @@ ui_print("@Installing Kernel...");
 		package_extract_dir("ultima/kernel/arter/system", "/system");
 	endif;
 	
-	if file_getprop("/tmp/aroma/kernel.prop","selected.1") == "4" then
+	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "boeffla" then
 		ui_print("Flashing Boeffla Kernel...");
 		assert(package_extract_file("ultima/kernel/boeffla/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
