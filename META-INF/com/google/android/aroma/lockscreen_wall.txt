@@ -1,0 +1,19 @@
+<@center><b><#selectbg_g>Warning!</#></b>
+
+<b><#selectbg_g>LOCKSCREEN WALLPAPER INFORMATION</#></b></@>
+
+<@fill><q>You have chosen to use the <#ff4444>Samsung Lockscreen</#> with the <#ff4444>AOSP Gallery</#>. 
+
+The AOSP Gallery <b>CANNOT</b> set the Lockscreen Wallpaper. 
+
+Please only install this combination if you are happy with that. 
+
+If not, please go back and install either the AOSP Lockscreen and Gallery, or Samsung Lockscreen and Gallery.
+
+Camera software does not affect this.
+
+</q>
+
+</@>
+
+

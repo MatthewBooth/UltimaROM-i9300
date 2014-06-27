@@ -191,7 +191,7 @@ textbox(
 				  "Camera",
 				  "Select the Camera apps you want to install: ",
 				  "@gapps",
-				  "gapps.prop",
+				  "play.prop",
 					
 					 "Choose your Google Apps",                  "",                                               			2,
 					"Google Books",           "Google Books reader App",                                          			1, # - item.1.1
@@ -400,11 +400,47 @@ textbox(
 		  "@camera",
 		  "camera.prop",
 			
-			"Choose Camera Apps",              		"",                 															2,
+			"Choose Camera App",              		"",                 															2,
 			"Samsung",							"Stock Samsung 4.4.2 Camera",									0,	#-- item.1.1
 			"Google",							"Google's Camera software from the Nexus line",					1	#-- item.1.2
 		);
 		
+	#-------------------------+-----------------[     Gallery Apps      ]----------------+---------------#
+    #-------------------------+---------------------------------------------------------+---------------#
+		
+		selectbox(
+		  "Gallery",
+		  "Select the Gallery apps you want to install: ",
+		  "@gallery",
+		  "gallery.prop",
+			
+			"Choose Gallery App",              		"",                 															2,
+			"Samsung",							"Stock Samsung 4.4.2 Gallery",					0,	#-- item.1.1
+			"AOSP",								"AOSP Gallery (lightweight)",					1	#-- item.1.2
+		);
+		
+		if (prop("lockscreen.prop","selected.1")=="1") && (prop("gallery.prop","selected.1")=="2")
+			then
+			agreebox(
+			  #-- Title
+				"Warning",
+			  
+			  #-- Subtitle / Description
+				"Please read the information below.",
+			  
+			  #-- Icon
+				"@alert",
+			  
+			  #-- Text Content ( Read from <AROMA Resource Dir>/license.txt )
+				resread("lockscreen_wall.txt"),
+			  
+			  #-- Checkbox Text
+				"Yeah, I'm fine with this...",
+			  
+			  #-- Unchecked Alert Message
+				"Please make sure you understand the implications"
+			);
+		endif;
   #-------------------------+-----------------[     Contacts and Phone     ]----------------+---------------#
   #-------------------------+---------------------------------------------------------+---------------#
 		

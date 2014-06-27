@@ -84,6 +84,15 @@ ui_print("@Installing System...");
 		package_extract_dir("ultima/camera/google", "/system");
     endif;
 	
+# Gallery
+    if file_getprop("/tmp/aroma/gallery.prop","selected.1") == "1" then
+		ui_print("Installing Samsung Gallery");
+		package_extract_dir("ultima/gallery/samsung", "/system");
+	else
+		ui_print("Installing AOSP Gallery");
+		package_extract_dir("ultima/gallery/google", "/system");
+    endif;
+	
 # Lockscreen
     if file_getprop("/tmp/aroma/lockscreen.prop","selected.1") == "1" then
 		ui_print("Installing Samsung Lockscreen");
