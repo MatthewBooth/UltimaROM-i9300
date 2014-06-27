@@ -90,7 +90,7 @@ ui_print("@Installing System...");
 		package_extract_dir("ultima/gallery/samsung", "/system");
 	else
 		ui_print("Installing AOSP Gallery");
-		package_extract_dir("ultima/gallery/google", "/system");
+		package_extract_dir("ultima/gallery/aosp", "/system");
     endif;
 	
 # Lockscreen
