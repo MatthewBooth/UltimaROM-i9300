@@ -23,7 +23,6 @@
 <*>Added Hard Swap enabled on /preload</*>
 <*>Added Automatic EFS backup - it's back from 4.1.2, now with .img</*>
 <*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
-<*>New OTA app - written by me</*>
 <*>Added stock boot animation from the Android L preview</*>
 <*>Updated system sounds from the Android L preview</*>
 
