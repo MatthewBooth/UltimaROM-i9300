@@ -506,21 +506,22 @@ ui_print("@Installing Kernel...");
 		endif;
 		
 		if file_getprop("/tmp/aroma-data/boeffla.prop","boeffla") == "stand" then
-		package_extract_dir("ultima/kernel/boeffla/presets/ultima_stand", "/data/.boeffla");
+			package_extract_dir("ultima/kernel/boeffla/presets/ultima_stand", "/data/.boeffla");
 		endif;
 		
 		if file_getprop("/tmp/aroma-data/boeffla.prop","boeffla") == "batt" then
-		package_extract_dir("ultima/kernel/boeffla/presets/ultima_batt", "/data/.boeffla");
+			package_extract_dir("ultima/kernel/boeffla/presets/ultima_batt", "/data/.boeffla");
 		endif;
 	endif;
 	
 ################################## CREATE HARDSWAP ###################################
 
 ui_print("@Installing Swap...");	
-	ui_print("Creating 256MB Swap on /preload...");
+	ui_print("Creating hardswap...");
 	package_extract_file("ultima/scripts/hardswap.sh", "/tmp/hardswap.sh");
 	set_perm(0, 0, 0777, "/tmp/hardswap.sh");
-	run_program("/tmp/hardswap.sh", "/preload", "256");
+	run_program("/tmp/hardswap.sh", "/preload", file_getprop("/tmp/aroma-data/hardswap.prop", "preload"));
+
 
 ################################## ROM INSTALLED ####################################	
 

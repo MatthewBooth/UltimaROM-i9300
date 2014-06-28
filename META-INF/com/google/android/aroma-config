@@ -394,6 +394,22 @@ textbox(
 					writetmpfile("chrome.prop","chrome=no\n");
 					writetmpfile("music.prop","music=no\n");
 				endif;
+				
+				if file_getprop("/tmp/aroma-data/install.prop","kernel") != "arter" then
+					form(
+						"Hardswap",
+						"Hardware Swap partition",
+						"@alert",
+						"hardswap.prop",
+
+						"preload",		"<#selectbg_g>Amount</#>","",											"group",
+						"0",			"0 Megabytes",			"Remove",										"select",
+						"64",			"64 Megabytes",			"",												"select",
+						"128",			"128 Megabytes",		"",												"select",
+						"256",			"256 Megabytes",		"<#ff4444>(RECOMMENDED)</#>",					"select",
+						"512",			"512 Megabytes",		"",												"select"
+					);
+				endif;
 	endif;
 		
 ##
