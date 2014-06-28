@@ -164,6 +164,7 @@ textbox(
 		writetmpfile("chrome.prop","chrome=yes\n");
 		writetmpfile("music.prop","music=yes\n");
 		writetmpfile("boeffla.prop","boeffla=stand\n");
+		writetmpfile("hardswap.prop","preload=256\n");
 	endif;
 	
 	# Ultima Lite Preset
@@ -175,6 +176,7 @@ textbox(
 		writetmpfile("chrome.prop","chrome=no\n");
 		writetmpfile("music.prop","music=no\n");
 		writetmpfile("boeffla.prop","boeffla=stand\n");
+		writetmpfile("hardswap.prop","preload=256\n");
 	endif;
 	
 	# Samsung Preset
@@ -186,6 +188,7 @@ textbox(
 		writetmpfile("chrome.prop","chrome=yes\n");
 		writetmpfile("music.prop","music=yes\n");
 		writetmpfile("boeffla.prop","boeffla=none\n");
+		writetmpfile("hardswap.prop","preload=256\n");
 	endif;
 	
 	# Samsung Lite Preset
@@ -197,6 +200,7 @@ textbox(
 		writetmpfile("chrome.prop","chrome=no\n");
 		writetmpfile("music.prop","music=no\n");
 		writetmpfile("boeffla.prop","boeffla=none\n");
+		writetmpfile("hardswap.prop","preload=256\n");
 	endif;
 	
 	# Custom install
@@ -406,7 +410,7 @@ textbox(
 						"0",			"0 Megabytes",			"Remove",										"select",
 						"64",			"64 Megabytes",			"",												"select",
 						"128",			"128 Megabytes",		"",												"select",
-						"256",			"256 Megabytes",		"<#ff4444>(RECOMMENDED)</#>",					"select",
+						"256",			"256 Megabytes",		"<#ff4444>(RECOMMENDED)</#>",					"select.selected",
 						"512",			"512 Megabytes",		"",												"select"
 					);
 				endif;
