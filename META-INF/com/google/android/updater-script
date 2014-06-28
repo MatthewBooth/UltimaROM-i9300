@@ -466,9 +466,9 @@ ui_print("@Settings Permissions...");
 
 ui_print("@Installing Kernel...");
 
-#Stock	
-	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "stock" then
-		ui_print("Flashing Stock Kernel...");
+#ArchiKernel	
+	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "archi" then
+		ui_print("Flashing ArchiKernel Kernel...");
 		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
 			   delete("/tmp/boot.img")); 

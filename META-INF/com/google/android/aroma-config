@@ -212,7 +212,7 @@ textbox(
 			"no",					"No", 					"Don't install",																	"select",
 
 			"kernel",				"<#selectbg_g>Kernel</#>","",																				"group",
-			"stock",				"Stock", 				"Stock ArchiPort (Samsung) Kernel",													"select",
+			"archi",				"ArchiKernel", 			"ArchiKernel",																		"select",
 			"agni",					"AGNi", 				"PSN AGNi pureSTOCK",																"select",
 			"arter",				"arter97", 				"arter97 kernel",																	"select",
 			"boeffla",				"Boeffla", 				"Boeffla Kernel <#ff4444>(RECOMMENDED)</#>",										"select.selected",
