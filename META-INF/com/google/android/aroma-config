@@ -274,8 +274,8 @@ textbox(
 			"boeffla",				"<#selectbg_g>Boeffla Presets</#>",				"",											"group",
 			"perf",					"Ultima - Performance", 	"Performance mode",												"select",
 			"stand",				"Ultima - Standard", 		"Ideal for everyday use <#ff4444>(RECOMMENDED)</#>",			"select.selected",
-			"batt",					"Ultima Battery", 			"Geared towards battery savings",								"select"
-			"none",					"None", 		"Do not install a preset",													"select"
+			"batt",					"Ultima Battery", 			"Geared towards battery savings",								"select",
+			"none",					"None", 					"Do not install a preset",													"select"
 		);
 		else
 			writetmpfile("boeffla.prop","boeffla=none\n");
