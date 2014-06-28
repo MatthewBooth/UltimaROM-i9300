@@ -177,6 +177,7 @@ ui_print("@Installing System...");
 
     if file_getprop("/tmp/aroma-data/gapps.prop","email") == "1" then
         package_extract_dir("ultima/apps/gapps/Email", "/system");
+		delete("/system/app/Exchange2.apk");
     endif;
 
     if file_getprop("/tmp/aroma-data/gapps.prop","mail") == "1" then
