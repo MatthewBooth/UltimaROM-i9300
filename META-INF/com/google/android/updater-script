@@ -500,6 +500,18 @@ ui_print("@Installing Kernel...");
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
 			   delete("/tmp/boot.img"));
 		package_extract_dir("ultima/kernel/boeffla/data", "/data");
+		
+		if file_getprop("/tmp/aroma-data/boeffla.prop","boeffla") == "perf" then
+			package_extract_dir("ultima/kernel/boeffla/presets/ultima_perf", "/data/.boeffla");
+		endif;
+		
+		if file_getprop("/tmp/aroma-data/boeffla.prop","boeffla") == "stand" then
+		package_extract_dir("ultima/kernel/boeffla/presets/ultima_stand", "/data/.boeffla");
+		endif;
+		
+		if file_getprop("/tmp/aroma-data/boeffla.prop","boeffla") == "batt" then
+		package_extract_dir("ultima/kernel/boeffla/presets/ultima_batt", "/data/.boeffla");
+		endif;
 	endif;
 	
 ################################## CREATE HARDSWAP ###################################

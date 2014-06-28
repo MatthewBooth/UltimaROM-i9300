@@ -1,0 +1,80 @@
+# created by: Boeffla-Config 2.1.43
+# (28.06.2014-03.44.01)
+
+echo '' > /dev/bk_cpu_voltages_profile
+echo '1400 1388 1288 1250 1188 1138 1088 1038 988 975 963 938 925 900 900' > /sys/devices/system/cpu/cpu0/cpufreq/UV_mV_table
+echo '1400000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+echo '200000' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+echo 'zzmoove' > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+busybox sleep 0.5s
+echo 'zzmoove - moderate' > /dev/bk_governor_profile
+/res/bc/bccontroller.sh apply_governor_profile 'zzmoove - moderate'
+echo 'row' > /sys/block/mmcblk0/queue/scheduler
+echo 'row' > /sys/block/mmcblk1/queue/scheduler
+echo '512' > /sys/block/mmcblk0/bdi/read_ahead_kb
+echo '1024' > /sys/block/mmcblk1/bdi/read_ahead_kb
+/res/bc/bccontroller.sh apply_ext4_tweaks 1
+echo '2' > /sys/module/cpuidle_exynos4/parameters/enable_mask
+echo '0' > /sys/devices/system/cpu/sched_mc_power_savings
+echo '' > /dev/bk_gpu_voltages_profile
+echo '875000 900000 950000 1025000 1087500' > /sys/class/misc/gpu_voltage_control/gpu_control
+echo '' > /dev/bk_gpu_frequencies_profile
+echo '160 266 350 440 533' > /sys/class/misc/gpu_clock_control/gpu_control
+echo '0' > /sys/class/misc/boeffla_sound/boeffla_sound
+echo '' > /sys/class/misc/boeffla_sound/headphone_volume
+echo ' ' > /sys/class/misc/boeffla_sound/speaker_volume
+echo '' > /sys/class/misc/boeffla_sound/speaker_tuning
+echo '' > /sys/class/misc/boeffla_sound/privacy_mode
+echo '' > /sys/class/misc/boeffla_sound/eq
+/res/bc/bccontroller.sh apply_eq_bands 
+echo '' > /sys/class/misc/boeffla_sound/eq_gains
+echo '' > /dev/bk_eq_gains_profile
+echo '' > /sys/class/misc/boeffla_sound/dac_direct
+echo '' > /sys/class/misc/boeffla_sound/dac_oversampling
+echo '' > /sys/class/misc/boeffla_sound/fll_tuning
+echo '' > /sys/class/misc/boeffla_sound/stereo_expansion
+echo '' > /sys/class/misc/boeffla_sound/mono_downmix
+echo '' > /sys/class/misc/boeffla_sound/mic_level_general
+echo '' > /sys/class/misc/boeffla_sound/mic_level_call
+echo '0' > /sys/class/sec/led/led_fade
+echo '40' > /sys/class/sec/led/led_intensity
+echo '1' > /sys/class/sec/led/led_speed
+echo '1' > /sys/class/misc/touchboost_switch/touchboost_switch
+echo '700000' > /sys/class/misc/touchboost_switch/touchboost_freq
+echo '0' > /sys/class/misc/touchwake/enabled
+echo '45000' > /sys/class/misc/touchwake/delay
+echo '0' > /sys/class/misc/touchwake/charger_mode
+echo '0' > /sys/kernel/early_suspend/early_suspend_delay
+echo '0' > /sys/class/misc/mdnie_preset/mdnie_preset
+echo '1' > /dev/bk_mdnie_overwrite
+echo '' > /sys/class/mdnie/mdnie/outdoor
+echo '' > /sys/class/mdnie/mdnie/negative
+echo '6' > /sys/class/mdnie/mdnie/scenario
+echo '3' > /sys/class/mdnie/mdnie/mode
+echo '' > /sys/class/sec/sec_touchkey/force_disable
+echo '' > /sys/class/sec/sec_touchkey/touch_led_handling
+echo '' > /sys/class/sec/sec_touchkey/touch_led_on_screen_touch
+echo 'Boeffla tweaks' > /dev/bk_system_tweaks
+/res/bc/bccontroller.sh apply_system_tweaks 'Boeffla tweaks'
+echo '26214400' > /sys/block/zram0/disksize
+echo '26214400' > /sys/block/zram1/disksize
+echo '26214400' > /sys/block/zram2/disksize
+echo '26214400' > /sys/block/zram3/disksize
+echo '' > /dev/bk_swappiness_overwrite
+echo '1100' > /sys/kernel/charge_levels/charge_level_ac
+echo '475' > /sys/kernel/charge_levels/charge_level_usb
+echo '475' > /sys/kernel/charge_levels/charge_level_wireless
+echo '0' > /sys/kernel/charge_levels/ignore_safety_margin
+echo '0' > /sys/kernel/charge_levels/ignore_unstable_power
+/res/bc/bccontroller.sh apply_cifs 0
+/res/bc/bccontroller.sh apply_nfs 0
+/res/bc/bccontroller.sh apply_xbox 0
+/res/bc/bccontroller.sh apply_usb_ethernet 0
+/res/bc/bccontroller.sh apply_exfat 1
+/res/bc/bccontroller.sh apply_ntfs 0
+echo '1' > /sys/kernel/logger_mode/logger_mode
+echo '1' > /sys/kernel/printk_mode/printk_mode
+echo '12288,15360,18432,21504,24576,30720,' > /sys/module/lowmemorykiller/parameters/minfree
+echo 'Ultima - Standard' >/data/.boeffla/startconfig_done
+busybox chmod 666 /data/.boeffla/startconfig_done
+
