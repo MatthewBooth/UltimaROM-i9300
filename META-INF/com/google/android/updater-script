@@ -518,7 +518,7 @@ ui_print("@Installing Kernel...");
 ################################## CREATE HARDSWAP ###################################
 
 ui_print("@Installing Swap...");	
-	ui_print("Creating hardswap...");
+	ui_print("Creating Hardswap...");
 	package_extract_file("ultima/scripts/hardswap.sh", "/tmp/hardswap.sh");
 	set_perm(0, 0, 0777, "/tmp/hardswap.sh");
 	run_program("/tmp/hardswap.sh", "/preload", file_getprop("/tmp/aroma-data/hardswap.prop", "preload"));
