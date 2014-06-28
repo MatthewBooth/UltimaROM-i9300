@@ -157,7 +157,7 @@ textbox(
 
 	# Ultima Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima" then
-		writetmpfile("install.prop", "recovery=yes\n"+"kernel=boeffla\n"+ "launcher=stock\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=boeffla\n"+ "launcher=stock\n"+"bootanimation=new\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
 		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"titanium_backup=1\n");
 		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "slides=1\n"+"tts=0\n"+ "translate=0\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
 		writetmpfile("calendar.prop","calendar=yes\n");
@@ -169,7 +169,7 @@ textbox(
 	
 	# Ultima Lite Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima_lite" then
-		writetmpfile("install.prop", "recovery=yes\n"+"kernel=boeffla\n"+ "launcher=stock\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=boeffla\n"+ "launcher=stock\n"+"bootanimation=new\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
 		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"titanium_backup=0\n");
 		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
 		writetmpfile("calendar.prop","calendar=no\n");
@@ -181,7 +181,7 @@ textbox(
 	
 	# Samsung Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung" then
-		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"bootanimation=new\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
 		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"titanium_backup=1\n");
 		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+"slides=1\n"+ "tts=0\n"+ "translate=0\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
 		writetmpfile("calendar.prop","calendar=yes\n");
@@ -193,7 +193,7 @@ textbox(
 	
 	# Samsung Lite Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung_lite" then
-		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
+		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"bootanimation=new\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
 		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"titanium_backup=0\n");
 		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
 		writetmpfile("calendar.prop","calendar=no\n");
@@ -224,6 +224,10 @@ textbox(
 			"agni",					"AGNi", 				"PSN AGNi pureSTOCK",																"select",
 			"arter",				"arter97", 				"arter97 kernel",																	"select",
 			"boeffla",				"Boeffla", 				"Boeffla Kernel <#ff4444>(RECOMMENDED)</#>",										"select.selected",
+			
+			"bootanimation",		"<#selectbg_g>Boot Animation</#>","",																		"group",
+			"new",					"Android L", 			"The new stock Google boot animation from the Android Developer Preview L <#ff4444>(RECOMMENDED)</#>",		    "select.selected",
+			"old",					"Stock Google", 		"Stock boot animation from Nexus and GPe devices",								 	"select",
 			
 			"launcher",				"<#selectbg_g>Launchers</#>","",																			"group",
 			"stock",				"Stock", 				"Stock 4.4.2 Launcher (includes mods) <#ff4444>(RECOMMENDED)</#>",					"select.selected",
@@ -336,7 +340,6 @@ textbox(
 					"office",		"Google QuickOffice", 		"A powerful and fully featured office app",								"check.checked",
 					"sheets",		"Google Sheets", 			"Create and edit spreadsheets",											"check.checked",
 					"slides",		"Google Slides", 			"Create and edit slidehows",											"check.checked",
-					"tts",			"Google Text-to-Speech",	"Google's Text-to-Speech synthesizer",									"check.checked",
 					"translate",	"Google Translate", 		"Translate languages from around the world",							"check.checked",
 					"videos",		"Google Videos", 			"Google Movie rentals and purchasing",									"check.checked",
 					"voice",		"Google Voice Search", 		"Search without a keyboard",											"check.checked",
