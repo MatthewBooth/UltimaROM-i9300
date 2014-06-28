@@ -542,7 +542,7 @@ ui_print(" ");
 ui_print("NOTES:");
 ui_print(" ");
 ui_print("@UltimaROM folder");
-ui_print("There is an UltimaROM folder on the sdcard/internal storage. <#ff4444>DO NOT REMOVE THIS FOLDER!</#>");
+ui_print("There is an UltimaROM folder on the sdcard/internal storage require for certain ROM functions <#ff4444>DO NOT REMOVE THIS FOLDER!</#>");
 ui_print(" ");
 
 ui_print("Make suggestions and please report any bugs in the ROM thread!");
