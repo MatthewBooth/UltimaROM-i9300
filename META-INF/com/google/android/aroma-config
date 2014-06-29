@@ -346,7 +346,7 @@ textbox(
 				);
 
 					
-					if file_getprop("/tmp/aroma-data/gapps_install.prop","calendar") == "1" then					
+					if file_getprop("/tmp/aroma-data/gapps.prop","calendar") == "1" then					
 					form(
 						"Calendar",
 						"Remove?",
@@ -361,7 +361,7 @@ textbox(
 					  writetmpfile("calendar.prop","calendar=no\n");
 				  endif;
 
-				  if file_getprop("/tmp/aroma-data/gapps_install.prop","chrome") == "1" then
+				  if file_getprop("/tmp/aroma-data/gapps.prop","chrome") == "1" then
 				  form(
 						"Chrome",
 						"Remove?",
@@ -376,11 +376,11 @@ textbox(
 					  writetmpfile("chrome.prop","chrome=no\n");
 				  endif;
 
-				  if file_getprop("/tmp/aroma-data/gapps_install.prop","music") == "1" then
+				  if file_getprop("/tmp/aroma-data/gapps.prop","music") == "1" then
 				  form(
 						"Google Play Music",
 						"Remove?",
-						"@browser",
+						"@music",
 						"music.prop",
 
 						"music",			"<#selectbg_g>Would you like to remove the AOSP App?</#>",			"",			"group",

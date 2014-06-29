@@ -112,7 +112,7 @@ ui_print("@Installing System...");
     endif;
 
 # Contacts and Phone
-    if file_getprop("/tmp/aroma-data/install.prop","lockscreen") == "contacts" then
+    if file_getprop("/tmp/aroma-data/install.prop","contacts") == "samsung" then
 		ui_print("Installing Samsung Contacts and Phone");
 		package_extract_dir("ultima/contacts_phone/samsung", "/system");
 	else
