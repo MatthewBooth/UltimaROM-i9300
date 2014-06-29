@@ -489,7 +489,7 @@ ui_print("@Installing Kernel...");
 	
 	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "arter" then
 		ui_print("Flashing arter97 Kernel...");
-		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
+		assert(package_extract_file("ultima/kernel/arter/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
 			   delete("/tmp/boot.img"));
 		run_program("/tmp/busybox", "mkdir", "/system/lib/modules");
@@ -521,11 +521,13 @@ ui_print("@Installing Kernel...");
 	
 ################################## CREATE HARDSWAP ###################################
 
+if file_getprop("/tmp/aroma-data/install.prop","kernel") != "arter" then
 ui_print("@Installing Swap...");	
 	ui_print("Creating Hardswap...");
 	package_extract_file("ultima/scripts/hardswap.sh", "/tmp/hardswap.sh");
 	set_perm(0, 0, 0777, "/tmp/hardswap.sh");
 	run_program("/tmp/hardswap.sh", "/preload", file_getprop("/tmp/aroma-data/hardswap.prop", "preload"));
+endif;
 
 
 ################################## ROM INSTALLED ####################################	
