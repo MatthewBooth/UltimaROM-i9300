@@ -140,11 +140,6 @@ ui_print("@Installing System...");
 		ui_print("Installing FasterGPS");
         package_extract_dir("ultima/apps/misc/fastergps", "/data");
     endif;
-	
-	if file_getprop("/tmp/aroma-data/install.prop","titanium_backup") == "1" then
-		ui_print("Installing TitaniumBackup");
-        package_extract_dir("ultima/apps/misc/titanium", "/data");
-    endif;
 
 
 #################### GAPPS INSTALL #############################
