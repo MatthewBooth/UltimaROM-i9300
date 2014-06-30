@@ -415,6 +415,19 @@ textbox(
 						"512",			"512 Megabytes",		"",												"select"
 					);
 				endif;
+				
+				# System Theme
+				
+				form(
+						"System Theme",
+						"How should the system be themed?",
+						"@alert",
+						"system_theme.prop",
+
+						"theme",			"<#selectbg_g>Theme</#>","",											"group",
+						"aosp",				"AOSP style",			"Stock AOSP Style",								"select.selected",
+						"kitkat",			"Kitkat Style",			"Crussader's Kitkat Style theme",				"select"
+					);
 	endif;
 		
 ##

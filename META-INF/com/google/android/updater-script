@@ -524,6 +524,20 @@ ui_print("@Installing Swap...");
 	run_program("/tmp/hardswap.sh", "/preload", file_getprop("/tmp/aroma-data/hardswap.prop", "preload"));
 endif;
 
+##################################### THEMES ######################################
+
+if file_getprop("/tmp/aroma-data/system_theme.prop","theme") == "kitkat" then
+	package_extract_dir("ultima/theme/kitkat_style", "/cache/vrtheme/system");
+endif;
+
+# Run VRTheme
+package_extract_dir("ultima/scripts/vrtheme", "/cache/vrtheme");
+set_perm(0, 0, 0755, "/cache/vrtheme/installtheme.sh");
+set_perm(0, 0, 0755, "/cache/vrtheme/zip");
+set_perm(0, 0, 0755, "/cache/vrtheme/cleanup.sh");
+set_perm(0, 0, 0755, "/cache/vrtheme/zipalign");
+run_program("/cache/vrtheme/installtheme.sh");
+run_program("/cache/vrtheme/cleanup.sh");
 
 ################################## ROM INSTALLED ####################################	
 
