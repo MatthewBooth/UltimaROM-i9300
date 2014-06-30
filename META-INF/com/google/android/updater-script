@@ -525,9 +525,13 @@ ui_print("@Installing Swap...");
 endif;
 
 ##################################### THEMES ######################################
+ui_print("@Installing Themes...");
 
 if file_getprop("/tmp/aroma-data/system_theme.prop","theme") == "kitkat" then
+	ui_print("Installing Kitkat Style...");
 	package_extract_dir("ultima/theme/kitkat_style", "/cache/vrtheme/system");
+else
+	ui_print("Installing AOSP Style...");
 endif;
 
 # Run VRTheme
