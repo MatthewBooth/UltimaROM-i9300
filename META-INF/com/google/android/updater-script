@@ -166,6 +166,10 @@ ui_print("@Installing System...");
     if file_getprop("/tmp/aroma-data/gapps.prop","manager") == "1" then
         package_extract_dir("ultima/apps/gapps/DeviceManager", "/data");
     endif;
+	
+	if file_getprop("/tmp/aroma-data/gapps.prop","docs") == "1" then
+        package_extract_dir("ultima/apps/gapps/Docs", "/data");
+    endif;
 
     if file_getprop("/tmp/aroma-data/gapps.prop","drive") == "1" then
         package_extract_dir("ultima/apps/gapps/Drive", "/data");
@@ -436,18 +440,13 @@ ui_print("@Settings Permissions...");
 	run_program("/system/xbin/busybox", "--install", "-s", "/system/xbin");
 
 # Install SuperSU	
+if file_getprop("/tmp/aroma-data/install.prop","root") == "yes" then
+	ui_print("@Installing SuperSU");
 	package_extract_dir("ultima/supersu", "/system");
 	package_extract_file("ultima/scripts/supersu.sh", "/tmp/supersu.sh");
 	set_perm(0, 0, 0777, "/tmp/supersu.sh");
-	run_program("/tmp/supersu.sh"); 
-	
-	set_metadata_recursive("/system/etc/init.d", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-	set_metadata("/system/etc/init.d", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-	set_metadata("/system/bin/.ext/.su", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
-	set_metadata("/system/etc/install-recovery.sh", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
-	set_metadata("/system/xbin/su", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
-	set_metadata("/system/xbin/daemonsu", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
-	run_program("/system/xbin/su", "--install");
+	run_program("/tmp/supersu.sh");
+endif;	
 
 ################## Installing Recovery #############################
 

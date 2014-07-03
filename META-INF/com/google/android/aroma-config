@@ -159,7 +159,7 @@ textbox(
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=archi\n"+ "launcher=stock\n"+"bootanimation=new\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
 		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n");
-		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "slides=1\n"+"translate=0\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
+		writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "docs=1\n"+"print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "slides=1\n"+"translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
 		writetmpfile("calendar.prop","calendar=yes\n");
 		writetmpfile("chrome.prop","chrome=yes\n");
 		writetmpfile("music.prop","music=yes\n");
@@ -172,7 +172,7 @@ textbox(
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima_lite" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=archi\n"+ "launcher=stock\n"+"bootanimation=new\n"+"lockscreen=aosp\n"+"camera=google\n"+"gallery=aosp\n"+"contacts=aosp\n"+
 		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n");
-		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
+		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "docs=0\n"+"print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
 		writetmpfile("calendar.prop","calendar=no\n");
 		writetmpfile("chrome.prop","chrome=no\n");
 		writetmpfile("music.prop","music=no\n");
@@ -185,7 +185,7 @@ textbox(
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"bootanimation=new\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
 		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n");
-		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+"slides=1\n"+ "translate=0\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
+		writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "docs=1\n"+"print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+"slides=1\n"+ "translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
 		writetmpfile("calendar.prop","calendar=yes\n");
 		writetmpfile("chrome.prop","chrome=yes\n");
 		writetmpfile("music.prop","music=yes\n");
@@ -198,7 +198,7 @@ textbox(
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung_lite" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"bootanimation=new\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
 		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n");
-		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
+		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "docs=0\n"+"print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
 		writetmpfile("calendar.prop","calendar=no\n");
 		writetmpfile("chrome.prop","chrome=no\n");
 		writetmpfile("music.prop","music=no\n");
@@ -228,6 +228,10 @@ textbox(
 			"agni",					"AGNi", 				"PSN AGNi pureSTOCK",																"select",
 			"arter",				"arter97", 				"arter97 kernel",																	"select",
 			"boeffla",				"Boeffla", 				"Boeffla Kernel",																	"select",
+			
+			"root",					"<#selectbg_g>SuperSU</#>","",																				"group",
+			"yes",					"Install", 				"Root my device <#ff4444>(RECOMMENDED)</#>",		    							"select.selected",
+			"no",					"Don't install", 		"Leave me unrooted",								 								"select",
 			
 			"bootanimation",		"<#selectbg_g>Boot Animation</#>","",																		"group",
 			"new",					"Android L", 			"The new stock Google boot animation from the Android Developer Preview L <#ff4444>(RECOMMENDED)</#>",		    "select.selected",
@@ -307,7 +311,7 @@ textbox(
 		);
 				
 				if file_getprop("/tmp/aroma-data/gapps_choice.prop","gapps_choice") == "yes" then
-					writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "slides=1\n"+ "sheets=1\n"+ "translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=1\n"+ "youtube=1\n" ); 
+					writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "docs=1\n"+"print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "keyboard=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "slides=1\n"+ "sheets=1\n"+ "translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=1\n"+ "youtube=1\n" ); 
 					writetmpfile("calendar.prop","calendar=yes\n");
 					writetmpfile("chrome.prop","chrome=yes\n");
 					writetmpfile("music.prop","music=yes\n");
@@ -321,10 +325,11 @@ textbox(
 					"@play",
 					"gapps.prop",
 
-					"gapps","<#selectbg_g>Google Apps</#>",				"",														"group",
+					"gapps","<#selectbg_g>Google Apps</#>",				"",																"group",
 					"books",		"Google Books", 			"Google Books reader App",												"check.checked",
 					"calendar",		"Google Calendar", 			"Google's in-house Calendar App",										"check.checked",
 					"chrome",		"Google Chrome", 			"Google's Chromium browser for Android",								"check.checked",
+					"docs",			"Google Docs", 				"Google's Document writing",											"check.checked",
 					"print",		"Google CloudPrint", 		"Use your printer, from anywhere in the world",							"check.checked",
 					"manager",		"Google Device Manager", 	"Remotely lock and track your lost device",								"check.checked",
 					"drive",		"Google Drive", 			"Google Docs/Drive application on the go",								"check.checked",
@@ -398,7 +403,7 @@ textbox(
 				
 				# No Gapps. Just Play Store, Service and Search
 				if file_getprop("/tmp/aroma-data/gapps_choice.prop","gapps_choice") == "no" then
-					writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" );
+					writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "docs=0\n"+"print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "keyboard=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"tts=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" );
 					writetmpfile("calendar.prop","calendar=no\n");
 					writetmpfile("chrome.prop","chrome=no\n");
 					writetmpfile("music.prop","music=no\n");
