@@ -1,5 +1,5 @@
 <b><#selectbg_g>UltimaROM - v17.0 Diablos</#></b>
-<*>Updated to 4.4.2 ArchiPort base XXUFNE1</*>
+<*>Updated to 4.4.2 ArchiPort base XXUFNE2</*>
 <*>All UltimaAOSP apps are Android 4.4.4</*>
 <*>Added UltimaAOSP SystemUI app, which includes the same mods, for example battery colour controls and clock mods</*>
 <*>Added UltimaAOSP Mms app, includes in-app theme chooser</*>
