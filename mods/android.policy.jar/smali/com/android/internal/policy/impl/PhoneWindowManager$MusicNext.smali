@@ -23,7 +23,7 @@
 
 # direct methods
 .method public constructor <init>(Lcom/android/internal/policy/impl/PhoneWindowManager;)V
-    .registers 2
+    .locals 0
 
     iput-object p1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$MusicNext;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
@@ -35,7 +35,7 @@
 
 # virtual methods
 .method public run()V
-    .registers 8
+    .locals 7
 
     const-string v1, "test"
 
@@ -45,7 +45,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_29
+    if-eqz v1, :cond_0
 
     new-instance v0, Landroid/content/Intent;
 
@@ -65,7 +65,7 @@
 
     invoke-virtual {v1, v0}, Landroid/content/Context;->startService(Landroid/content/Intent;)Landroid/content/ComponentName;
 
-    :goto_1f
+    :goto_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$MusicNext;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     const/4 v2, 0x1
@@ -78,7 +78,7 @@
 
     return-void
 
-    :cond_29
+    :cond_0
     iget-object v1, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$MusicNext;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindowManager$MusicNext;->this$0:Lcom/android/internal/policy/impl/PhoneWindowManager;
@@ -87,5 +87,5 @@
 
     invoke-virtual {v1, v2}, Lcom/android/internal/policy/impl/PhoneWindowManager;->sendMediaButtonEvent(I)V
 
-    goto :goto_1f
+    goto :goto_0
 .end method
