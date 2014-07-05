@@ -1,9 +1,9 @@
-	assert(getprop("ro.product.device") == "m0" || getprop("ro.build.product") == "m0" || 
-		   getprop("ro.product.device") == "i9300" || getprop("ro.build.product") == "i9300" || 
-		   getprop("ro.product.device") == "GT-I9300" || getprop("ro.build.product") == "GT-I9300");
-	unmount("/cache");
-	unmount("/data");
-	unmount("/system");
+assert(getprop("ro.product.device") == "m0" || getprop("ro.build.product") == "m0" || 
+	   getprop("ro.product.device") == "i9300" || getprop("ro.build.product") == "i9300" || 
+	   getprop("ro.product.device") == "GT-I9300" || getprop("ro.build.product") == "GT-I9300");
+unmount("/cache");
+unmount("/data");
+unmount("/system");
 ui_print("@|----------- UltimaROM ----------|");
 ui_print(" ");
 ui_print(" ");
@@ -446,6 +446,14 @@ if file_getprop("/tmp/aroma-data/install.prop","root") == "yes" then
 	package_extract_file("ultima/scripts/supersu.sh", "/tmp/supersu.sh");
 	set_perm(0, 0, 0777, "/tmp/supersu.sh");
 	run_program("/tmp/supersu.sh");
+	
+	set_metadata("/system/bin/.ext/.su", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
+	set_metadata("/system/etc/install-recovery.sh", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
+	set_metadata("/system/xbin/sugote", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
+	set_metadata("/system/xbin/su", "uid", 0, "gid", 0, "mode", 06755, "capabilities", 0x0, "selabel", "u:object_r:zygote_exec:s0");
+	set_metadata("/system/xbin/daemonsu", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
+	set_metadata("/system/xbin/sugote-mksh", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:su_exec:s0");
+	run_program("/system/xbin/su", "--install");
 endif;	
 
 
@@ -546,7 +554,7 @@ run_program("/cache/vrtheme/cleanup.sh");
 
 ## Extra
 
-# Make sure init.d has executable persm
+# Make sure init.d has executable perms
 set_metadata_recursive("/system/etc/init.d", "uid", 0, "gid", 2000, "dmode", 0755, "fmode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 set_metadata("/system/etc/init.d", "uid", 0, "gid", 0, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 
