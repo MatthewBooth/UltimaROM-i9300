@@ -425,18 +425,36 @@ textbox(
 					);
 				endif;
 				
-				# System Theme
+				# Theme's
 				
-				form(
-						"System Theme",
-						"How should the system be themed?",
-						"@alert",
-						"system_theme.prop",
+				if file_getprop("/tmp/aroma-data/install.prop","contacts") == "samsung" then
+					form(
+							"Themes",
+							"How should the these apps be themed?",
+							"@alert",
+							"themes.prop",
 
-						"theme",			"<#selectbg_g>Theme</#>","",											"group",
-						"aosp",				"AOSP style",			"Stock AOSP Style",								"select.selected",
-						"kitkat",			"Kitkat Style",			"Crussader's Kitkat Style theme",				"select"
-					);
+							"system",			"<#selectbg_g>System</#>","",											"group",
+							"aosp",				"AOSP style",			"Stock AOSP Style",								"select.selected",
+							"kitkat",			"Kitkat Style",			"Crussader's Kitkat Style theme",				"select",
+							
+							"contact",			"<#selectbg_g>Contacts and Phone</#>","",								"group",
+							"aosp",				"AOSP style",			"Stock AOSP Style",								"select.selected",
+							"kitkat_dark",		"Kitkat Style - Dark",	"Crussader's Kitkat Style Holo Dark",			"select",
+							"kitkat_light",		"Kitkat Style - Light",	"Crussader's Kitkat Style Holo Light",			"select"
+						);
+				else
+						form(
+							"Themes",
+							"How should the these apps be themed?",
+							"@alert",
+							"themes.prop",
+
+							"system",			"<#selectbg_g>System</#>","",											"group",
+							"aosp",				"AOSP style",			"Stock AOSP Style",								"select.selected",
+							"kitkat",			"Kitkat Style",			"Crussader's Kitkat Style theme",				"select"
+						);
+				endif;
 	endif;
 		
 ##
