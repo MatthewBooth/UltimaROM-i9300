@@ -119,6 +119,15 @@ ui_print("@Installing System...");
 		ui_print("Installing AOSP Contacts and Phone");
 		package_extract_dir("ultima/contacts_phone/aosp", "/system");
     endif;	
+
+# DSP Manager
+    if file_getprop("/tmp/aroma-data/install.prop","audio") == "yes" then
+		ui_print("Installing DSP Manager");
+		package_extract_dir("ultima/dsp", "/system");
+		delete("/system/priv-app/MusicFX.apk");
+	else
+		ui_print("Installing Samsung Audio Effects");
+    endif;
 	
 # Misc
 	if file_getprop("/tmp/aroma-data/install.prop","acdisplay") == "1" then
@@ -534,25 +543,25 @@ ui_print("@Installing Themes...");
 
 if file_getprop("/tmp/aroma-data/install.prop","contacts") == "samsung" then
 
-	if file_getprop("/tmp/aroma-data/theme.prop","system") == "kitkat" then
+	if file_getprop("/tmp/aroma-data/themes.prop","system") == "kitkat" then
 		ui_print("Installing Kitkat Style System...");
 		package_extract_dir("ultima/theme/kitkat_style", "/cache/vrtheme/system");
 	else
 		ui_print("Installing AOSP Style System...");
 	endif;
-	if file_getprop("/tmp/aroma-data/theme.prop","contact") == "aosp" then
+	if file_getprop("/tmp/aroma-data/themes.prop","contact") == "aosp" then
 		ui_print("Installing AOSP Style Contacts...");
 	endif;
-	if file_getprop("/tmp/aroma-data/theme.prop","contact") == "kitkat_dark" then
+	if file_getprop("/tmp/aroma-data/themes.prop","contact") == "kitkat_dark" then
 		ui_print("Installing Kitkat Style Contacts...");
-		package_extract_dir("ultima/contacts_phone/samsung/kitkat_dark", "/cache/vrtheme/system");
+		package_extract_dir("ultima/contacts_phone/samsung/kk_dark", "/cache/vrtheme/system");
 	endif;
-	if file_getprop("/tmp/aroma-data/theme.prop","contact") == "kitkat_light" then
+	if file_getprop("/tmp/aroma-data/themes.prop","contact") == "kitkat_light" then
 		ui_print("Installing Kitkat Style Contacts...");
-		package_extract_dir("ultima/contacts_phone/samsung/kitkat_light", "/cache/vrtheme/system");
+		package_extract_dir("ultima/contacts_phone/samsung/kk_light", "/cache/vrtheme/system");
 	endif;
 else
-	if file_getprop("/tmp/aroma-data/theme.prop","system") == "kitkat" then
+	if file_getprop("/tmp/aroma-data/themes.prop","system") == "kitkat" then
 		ui_print("Installing Kitkat Style System...");
 		package_extract_dir("ultima/theme/kitkat_style", "/cache/vrtheme/system");
 	else

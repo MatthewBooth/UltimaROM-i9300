@@ -242,6 +242,10 @@ textbox(
 			"google",				"Google", 				"Google Experience Launcher 4.4.2",													"select",
 			"nova",					"Nova", 				"Highly customisable custom launcher",												"select",
 			
+			"audio",				"<#selectbg_g>DSP Manager</#>","",																			"group",
+			"yes",					"Install", 				"Install CyanogenMod DSP Manager",		    										"select.selected",
+			"no",					"Don't install", 		"Use Samsung's Audio Effects",								 						"select",
+			
 			"lockscreen",			"<#selectbg_g>Lockscreen</#>","",																			"group",
 			"aosp",					"AOSP", 				"Stock 4.4.2 Lockscreen <#ff4444>(RECOMMENDED)</#>",								"select.selected",
 			"samsung",				"Samsung", 				"Stock Samsung 4.4.2 Lockscreen",													"select",
