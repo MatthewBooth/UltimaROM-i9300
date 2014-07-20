@@ -1,40 +1,7 @@
-<b><#selectbg_g>UltimaROM - v17.0 Diablos</#></b>
-<*>Updated to 4.4.2 ArchiPort base XXUFNE2</*>
-<*>All UltimaAOSP apps are Android 4.4.4</*>
-<*>Added UltimaAOSP SystemUI app, which includes the same mods, for example battery colour controls and clock mods</*>
-<*>Added UltimaAOSP Mms app, includes in-app theme chooser</*>
-<*>Added UltimaAOSP lockscreen option</*>
-<*>Added UltimaAOSP Torch</*>
-<*>Added UltimaAOSP Contacts and Dialer option</*>
-<*>Added Samsung Contacts and Dialer option</*>
-<*>Added Samsung Contacts and Dialer Kitkat Style Themes</*>
-<*>Added CyanogenMod DSP Manager</*>
-<*>Added CRT off animation</*>
-<*>Added extended power menu toggle</*>
-<*>Added 4-way rotation</*>
-<*>Added Volume to Skip mod</*>
-<*>Added Screen off/Lockscreen Torch mod</*>
-<*>Added Navigation bar toggle</*>
-<*>Added ICS Grass and Microbes LWP</*>
-<*>Added CM  PhotoPhase LWP</*>
-<*>Enabled AppOpps Menu</*>
-<*>Added Google Camera</*>
-<*>Added 8 Lockscreen Effects (Samsung)</*>
-<*>Added AOSP Gallery</*>
-<*>Added latest GApps as of release</*>
-<*>Added ArchiDroid init.d - Kernel independent init.d script execution</*>
-<*>Added Hard Swap enabled on /preload</*>
-<*>Added Automatic EFS backup - it's back from 4.1.2, now with .img</*>
-<*>Added OTA Updates - my own app</*>
-<*>Newly laid out UltimaROM Settings. Now UltimaControl</*>
-<*>Added stock boot animation from the Android L preview</*>
-<*>Updated system sounds from the Android L preview</*>
-
-You can always see the full extent of the changelog, as much of the above is simplified, here: 
-
-<#selectbg_g>https://github.com/Kryten2k35/UltimaROM-i9300/commits/Stable</#>
-
-
-
-
-
+<b><#selectbg_g>UltimaROM - v17.1 Diablos</#></b>
+<*>Fixed SIM PIN error when using AOSP lockscreen</*>
+<*>Fixed syncing Google Contacts when using Samsung Contacts and Phone</*>
+<*>Added full call recording controls to Samsung Phone (NOT AOSP Phone)</*>
+<*>Added Call recording controls to UltimaControl</*>
+<*>Readded PageBuddy settings - Some people on virtual Networks may need to turn off the roaming notification</*>
+<*>Added possible AllShare cast fix</*>
