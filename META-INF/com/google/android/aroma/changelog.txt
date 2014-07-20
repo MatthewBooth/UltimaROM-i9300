@@ -5,3 +5,4 @@
 <*>Added Call recording controls to UltimaControl</*>
 <*>Readded PageBuddy settings - Some people on virtual Networks may need to turn off the roaming notification</*>
 <*>Added possible AllShare cast fix</*>
+<*>Fixed install bug when user picked a preset</*>

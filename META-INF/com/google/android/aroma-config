@@ -165,7 +165,7 @@ textbox(
 		writetmpfile("music.prop","music=yes\n");
 		writetmpfile("boeffla.prop","boeffla=stand\n");
 		writetmpfile("hardswap.prop","preload=256\n");
-		writetmpfile("system_theme.prop","theme=aosp\n");
+		writetmpfile("themes.prop","system=aosp\n");
 	endif;
 	
 	# Ultima Lite Preset
@@ -178,7 +178,7 @@ textbox(
 		writetmpfile("music.prop","music=no\n");
 		writetmpfile("boeffla.prop","boeffla=stand\n");
 		writetmpfile("hardswap.prop","preload=256\n");
-		writetmpfile("system_theme.prop","theme=aosp\n");
+		writetmpfile("themes.prop","system=aosp\n");
 	endif;
 	
 	# Samsung Preset
@@ -191,7 +191,7 @@ textbox(
 		writetmpfile("music.prop","music=yes\n");
 		writetmpfile("boeffla.prop","boeffla=none\n");
 		writetmpfile("hardswap.prop","preload=256\n");
-		writetmpfile("system_theme.prop","theme=aosp\n");
+		writetmpfile("themes.prop","system=aosp\n"+"contact=aosp\n");
 	endif;
 	
 	# Samsung Lite Preset
@@ -204,7 +204,7 @@ textbox(
 		writetmpfile("music.prop","music=no\n");
 		writetmpfile("boeffla.prop","boeffla=none\n");
 		writetmpfile("hardswap.prop","preload=256\n");
-		writetmpfile("system_theme.prop","theme=aosp\n");
+		writetmpfile("themes.prop","theme=aosp\n"+"contact=aosp\n");
 	endif;
 	
 	# Custom install
