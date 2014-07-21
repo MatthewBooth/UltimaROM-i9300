@@ -5,4 +5,8 @@
 <*>Added Call recording controls to UltimaControl</*>
 <*>Readded PageBuddy settings - Some people on virtual Networks may need to turn off the roaming notification</*>
 <*>Added possible AllShare cast fix</*>
+<*>Added possible Bluetooth fix</*>
 <*>Fixed install bug when user picked a preset</*>
+<*>Removed PageBuddyNotifSvc. Can't figure out how to make it larger, and thus it looks ugly. I'll figure something out in future</*>
+<*>Removed SimpleWidget.apk. More bloat</*>
+<*>Added Android Terminal Emulator to the installer</*>
