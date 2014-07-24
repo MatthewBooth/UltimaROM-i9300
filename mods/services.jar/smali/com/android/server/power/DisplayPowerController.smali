@@ -898,7 +898,7 @@
 
     iput v7, p0, Lcom/android/server/power/DisplayPowerController;->mScreenBrightnessRangeMaximum:I
 
-    const/4 v7, 0x1
+    const/4 v7, 0x0
 
     iput-boolean v7, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
 
