@@ -9340,7 +9340,7 @@
 
 	const-string v1, "system_pref_screen_animation"
 
-    const/4 v2, 0x0
+    const/4 v2, 0x1
 
     invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 
