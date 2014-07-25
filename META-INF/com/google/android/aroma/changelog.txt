@@ -1,4 +1,6 @@
 <b><#selectbg_g>UltimaROM - v17.1 Diablos</#></b>
 <*>Added long press menu button to kill app and toggle</*>
 <*>Added CRT/Fade screen off animation toggle</*>
+<*>Added some missing methods to SystemUI regarding notification sounds</*>
+<*>Updated Gapps</*>
 

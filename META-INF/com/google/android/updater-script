@@ -49,9 +49,7 @@ ui_print("@Mounting and Formatting Devices...");
 	delete_recursive("/data/data/com.android.contacts");
 	delete_recursive("/data/data/com.android.dialer");
 
-	
 	show_progress(1.0, 2400);
-
 
 ########################## INSTALL SYSTEM #####################	
 	
