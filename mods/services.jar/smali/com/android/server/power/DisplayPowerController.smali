@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+		Lcom/android/server/power/DisplayPowerController$SettingsObserver;,
         Lcom/android/server/power/DisplayPowerController$DisplayControllerHandler;,
         Lcom/android/server/power/DisplayPowerController$Callbacks;
     }
@@ -130,6 +131,8 @@
 .field private mCablRequest:Lcom/android/server/power/CABLControl;
 
 .field private mCallbackHandler:Landroid/os/Handler;
+
+.field mContext: Landroid/content/Context;
 
 .field private final mCallbacks:Lcom/android/server/power/DisplayPowerController$Callbacks;
 
@@ -315,6 +318,8 @@
 .field private mScreenOnWasBlocked:Z
 
 .field private final mSensorManager:Landroid/hardware/SensorManager;
+
+.field mSettingsObserver:Lcom/android/server/power/DisplayPowerController$SettingsObserver;
 
 .field private mTiltAngle:F
 
@@ -606,7 +611,23 @@
     move-object/from16 v0, p11
 
     iput-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mCallbackHandler:Landroid/os/Handler;
+	
+	move-object/from16 v0, p2
+	
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mContext:Landroid/content/Context;
+		
+	new-instance v0, Lcom/android/server/power/DisplayPowerController$SettingsObserver;
 
+	move-object/from16 v7, p11
+
+    invoke-direct {v0, p0, v7}, Lcom/android/server/power/DisplayPowerController$SettingsObserver;-><init>(Lcom/android/server/power/DisplayPowerController;Landroid/os/Handler;)V
+
+    iput-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mSettingsObserver:Lcom/android/server/power/DisplayPowerController$SettingsObserver;
+
+    iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mSettingsObserver:Lcom/android/server/power/DisplayPowerController$SettingsObserver;
+
+    invoke-virtual {v0}, Lcom/android/server/power/DisplayPowerController$SettingsObserver;->observe()V
+	
     iput-object p4, p0, Lcom/android/server/power/DisplayPowerController;->mLights:Lcom/android/server/LightsService;
 
     iput-object p5, p0, Lcom/android/server/power/DisplayPowerController;->mTwilight:Lcom/android/server/TwilightService;
@@ -898,9 +919,7 @@
 
     iput v7, p0, Lcom/android/server/power/DisplayPowerController;->mScreenBrightnessRangeMaximum:I
 
-    const/4 v7, 0x0
-
-    iput-boolean v7, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
+    invoke-virtual {p0}, Lcom/android/server/power/DisplayPowerController;->updateSettings()V
 
     iget-object v7, p0, Lcom/android/server/power/DisplayPowerController;->mSensorManager:Landroid/hardware/SensorManager;
 
@@ -9308,4 +9327,36 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+.method public updateSettings()V
+    .locals 5
+
+    iget-object v0, p0, Lcom/android/server/power/DisplayPowerController;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
+
+    move-result-object v0
+
+	const-string v1, "system_pref_screen_animation"
+
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, v2}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
+
+    move-result v3
+	
+	if-nez v3, :cond_0
+	
+	const/4 v3, 0x1
+	
+	goto :goto_0
+	
+	:cond_0
+	const/4 v3, 0x0
+	
+	:goto_0
+    iput-boolean v3, p0, Lcom/android/server/power/DisplayPowerController;->mElectronBeamFadesConfig:Z
+
+	return-void
 .end method
