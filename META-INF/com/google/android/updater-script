@@ -42,7 +42,12 @@ ui_print("@Mounting and Formatting Devices...");
 	
 	ui_print("Clearing Cache and Dalvik...");
 	delete_recursive("/preload");  		
-	delete_recursive("/cache");  		
+	delete_recursive("/cache"); 
+
+	# Clearing old Databases
+	delete_recursive("/data/data/com.android.providers.contacts");
+	delete_recursive("/data/data/com.android.contacts");
+	delete_recursive("/data/data/com.android.dialer");
 
 	
 	show_progress(1.0, 2400);
