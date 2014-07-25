@@ -1,12 +1,4 @@
 <b><#selectbg_g>UltimaROM - v17.1 Diablos</#></b>
-<*>Fixed SIM PIN error when using AOSP lockscreen</*>
-<*>Fixed syncing Google Contacts when using Samsung Contacts and Phone</*>
-<*>Added full call recording controls to Samsung Phone (NOT AOSP Phone)</*>
-<*>Added Call recording controls to UltimaControl</*>
-<*>Readded PageBuddy settings - Some people on virtual Networks may need to turn off the roaming notification</*>
-<*>Added possible AllShare cast fix</*>
-<*>Added possible Bluetooth fix</*>
-<*>Fixed install bug when user picked a preset</*>
-<*>Removed PageBuddyNotifSvc. Can't figure out how to make it larger, and thus it looks ugly. I'll figure something out in future</*>
-<*>Removed SimpleWidget.apk. More bloat</*>
-<*>Added Android Terminal Emulator to the installer</*>
+<*>Added long press menu button to kill app and toggle</*>
+<*>Added CRT/Fade screen off animation toggle</*>
+
