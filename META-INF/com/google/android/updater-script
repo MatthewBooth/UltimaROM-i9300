@@ -219,6 +219,7 @@ ui_print("@Installing System...");
 
     if file_getprop("/tmp/aroma-data/gapps.prop","keyboard") == "1" then
         package_extract_dir("ultima/apps/gapps/Keyboard", "/data");
+		delete("/system/app/LatinIME.apk", "/system/lib/libjni_latinime.so");
     endif;
 
     if file_getprop("/tmp/aroma-data/gapps.prop","maps") == "1" then
