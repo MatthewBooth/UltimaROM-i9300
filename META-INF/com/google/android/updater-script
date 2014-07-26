@@ -152,6 +152,11 @@ ui_print("@Installing System...");
 		ui_print("Installing FasterGPS");
         package_extract_dir("ultima/apps/misc/fastergps", "/data");
     endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","terminal") == "1" then
+		ui_print("Installing Terminal");
+        package_extract_dir("ultima/apps/misc/terminal", "/data");
+    endif;
 
 
 #################### GAPPS INSTALL #############################
