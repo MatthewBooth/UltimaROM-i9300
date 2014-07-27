@@ -4,7 +4,7 @@
 <*>Added shutter sound menu for Samsung camera</*>
 <*>Added WiFi band switcher to UltimaControl</*>
 <*>Added some missing methods to SystemUI regarding notification sounds</*>
-<*>Added clearing contacts and phone databases in AROMA in order to facilitate users switching from AOSP ro Samsung (or vise versa) without wiping the whole phone</*>
+<*>Added clearing contacts and phone databases in AROMA in order to facilitate users switching from AOSP or Samsung (or vise versa) without wiping the whole phone</*>
 <*>Updated Gapps</*>
 <*>Fixed a crash in SystemUI when you received a notification</*>
 <*>Fixed AOSP Video Editor crashing</*>
