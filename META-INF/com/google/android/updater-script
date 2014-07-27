@@ -502,7 +502,8 @@ ui_print("@Installing Kernel...");
 		ui_print("Flashing ArchiKernel Kernel...");
 		assert(package_extract_file("ultima/kernel/stock/boot.img", "/tmp/boot.img"),
 			   write_raw_image("/tmp/boot.img", "/dev/block/mmcblk0p5"),
-			   delete("/tmp/boot.img")); 
+			   delete("/tmp/boot.img"));
+		package_extract_dir("/ultima/kernel/stock/lib", "/system/lib");
 	endif;
 	
 	if file_getprop("/tmp/aroma-data/install.prop","kernel") == "agni" then
