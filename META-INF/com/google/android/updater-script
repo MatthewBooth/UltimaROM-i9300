@@ -91,7 +91,12 @@ ui_print("@Installing System...");
     if file_getprop("/tmp/aroma-data/install.prop","camera") == "samsung" then
 		ui_print("Installing Samsung Camera");
 		package_extract_dir("ultima/camera/samsung", "/system");
-	else
+	endif;
+	if file_getprop("/tmp/aroma-data/install.prop","camera") == "aosp" then
+		ui_print("Installing AOSP Camera");
+		package_extract_dir("ultima/camera/aosp", "/system");
+	endif;
+	if file_getprop("/tmp/aroma-data/install.prop","camera") == "google" then
 		ui_print("Installing Google Camera");
 		package_extract_dir("ultima/camera/google", "/system");
     endif;
