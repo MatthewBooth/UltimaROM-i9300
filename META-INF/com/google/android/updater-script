@@ -151,6 +151,44 @@ ui_print("@Installing System...");
 		ui_print("Installing Samsung Audio Effects");
     endif;
 	
+#Live Wallpapers
+	
+	if file_getprop("/tmp/aroma-data/install.prop","bubbles") == "1" then
+        package_extract_dir("ultima/live_wallpapers/bubbles", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","deepsea") == "1" then
+        package_extract_dir("ultima/live_wallpapers/deepsea", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","grass") == "1" then
+        package_extract_dir("ultima/live_wallpapers/grass", "/system");
+    endif;
+	
+	 if file_getprop("/tmp/aroma-data/install.prop","holo_spiral") == "1" then
+        package_extract_dir("ultima/live_wallpapers/holo_spiral", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","luminous_dots") == "1" then
+        package_extract_dir("ultima/live_wallpapers/luminous_dots", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","microbes") == "1" then
+        package_extract_dir("ultima/live_wallpapers/microbes", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","phasebeam") == "1" then
+        package_extract_dir("ultima/live_wallpapers/phasebeam", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","photophase") == "1" then
+        package_extract_dir("ultima/live_wallpapers/photophase", "/system");
+    endif;
+	
+	if file_getprop("/tmp/aroma-data/install.prop","sunbeam") == "1" then
+        package_extract_dir("ultima/live_wallpapers/sunbeam", "/system");
+    endif;
+	
 # Misc
 	if file_getprop("/tmp/aroma-data/install.prop","acdisplay") == "1" then
 		ui_print("Installing AcDisplay");
