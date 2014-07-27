@@ -645,8 +645,9 @@ set_metadata("/system/etc/init.d", "uid", 0, "gid", 0, "mode", 0755, "capabiliti
 ui_print("@ROM Installed!");
 ui_print(" ");	
 
-################################ THEME INSTALLATION #################################
-
+package_extract_file("ultima/scripts/aromaprop.sh", "/tmp/aromaprop.sh");
+set_perm(0, 0, 0777, "/tmp/aromaprop.sh");
+run_program("/tmp/aromaprop.sh");
 
 ui_print("@Unmounting Everything...");
 unmount("/system");
