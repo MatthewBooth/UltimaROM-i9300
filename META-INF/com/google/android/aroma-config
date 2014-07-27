@@ -158,7 +158,7 @@ textbox(
 	# Ultima Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=archi\n"+"launcher=stock\n"+"bootanimation=new\n"+"root=yes\n"+"lockscreen=aosp\n"+"camera=aosp\n"+"gallery=aosp\n"+"contacts=aosp\n"+
-		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"terminal=1\n"+"audio=yes\n"+"bubbles=1\n" + "deepsea=1\n" + "grass=1\n" + "holo_spiral=1\n" + "luminousdots=1\n" + "microbes=1\n" + "phasebeam=1\n" + "photophase=1\n" + "sunbeam=1\n" );
+		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"terminal=1\n"+"audio=yes\n"+"bubbles=1\n" + "deepsea=1\n" + "grass=1\n" + "holo_spiral=1\n" + "luminousdots=1\n" + "microbes=1\n" + "phasebeam=1\n" + "photophase=1\n" + "sunbeam=1\n" + "chronus=1\n" + "fmradio=1\n" + "jobmanager=1\n" + "kies=0\n" + "multiwindow=0\n" + "torch=1\n" + "videoeditor=1\n");
 		writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "docs=1\n"+"print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+ "slides=1\n"+"translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
 		writetmpfile("calendar.prop","calendar=yes\n");
 		writetmpfile("chrome.prop","chrome=yes\n");
@@ -171,7 +171,7 @@ textbox(
 	# Ultima Lite Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "ultima_lite" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=archi\n"+ "launcher=stock\n"+"bootanimation=new\n"+"root=yes\n"+"lockscreen=aosp\n"+"camera=aosp\n"+"gallery=aosp\n"+"contacts=aosp\n"+
-		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"terminal=0\n"+"audio=yes\n"+"bubbles=0\n" + "deepsea=0\n" + "grass=0\n" + "holo_spiral=0\n" + "luminousdots=0\n" + "microbes=0\n" + "phasebeam=0\n" + "photophase=0\n" + "sunbeam=0\n" );
+		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"terminal=0\n"+"audio=yes\n"+"bubbles=0\n" + "deepsea=0\n" + "grass=0\n" + "holo_spiral=0\n" + "luminousdots=0\n" + "microbes=0\n" + "phasebeam=0\n" + "photophase=0\n" + "sunbeam=0\n" + "chronus=0\n" + "fmradio=0\n" + "jobmanager=0\n" + "kies=0\n" + "multiwindow=0\n" + "torch=0\n" + "videoeditor=0\n");
 		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "docs=0\n"+"print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+"translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
 		writetmpfile("calendar.prop","calendar=no\n");
 		writetmpfile("chrome.prop","chrome=no\n");
@@ -184,7 +184,7 @@ textbox(
 	# Samsung Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"bootanimation=new\n"+"root=yes\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
-		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"terminal=1\n"+"audio=no\n"+"bubbles=1\n" + "deepsea=1\n" + "grass=1\n" + "holo_spiral=1\n" + "luminousdots=1\n" + "microbes=1\n" + "phasebeam=1\n" + "photophase=1\n" + "sunbeam=1\n" );
+		"acdisplay=1\n"+"adaway=1\n"+"dropbox=1\n"+"fastergps=1\n"+"terminal=1\n"+"audio=no\n"+"bubbles=1\n" + "deepsea=1\n" + "grass=1\n" + "holo_spiral=1\n" + "luminousdots=1\n" + "microbes=1\n" + "phasebeam=1\n" + "photophase=1\n" + "sunbeam=1\n" + "chronus=1\n" + "fmradio=1\n" + "jobmanager=1\n" + "kies=1\n" + "multiwindow=1\n" + "torch=1\n" + "videoeditor=1\n");
 		writetmpfile( "gapps.prop", "books=1\n"+ "calendar=1\n"+ "chrome=1\n"+ "docs=1\n"+"print=1\n"+ "manager=1\n"+ "drive=1\n"+ "ears=1\n"+ "games=1\n"+ "email=1\n"+ "mail=1\n"+ "hangouts=1\n"+ "keep=1\n"+ "maps=1\n"+ "music=1\n"+ "news=1\n"+ "plus=1\n"+ "office=1\n"+ "sheets=1\n"+"slides=1\n"+ "translate=1\n"+ "videos=1\n"+ "voice=1\n"+ "wallet=0\n"+ "youtube=1\n" ); 
 		writetmpfile("calendar.prop","calendar=yes\n");
 		writetmpfile("chrome.prop","chrome=yes\n");
@@ -197,7 +197,7 @@ textbox(
 	# Samsung Lite Preset
 	if file_getprop("/tmp/aroma-data/preset.prop","preset") == "samsung_lite" then
 		writetmpfile("install.prop", "recovery=yes\n"+"kernel=stock\n"+ "launcher=archi\n"+"bootanimation=new\n"+"root=yes\n"+"lockscreen=samsung\n"+"camera=samsung\n"+"gallery=samsung\n"+"contacts=samsung\n"+
-		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"terminal=0\n"+"audio=no\n"+"bubbles=0\n" + "deepsea=0\n" + "grass=0\n" + "holo_spiral=0\n" + "luminousdots=0\n" + "microbes=0\n" + "phasebeam=0\n" + "photophase=0\n" + "sunbeam=0\n");
+		"acdisplay=0\n"+"adaway=0\n"+"dropbox=0\n"+"fastergps=0\n"+"terminal=0\n"+"audio=no\n"+"bubbles=0\n" + "deepsea=0\n" + "grass=0\n" + "holo_spiral=0\n" + "luminousdots=0\n" + "microbes=0\n" + "phasebeam=0\n" + "photophase=0\n" + "sunbeam=0\n" + "chronus=0\n" + "fmradio=0\n" + "jobmanager=0\n" + "kies=0\n" + "multiwindow=0\n" + "torch=0\n" + "videoeditor=0\n");
 		writetmpfile( "gapps.prop", "books=0\n"+ "calendar=0\n"+ "chrome=0\n"+ "docs=0\n"+"print=0\n"+ "manager=0\n"+ "drive=0\n"+ "ears=0\n"+ "games=0\n"+ "email=0\n"+ "mail=0\n"+ "hangouts=0\n"+ "keep=0\n"+ "maps=0\n"+ "music=0\n"+ "news=0\n"+ "plus=0\n"+ "office=0\n"+ "sheets=0\n"+ "slides=0\n"+ "translate=0\n"+ "videos=0\n"+ "voice=0\n"+ "wallet=0\n"+ "youtube=0\n" ); 
 		writetmpfile("calendar.prop","calendar=no\n");
 		writetmpfile("chrome.prop","chrome=no\n");
@@ -273,7 +273,16 @@ textbox(
 			"adaway",				"AdAway", 				"Ad blocking via the HOSTS file",													"check.checked",
 			"dropbox",				"Dropbox", 				"Sync and backup your phones pictures and videos",									"check.checked",
 			"fastergps",			"FasterGPS", 			"Help locate your GPS signal quicker by preselecting your country",					"check.checked",
+			
+			"bloat",				"<#selectbg_g>System Apps</#>","",																			"group",
+			"chronus",				"Chronus", 				"Clock and weather widgets",														"check.checked",
+			"fmradio",				"FM Radio", 			"Use your headphones as a radio antenna",											"check.checked",
+			"jobmanager",			"Task Manager", 		"Samsung Task Manager",																"check.checked",
+			"kies",					"Kies", 				"Samsung Kies",																		"check.checked",
+			"multiwindow",			"Multi Window", 		"Open two apps at once",															"check.checked",
 			"terminal",				"Terminal", 			"Android Terminal Emulator",														"check.checked",
+			"torch",				"Torch", 				"CyanogenMod AOSP Torch",															"check.checked",
+			"videoeditor",			"Video Editor", 		"AOSP Video Editor",																"check.checked",
 			
 			"lwp",					"<#selectbg_g>Live Wallpapers</#>","",																		"group",
 			"bubbles",				"Bubbles", 				"",																					"check.checked",
@@ -478,7 +487,8 @@ textbox(
 						);
 				endif;
 	endif;
-		
+
+ini_set("text_next", "Install");
 ##
 #
 # Next Screen is Installation UI, So change the next button text to "Install Now"
