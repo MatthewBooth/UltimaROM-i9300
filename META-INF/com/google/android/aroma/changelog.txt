@@ -2,6 +2,7 @@
 <*>Added long press menu button to kill app and toggle</*>
 <*>Added CRT/Fade screen off animation toggle</*>
 <*>Added shutter sound menu for Samsung camera</*>
+<*>Added UltimaAOSP Camera</*>
 <*>Added WiFi band switcher to UltimaControl</*>
 <*>Added some missing methods to SystemUI regarding notification sounds</*>
 <*>Added clearing contacts and phone databases in AROMA in order to facilitate users switching from AOSP or Samsung (or vise versa) without wiping the whole phone</*>
@@ -13,5 +14,6 @@
 <*>Fixed AOSP keyboard remaining after installing Google Keyboard</*>
 <*>Fixed Google Keyboard not working correctly (moved it to /system)</*>
 <*>Fixed SuperSU installation. Now simply uses Chainfire's installation script</*>
+<*>Fixed AOSP Gallery edit feature. No longer crashes as missing libraries were added.</*>
 <*>Compressed some apps using GOptimise</*>
 
