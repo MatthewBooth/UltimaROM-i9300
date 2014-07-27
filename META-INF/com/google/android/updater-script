@@ -114,6 +114,20 @@ ui_print("@Installing System...");
 		package_extract_dir("ultima/lockscreen/aosp", "/system");
     endif;
 
+#Keyboards
+	if file_getprop("/tmp/aroma-data/install.prop","keyboards") == "aosp" then
+		ui_print("Installing AOSP Keyboard");
+		package_extract_dir("ultima/keyboards/aosp", "/system");
+	endif;
+    if file_getprop("/tmp/aroma-data/install.prop","keyboards") == "google" then
+      ui_print("Installing Google Keyboard");
+	  package_extract_dir("ultima/keyboards/google", "/system");
+    endif;	
+	if file_getprop("/tmp/aroma-data/install.prop","keyboards") == "swift" then
+      ui_print("Installing SwiftKey Keyboard");
+	  package_extract_dir("ultima/keyboards/swiftkey", "/system");
+    endif;
+
 # Contacts and Phone
     if file_getprop("/tmp/aroma-data/install.prop","contacts") == "samsung" then
 		ui_print("Installing Samsung Contacts and Phone");
@@ -215,11 +229,6 @@ ui_print("@Installing System...");
 
     if file_getprop("/tmp/aroma-data/gapps.prop","keep") == "1" then
         package_extract_dir("ultima/apps/gapps/Keep", "/data");
-    endif;
-
-    if file_getprop("/tmp/aroma-data/gapps.prop","keyboard") == "1" then
-        package_extract_dir("ultima/apps/gapps/Keyboard", "/system");
-		delete("/system/app/LatinIME.apk", "/system/lib/libjni_latinime.so");
     endif;
 
     if file_getprop("/tmp/aroma-data/gapps.prop","maps") == "1" then
