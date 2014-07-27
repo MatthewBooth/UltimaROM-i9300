@@ -252,7 +252,7 @@ textbox(
 			
 			"camera",				"<#selectbg_g>Camera</#>","",																				"group",
 			"aosp",					"AOSP", 				"UltimaAOSP Camera based on CyanogenMod camera <#ff4444>(RECOMMENDED)</#>",			"select.selected",
-			"google",				"Google", 				"Google's Camera software from the Nexus line",										"select.selected",
+			"google",				"Google", 				"Google's Camera software from the Nexus line",										"select",
 			"samsung",				"Samsung", 				"Stock Samsung 4.4.2 Camera",														"select",
 			
 			"gallery",				"<#selectbg_g>Gallery</#>","",																				"group",
