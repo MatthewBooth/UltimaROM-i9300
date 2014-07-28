@@ -117,7 +117,6 @@ dalvik.vm.heapsize=256m
 ro.opengles.version=131072
 debug.hwui.render_dirty_regions=false
 drm.service.enabled=true
-ro.tvout.enable=false
 dalvik.vm.heaptargetutilization=0.75
 dalvik.vm.heapminfree=512k
 ro.sf.lcd_density=320

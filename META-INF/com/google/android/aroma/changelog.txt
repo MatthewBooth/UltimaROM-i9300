@@ -16,5 +16,7 @@
 <*>Fixed Google Keyboard not working correctly (moved it to /system)</*>
 <*>Fixed SuperSU installation. Now simply uses Chainfire's installation script</*>
 <*>Fixed AOSP Gallery edit feature. No longer crashes as missing libraries were added.</*>
+<*>Fixed AOSP lockscreen unlock icon not being centred properly</*>
+<*>Fixed Samsung phone auto call recording not working if you used KK style themed versions</*>
 <*>Compressed some apps using GOptimise</*>
 
