@@ -1,22 +1,3 @@
-<b><#selectbg_g>UltimaROM - v17.2 Diablos</#></b>
-<*>Added long press menu button to kill app and toggle</*>
-<*>Added CRT/Fade screen off animation toggle</*>
-<*>Added shutter sound menu for Samsung camera</*>
-<*>Added UltimaAOSP Camera</*>
-<*>Added WiFi band switcher to UltimaControl</*>
-<*>Added some missing methods to SystemUI regarding notification sounds</*>
-<*>Added clearing contacts and phone databases in AROMA in order to facilitate users switching from AOSP or Samsung (or vise versa) without wiping the whole phone</*>
-<*>Updated Gapps & Kernels</*>
-<*>Made Live Wallpapers optional</*>
-<*>Fixed a crash in SystemUI when you received a notification</*>
-<*>Fixed AOSP Video Editor crashing</*>
-<*>Fixed some install presets not installing all items correctly</*>
-<*>Fixed Terminal not actually installing, even if chosen</*>
-<*>Fixed AOSP keyboard remaining after installing Google Keyboard</*>
-<*>Fixed Google Keyboard not working correctly (moved it to /system)</*>
-<*>Fixed SuperSU installation. Now simply uses Chainfire's installation script</*>
-<*>Fixed AOSP Gallery edit feature. No longer crashes as missing libraries were added.</*>
-<*>Fixed AOSP lockscreen unlock icon not being centred properly</*>
-<*>Fixed Samsung phone auto call recording not working if you used KK style themed versions</*>
-<*>Compressed some apps using GOptimise</*>
-
+<b><#selectbg_g>UltimaROM - v17.3 Diablos</#></b>
+<*>Enabled all three camera's to be installed at once</*>
+<*>Samsung camera now works with AOSP gallery</*>

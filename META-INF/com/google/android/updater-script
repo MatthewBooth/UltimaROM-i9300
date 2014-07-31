@@ -88,15 +88,15 @@ ui_print("@Installing System...");
     endif;
 
 # Cameras
-    if file_getprop("/tmp/aroma-data/install.prop","camera") == "samsung" then
+    if file_getprop("/tmp/aroma-data/install.prop","camera_samsung") == "1" then
 		ui_print("Installing Samsung Camera");
 		package_extract_dir("ultima/camera/samsung", "/system");
 	endif;
-	if file_getprop("/tmp/aroma-data/install.prop","camera") == "aosp" then
+	if file_getprop("/tmp/aroma-data/install.prop","camera_aosp") == "1" then
 		ui_print("Installing AOSP Camera");
 		package_extract_dir("ultima/camera/aosp", "/system");
 	endif;
-	if file_getprop("/tmp/aroma-data/install.prop","camera") == "google" then
+	if file_getprop("/tmp/aroma-data/install.prop","camera_google") == "1" then
 		ui_print("Installing Google Camera");
 		package_extract_dir("ultima/camera/google", "/system");
     endif;
